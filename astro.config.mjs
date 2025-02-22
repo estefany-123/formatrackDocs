@@ -78,6 +78,28 @@ export default defineConfig({
 					]
 				},
 				{
+					"label": "Movimientos",
+					"items": [
+					  { "label": "Listar Movimientos", "slug": "movimientos/listarMovimientos" },
+					  { "label": "Buscar Movimientos por Estado", "slug": "movimientos/buscarMovimientos" },
+					  { "label": "Registrar Movimiento", "slug": "movimientos/registrarMovimiento" },
+					  { "label": "Actualizar Movimiento", "slug": "movimientos/actualizarMovimiento" },
+					  { "label": "Aceptar Movimiento", "slug": "movimientos/aceptarMovimiento" },
+					  { "label": "Cancelar Movimiento", "slug": "movimientos/cancelarMovimiento" },
+					  { "label": "Actualizar Stock por Movimiento", "slug": "movimientos/actualizarStockMovimiento" }
+					]
+				},
+				{
+					"label": "Municipios",
+					"items": [
+					  { "label": "Listar Municipios", "slug": "municipios/listarMunicipios" },
+					  { "label": "Buscar Municipio por Nombre", "slug": "municipios/buscarMunicipio" },
+					  { "label": "Registrar Municipio", "slug": "municipios/registrarMunicipio" },
+					  { "label": "Actualizar Municipio", "slug": "municipios/actualizarMunicipio" },
+					  { "label": "Cambiar Estado de Municipio", "slug": "municipios/cambiarEstadoMunicipio" }
+					]
+				},
+				{
 					label: 'Reference',
 					autogenerate: { directory: 'reference' },
 				},
