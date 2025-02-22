@@ -15,7 +15,7 @@ export default defineConfig({
 					label: 'Inicio',
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: 'Qué es FormaTrack?', slug: 'guides/example' },
+						{ label: 'Qué es FormaTrack?', slug: 'inicio/introduccion' },
 					],
 				},
 				{
@@ -162,8 +162,60 @@ export default defineConfig({
 					]
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					"label": "Tipos de Sitio",
+					"items": [
+					  { "label": "Listar Tipos de Sitio", "slug": "tipos-sitio/listarTiposSitio" },
+					  { "label": "Buscar Tipo de Sitio por Nombre", "slug": "tipos-sitio/buscarTipoSitio" },
+					  { "label": "Registrar Tipo de Sitio", "slug": "tipos-sitio/registrarTipoSitio" },
+					  { "label": "Actualizar Tipo de Sitio", "slug": "tipos-sitio/actualizarTipoSitio" },
+					  { "label": "Cambiar Estado de Tipo de Sitio", "slug": "tipos-sitio/cambiarEstadoTipoSitio" }
+					]
+				},
+				{
+					"label": "Unidades de Medida",
+					"items": [
+					  { "label": "Listar Unidades de Medida", "slug": "unidades-medida/listarUnidadesMedida" },
+					  { "label": "Buscar Unidad de Medida por Nombre", "slug": "unidades-medida/buscarUnidadMedida" },
+					  { "label": "Registrar Unidad de Medida", "slug": "unidades-medida/registrarUnidadMedida" },
+					  { "label": "Actualizar Unidad de Medida", "slug": "unidades-medida/actualizarUnidadMedida" },
+					  { "label": "Desactivar Unidad de Medida", "slug": "unidades-medida/desactivarUnidadMedida" }
+					]
+				},
+				{
+					"label": "Usuario Ficha",
+					"items": [
+					  { "label": "Listar Asignaciones de Fichas a Usuarios", "slug": "usuario-ficha/listarUsuarioFicha" },
+					  { "label": "Registrar Asignación de Ficha a Usuario", "slug": "usuario-ficha/registrarUsuarioFicha" },
+					  { "label": "Actualizar Asignación de Ficha a Usuario", "slug": "usuario-ficha/actualizarUsuarioFicha" }
+					]
+				},
+				{
+					"label": "Usuarios",
+					"items": [
+					  { "label": "Listar Usuarios", "slug": "usuarios/listarUsuarios" },
+					  { "label": "Buscar Usuario por Documento", "slug": "usuarios/buscarUsuario" },
+					  { "label": "Registrar Usuario", "slug": "usuarios/registrarUsuario" },
+					  { "label": "Actualizar Usuario", "slug": "usuarios/actualizarUsuario" },
+					  { "label": "Cambiar Estado de Usuario", "slug": "usuarios/cambiarEstadoUsuario" },
+					  { "label": "Eliminar Usuario", "slug": "usuarios/eliminarUsuario" },
+					  { "label": "Iniciar Sesión", "slug": "usuarios/login" },
+					  { "label": "Cerrar Sesión", "slug": "usuarios/logout" }
+					]
+				},
+				{
+					"label": "Verificaciones",
+					"items": [
+					  { "label": "Listar Verificaciones", "slug": "verificaciones/listarVerificaciones" },
+					  { "label": "Buscar Verificación por Fecha", "slug": "verificaciones/buscarVerificacion" },
+					  { "label": "Registrar Verificación", "slug": "verificaciones/registrarVerificacion" },
+					  { "label": "Actualizar Verificación", "slug": "verificaciones/actualizarVerificacion" }
+					]
+				},
+				{
+					"label": 'Formatrack',
+					"items": [
+						{ "label": "Que es FormaTrack?", "slug": "formatrack/conclusion" },
+					]
 				},
 			],
 		}),
