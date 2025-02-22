@@ -12,6 +12,13 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
+					label: 'Inicio',
+					items: [
+						// Each item here is one entry in the navigation menu.
+						{ label: 'Qué es FormaTrack?', slug: 'guides/example' },
+					],
+				},
+				{
                     label: 'Areas',
                     items: [
                         { label: 'Listar Áreas', slug: 'areas/listarAreas' },
@@ -51,11 +58,24 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'Guides',
+					label: 'Fichas',
 					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
+					  { label: 'Listar Fichas', slug: 'fichas/listarFichas' },
+					  { label: 'Buscar Ficha por Código', slug: 'fichas/buscarFichaPorCodigo' },
+					  { label: 'Registrar Ficha', slug: 'fichas/registrarFicha' },
+					  { label: 'Actualizar Ficha', slug: 'fichas/actualizarFicha' },
+					  { label: 'Desactivar Ficha', slug: 'fichas/desactivarFicha' },
 					],
+				},
+				{
+					label: "Inventarios",
+					items: [
+					  { label: "Listar Inventarios", slug: "inventario/listarInventarios" },
+					  { label: "Buscar Inventarios Por Estado", slug: "inventario/buscarInventariosPorEstado" },
+					  { label: "Registrar Inventario", slug: "inventario/registrarInventario" },
+					  { label: "Actualizar Inventario", slug: "inventario/actualizarInventario" },
+					  { label: "Desactivar Inventario", slug: "inventario/desactivarInventario" }
+					]
 				},
 				{
 					label: 'Reference',
