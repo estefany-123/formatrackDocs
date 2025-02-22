@@ -22,6 +22,15 @@ export default defineConfig({
                     ],
                 },
 				{
+					label: 'Categorías',
+					items: [
+					  { label: 'Listar Categorías', slug: 'categorias/listarCategorias' },
+					  { label: 'Registrar Categoría', slug: 'categorias/registrarCategoria' },
+					  { label: 'Actualizar Categoría', slug: 'categorias/actualizarCategoria' },
+					  { label: 'Cambiar Estado de Categoría', slug: 'categorias/cambiarEstadoCategoria' },
+					],
+				},
+				{
 					label: 'Guides',
 					items: [
 						// Each item here is one entry in the navigation menu.
