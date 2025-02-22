@@ -12,6 +12,16 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
+                    label: 'Areas',
+                    items: [
+                        { label: 'Listar Áreas', slug: 'areas/listarAreas' },
+                        { label: 'Registrar Área', slug: 'areas/registrarArea' },
+                        { label: 'Actualizar Área', slug: 'areas/actualizarArea' },
+                        { label: 'Buscar Área por Nombre', slug: 'areas/buscarAreaPorNombre' },
+                        { label: 'Desactivar Área', slug: 'areas/desactivarArea' },
+                    ],
+                },
+				{
 					label: 'Guides',
 					items: [
 						// Each item here is one entry in the navigation menu.
