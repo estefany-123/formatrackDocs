@@ -120,6 +120,16 @@ export default defineConfig({
 					]
 				},
 				{
+					"label": "Sedes",
+					"items": [
+					  { "label": "Listar Sedes", "slug": "sedes/listarSedes" },
+					  { "label": "Buscar Sede por Nombre", "slug": "sedes/buscarSede" },
+					  { "label": "Registrar Sede", "slug": "sedes/registrarSede" },
+					  { "label": "Actualizar Sede", "slug": "sedes/actualizarSede" },
+					  { "label": "Desactivar Sede", "slug": "sedes/desactivarSede" }
+					]
+				},
+				{
 					label: 'Reference',
 					autogenerate: { directory: 'reference' },
 				},
