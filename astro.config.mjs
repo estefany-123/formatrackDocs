@@ -31,6 +31,16 @@ export default defineConfig({
 					],
 				},
 				{
+					label: 'Centros',
+					items: [
+					  { label: 'Listar Centros', slug: 'centros/listarCentros' },
+					  { label: 'Buscar Centro por Nombre', slug: 'centros/buscarCentroPorNombre' },
+					  { label: 'Registrar Centro', slug: 'centros/registrarCentro' },
+					  { label: 'Actualizar Centro', slug: 'centros/actualizarCentro' },
+					  { label: 'Cambiar Estado de Centro', slug: 'centros/cambiarEstadoCentro' },
+					],
+				},
+				{
 					label: 'Guides',
 					items: [
 						// Each item here is one entry in the navigation menu.
