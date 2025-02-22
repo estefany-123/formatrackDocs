@@ -130,6 +130,38 @@ export default defineConfig({
 					]
 				},
 				{
+					"label": "Sitios",
+					"items": [
+					  { "label": "Listar Sitios", "slug": "sitios/listarSitios" },
+					  { "label": "Buscar Sitio por Nombre", "slug": "sitios/buscarSitio" },
+					  { "label": "Registrar Sitio", "slug": "sitios/registrarSitio" },
+					  { "label": "Actualizar Sitio", "slug": "sitios/actualizarSitio" },
+					  { "label": "Desactivar Sitio", "slug": "sitios/desactivarSitio" }
+					]
+				},
+				{
+					"label": "Solicitudes",
+					"items": [
+					  { "label": "Listar Solicitudes", "slug": "solicitudes/listarSolicitudes" },
+					  { "label": "Buscar Solicitudes por Estado", "slug": "solicitudes/buscarSolicitudes" },
+					  { "label": "Registrar Solicitud", "slug": "solicitudes/registrarSolicitud" },
+					  { "label": "Actualizar Solicitud", "slug": "solicitudes/actualizarSolicitud" },
+					  { "label": "Aceptar Solicitud", "slug": "solicitudes/aceptarSolicitud" },
+					  { "label": "Rechazar Solicitud", "slug": "solicitudes/rechazarSolicitud" },
+					  { "label": "Actualizar Stock por Solicitud", "slug": "solicitudes/actualizarStockSolicitud" }
+					]
+				},
+				{
+					"label": "Tipos de Movimiento",
+					"items": [
+					  { "label": "Listar Tipos de Movimiento", "slug": "tipos-movimiento/listarTipoMovimiento" },
+					  { "label": "Buscar Tipos de Movimiento por Estado", "slug": "tipos-movimiento/buscarTipoMovimiento" },
+					  { "label": "Registrar Tipo de Movimiento", "slug": "tipos-movimiento/registrarTipoMovimiento" },
+					  { "label": "Actualizar Tipo de Movimiento", "slug": "tipos-movimiento/actualizarTipoMovimiento" },
+					  { "label": "Desactivar Tipo de Movimiento", "slug": "tipos-movimiento/desactivarTipoMovimiento" }
+					]
+				},
+				{
 					label: 'Reference',
 					autogenerate: { directory: 'reference' },
 				},
