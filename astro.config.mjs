@@ -6,18 +6,18 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: 'FormaTrack',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/migueldev2006/formatrackNodejs/tree/dev',
 			},
 			sidebar: [
 				{
                     label: 'Areas',
                     items: [
                         { label: 'Listar Áreas', slug: 'areas/listarAreas' },
+                        { label: 'Buscar Área por Nombre', slug: 'areas/buscarAreaPorNombre' },
                         { label: 'Registrar Área', slug: 'areas/registrarArea' },
                         { label: 'Actualizar Área', slug: 'areas/actualizarArea' },
-                        { label: 'Buscar Área por Nombre', slug: 'areas/buscarAreaPorNombre' },
                         { label: 'Desactivar Área', slug: 'areas/desactivarArea' },
                     ],
                 },
@@ -38,6 +38,16 @@ export default defineConfig({
 					  { label: 'Registrar Centro', slug: 'centros/registrarCentro' },
 					  { label: 'Actualizar Centro', slug: 'centros/actualizarCentro' },
 					  { label: 'Cambiar Estado de Centro', slug: 'centros/cambiarEstadoCentro' },
+					],
+				},
+				{
+					label: 'Elementos',
+					items: [
+					  { label: 'Listar Elementos', slug: 'elementos/listarElementos' },
+					  { label: 'Buscar Elementos por Nombre', slug: 'elementos/buscarElementosPorNombre' },
+					  { label: 'Registrar Elementos', slug: 'elementos/registrarElementos' },
+					  { label: 'Actualizar Elementos', slug: 'elementos/actualizarElementos' },
+					  { label: 'Desactivar Elementos', slug: 'elementos/desactivarElementos' },
 					],
 				},
 				{
