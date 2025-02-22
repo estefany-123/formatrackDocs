@@ -100,6 +100,26 @@ export default defineConfig({
 					]
 				},
 				{
+					"label": "Programas de Formación",
+					"items": [
+					  { "label": "Listar Programas de Formación", "slug": "programas-formacion/listarProgramas" },
+					  { "label": "Buscar Programa de Formación por Nombre", "slug": "programas-formacion/buscarPrograma" },
+					  { "label": "Registrar Programa de Formación", "slug": "programas-formacion/registrarPrograma" },
+					  { "label": "Actualizar Programa de Formación", "slug": "programas-formacion/actualizarPrograma" },
+					  { "label": "Desactivar Programa de Formación", "slug": "programas-formacion/desactivarPrograma" }
+					]
+				},
+				{
+					"label": "Roles",
+					"items": [
+					  { "label": "Listar Roles", "slug": "roles/listarRoles" },
+					  { "label": "Buscar Rol por Nombre", "slug": "roles/buscarRol" },
+					  { "label": "Registrar Rol", "slug": "roles/registrarRol" },
+					  { "label": "Actualizar Rol", "slug": "roles/actualizarRol" },
+					  { "label": "Desactivar Rol", "slug": "roles/desactivarRol" }
+					]
+				},
+				{
 					label: 'Reference',
 					autogenerate: { directory: 'reference' },
 				},
