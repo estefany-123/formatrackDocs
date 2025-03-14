@@ -1,0 +1,57 @@
+---
+title: "Buscar Inventarios Por Estado"
+description: "Obtiene una lista de inventarios filtrados por estado."
+slug: "inventario/buscarInventariosPorEstado"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+
+Este endpoint permite buscar elementos en el inventario según su estado.
+
+Methodo:`GET`
+
+<h3>Endpoint</h3>
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/api/inventario/:estado
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los inventarios
+
+
+<h3>Ejemplo de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 200">
+  ```json
+ {
+    "id_inventario": 1,
+    "valor": 3000,
+    "costo": 55000,
+    "descripcion": "Cable UTP 8 para trabajar conexiones de red",
+    "stock": 2,
+    "estado": "Inactivo",
+    "imagen_elemento": "1739935671377-bosque.jpg",
+    "fecha_creacion": "2025-02-13T05:00:00.000Z",
+    "fecha_actualizacion": "2025-02-19T05:00:00.000Z",
+    "fk_sitio": 2,
+    "fk_elemento": 3
+  }
+```
+  </TabItem>
+
+  <TabItem label="Status 404">
+  ```json
+  {message:"No hay elementos registrados en el inventario"}
+  ```
+  </TabItem>
+
+</Tabs>

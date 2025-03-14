@@ -1,0 +1,76 @@
+---
+title: "Registrar Sitio"
+description: "Permite registrar un nuevo sitio en el sistema."
+slug: "sitios/registrarSitio"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite registrar un nuevo sitio con los datos proporcionados.
+
+Method: `POST`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/Sitio
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los sitios
+
+<h3>Endpoint para los Datos del area</h3>
+
+Para agilizar la creacion de nuevos sitios te ofrecemos este endpoint de apoyo para que puedas consultar y obtener el ID del tipo de sitio y area necesarios para crear tu sitio.
+<li><a href="/tipos-sitio/listarTiposSitio">Tipo sitio</a></li>
+<li><a href="/areas/listarAreas">Areas</a></li>
+
+
+<h3>Parametros del cuerpo</h3>
+
+| Parametro y Tipo | Descripcion
+|----------|--------
+| nombre (string) |  Nombre que se dara al sitio
+| persona_encargada (string) | Nombre de la persona encargada del sitio
+| ubicacion (string) | Nose
+| estado (boolean) | Si esta activo o inactivo dicho sitio
+| fecha_creacion (date) | fecha en la que se creo o registro el sitio
+| fecha_actualizacion (date) | Fecha en la que se actualizo el sitio
+| fk_tipo_sitio (integer) | ID del tipo de sitio al que pertenece este sitio. Para ver los tipos de sitios disponibles visite este endpoint <a href="/tipos-sitio/listarTiposSitio">tipo sitio</a>
+|fk_area (integer) | ID del area en la cual va a estar el sitio. Para ver las areas visite este endpoint <a href="/areas/listarAreas">areas</a>
+
+### Body
+
+```json
+{
+  "nombre": "string",
+  "persona_encargada": "string",
+  "ubicacion": "string",
+  "estado": "boolean",
+  "fecha_creacion": "date",
+  "fecha_actualizacion": "date",
+  "fk_tipo_sitio": "integer",
+  "fk_area": "integer"
+}
+```
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 201">
+  ```json
+  {message:"Se registro el sitio correctamente"}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"No se registro el sitio"}
+  ```
+  </TabItem>
+</Tabs>
+

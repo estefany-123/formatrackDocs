@@ -1,0 +1,63 @@
+---
+title: "Listar Movimientos"
+description: "Obtiene la lista de todos los movimientos registrados en el sistema."
+slug: "movimientos/listarMovimientos"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<h2>¿Que son los movimientos?</h2>
+
+Los movimientos de materiales de formacion se refiere a las acciones de traslado, ingreso o salida de los materiales o insumos que se usan en los procesos de formacion.
+
+<h3>Descripcion</h3>
+
+Este endpoint permite listar todos los movimientos registrados.
+
+
+Method : `GET`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/api/movimiento/
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los movimientos
+
+
+<h3>Ejemplo de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 200">
+
+  ```json
+{
+    "id_movimiento": 6,
+    "descripcion": "Ingreso de equipos portatiles para el ambiente y12",
+    "cantidad": 12,
+    "hora_ingreso": "10:00:00",
+    "hora_salida": "00:00:00",
+    "estado": "Aprobado",
+    "caracterizacion": "No Devolutivo",
+    "fecha_movimiento": "2025-02-13T05:00:00.000Z",
+    "fecha_actualizacion": "2025-02-13T05:00:00.000Z",
+    "fk_sitio": 2,
+    "fk_usuario": 1,
+    "fk_tipo_movimiento": 1,
+    "fk_elemento": 2
+  }
+```
+  </TabItem>
+
+  <TabItem label="Status 500">
+  ```json
+  {message:"Error al consultar en el sistema"}
+  ```
+  </TabItem>
+</Tabs>

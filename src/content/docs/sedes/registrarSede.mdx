@@ -1,0 +1,67 @@
+---
+title: "Registrar Sede"
+description: "Permite registrar una nueva sede en el sistema."
+slug: "sedes/registrarSede"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite registrar una nueva sede con los datos proporcionados.
+
+Method: `POST`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/Sede
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a las sedes
+
+<h3>Endpoint para los Datos de la sede</h3>
+
+Para agilizar la creacion de nuevas sedes te ofrecemos este endpoint de apoyo para que puedas consultar y obtener el ID del centro necesario para crear tu sede.
+<li><a href="/centros/listarCentros">Centro</a></li>
+
+<h3>Parametros del cuerpo</h3>
+
+| Parametro y Tipo | Descripcion
+|----------|--------
+| nombre (string) |  Nombre que se le da a la sede
+| estado (boolean) | Si esta activa o inactiva la sede
+| fecha_creacion (date) | Fecha en la que se creo la sede
+| fecha_actualizacion (date) | Fecha en la que se actualizo algo de la sede
+| fk_centro (integer) | ID del centro al que pertenece la sede. Conozca las sedes en este endpoint <a href>="/centros/listarCentros">centros</a>
+
+### Body
+
+```json
+{
+  "nombre": "string",
+  "estado": "boolean",
+  "fecha_creacion": "date",
+  "fecha_actualizacion": "date",
+  "fk_centro": "integer"
+}
+```
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 201">
+  ```json
+  {message:"Se registro la sede correctamente"}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"No se registro la sede"}
+  ```
+  </TabItem>
+</Tabs>

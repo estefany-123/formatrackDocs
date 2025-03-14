@@ -1,0 +1,68 @@
+---
+title: "Registrar Programa de Formación"
+description: "Permite registrar un nuevo programa de formación en el sistema."
+slug: "programas-formacion/registrarPrograma"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite registrar un nuevo programa de formación con los datos proporcionados.
+
+Method: `POST`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/P.formacion
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los programas de formacion
+
+<h3>Endpoint para los Datos del area</h3>
+
+Para agilizar la creacion de nuevos programas de formacion te ofrecemos este endpoint de apoyo para que puedas consultar y obtener el ID del area a la que pertenecera el programa de formacion .
+<li><a href="/areas/listarAreas">Areas</a></li>
+
+
+<h3>Parametros del cuerpo</h3>
+
+| Parametro y Tipo | Descripcion
+|----------|--------
+| nombre (string) |  Nombre que hace referencia al programa de formacion
+| estado (boolean) | Si el programa se encuentra activo o inactivo
+| fecha_creacion (date) | Fecha en la que se registro el programa
+| fecha_actualizacion (date) | Fecha en la que se actualizo el programa
+| fk_area (integer) |  ID del area en la que va a estar el programa. Para conocer las areas puede consultar este endpoint <a href="/areas/listarAreas">areas</a>
+
+### Body
+
+```json
+{
+  "nombre": "string",
+  "estado": "boolean",
+  "fecha_creacion": "date",
+  "fecha_actualizacion": "date",
+  "fk_area": "integer"
+}
+```
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 201">
+  ```json
+  {message:"Se registro el programa correctamente"}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"No se registro el programa"}
+  ```
+  </TabItem>
+</Tabs>

@@ -1,0 +1,65 @@
+---
+title: "Listar Programas de Formación"
+description: "Obtiene la lista de todos los programas de formación registrados en el sistema."
+slug: "programas-formacion/listarProgramas"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<h2>¿Que son las Areas?</h2>
+
+Los programas de formación son planes de estudio diseñados para capacitar a los aprendices en diferentes áreas del conocimiento y prepararlos para el mundo laboral
+
+<h3>Descripcion</h3>
+
+Este endpoint permite listar todos los programas de formación registrados.
+
+
+Method : `GET`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/P.formacion
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los programas de formacion
+
+
+<h3>Ejemplo de respuesta</h3>
+
+
+<Tabs>
+  <TabItem label="Status 200">
+
+  ```json
+{
+    "id_programa": 2,
+    "nombre": "multimedia1",
+    "estado": true,
+    "fecha_creacion": "3038-10-10T05:00:00.000Z",
+    "fecha_actualizacion": "3034-10-10T05:00:00.000Z",
+    "fk_area": 3
+  },
+  {
+    "id_programa": 4,
+    "nombre": "adso",
+    "estado": true,
+    "fecha_creacion": "3038-10-10T05:00:00.000Z",
+    "fecha_actualizacion": "3034-10-10T05:00:00.000Z",
+    "fk_area": 3
+  }
+```
+  </TabItem>
+
+  <TabItem label="Status 500">
+  ```json
+  {message:"Error al listar los Programa_Formacion"}
+  ```
+  </TabItem>
+</Tabs>

@@ -1,0 +1,76 @@
+---
+title: "Listar elementos"
+description: "Obtiene la lista de elementos disponibles."
+slug: "elementos/listarElementos"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<h2>¿Que son los elementos?</h2>
+Los elementos son los componentes escenciales que ayudan a que los aprendices tengan los recursos materiales necesarios para que adquieran sus habilidades necesarias
+
+<h3>Descripcion</h3>
+
+Este endpoint permite obtener la lista de elementos disponibles en el sistema.
+
+Method : `GET`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/api/elemento/
+  ```
+  </TabItem>
+</Tabs>
+
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los elementos
+
+
+<h3>Ejemplo de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 200">
+
+  ```json
+{
+    "id_elemento": 2,
+    "codigo_sena": 145,
+    "codigo_unpsc": 589,
+    "nombre": "Bulto Zana",
+    "descripcion": "Utilizado para cocinar",
+    "stock": 3,
+    "estado": "Consumible",
+    "actividad": "Inactivo",
+    "fecha_creacion": "2025-02-13T05:00:00.000Z",
+    "fecha_actualizacion": "2025-02-13T05:00:00.000Z",
+    "fk_unidad_medida": 1,
+    "fk_categoria": 1
+  },
+  {
+    "id_elemento": 3,
+    "codigo_sena": 123,
+    "codigo_unpsc": 567,
+    "nombre": "Computadora",
+    "descripcion": "Utilizado para programar",
+    "stock": 3,
+    "estado": "No Consumible",
+    "actividad": "Activo",
+    "fecha_creacion": "2025-02-13T05:00:00.000Z",
+    "fecha_actualizacion": "2025-02-13T05:00:00.000Z",
+    "fk_unidad_medida": 1,
+    "fk_categoria": 1
+  }
+```
+  </TabItem>
+
+  <TabItem label="Status 500">
+  ```json
+  {message:"Error al consultar en el sistema"}
+  ```
+  </TabItem>
+</Tabs>
+

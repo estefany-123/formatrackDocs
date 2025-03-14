@@ -1,0 +1,55 @@
+---
+title: "Buscar área por nombre"
+description: "Busca un área en el sistema utilizando su nombre."
+slug: "areas/buscarAreaPorNombre"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+
+Este endpoint permite buscar un área específica por su nombre.
+
+Methodo:`GET`
+
+<h3>Endpoint</h3>
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/Areas/:nombre
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a las areas
+
+<h3>Ejemplo de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 200">
+  ```json
+{
+    "id_area": 4,
+    "nombre": "TICS",
+    "persona_encargada": "don juan",
+    "estado": false,
+    "fecha_creacion": "2024-05-05T05:00:00.000Z",
+    "fecha_actualizacion": "2020-03-03T05:00:00.000Z",
+    "fk_sede": 1
+}
+```
+  </TabItem>
+
+  <TabItem label="Status 404">
+  ```json
+  {message:"Area no existe"}
+  ```
+  </TabItem>
+</Tabs>
+
+
+
+

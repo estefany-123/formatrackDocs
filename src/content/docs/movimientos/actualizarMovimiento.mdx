@@ -1,0 +1,63 @@
+---
+title: "Actualizar Movimiento"
+description: "Permite actualizar un movimiento existente en el sistema."
+slug: "movimientos/actualizarMovimiento"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite actualizar un movimiento específico utilizando su ID.
+
+
+Method: `PUT`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/api/movimiento/update/:id_movimiento
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los movimientos
+
+
+
+### Body
+
+```json
+{
+  "descripcion": "string",
+  "cantidad": "integer",
+  "hora_ingreso": "time",
+  "hora_salida": "time",
+  "estado": "string",
+  "caracterizacion": "string",
+  "fecha_movimiento": "date",
+  "fecha_actualizacion": "date",
+  "fk_usuario": "integer",
+  "fk_tipo_movimiento": "integer",
+  "fk_sitio": "integer",
+  "fk_elemento": "integer"
+}
+```
+
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 201">
+  ```json
+  {message:"Movimiento actualizado"}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"Fallo la actualizacion del movimeiento"}
+  ```
+  </TabItem>
+</Tabs>

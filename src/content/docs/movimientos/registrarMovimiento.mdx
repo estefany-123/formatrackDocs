@@ -1,0 +1,84 @@
+---
+title: "Registrar Movimiento"
+description: "Permite registrar un nuevo movimiento en el sistema."
+slug: "movimientos/registrarMovimiento"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite registrar un nuevo movimiento con los datos proporcionados.
+
+Method: `POST`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/api/movimiento/register/
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los movimientos
+
+<h3>Endpoint para los Datos del area</h3>
+
+Para agilizar la creacion de nuevos movimientos te ofrecemos estos endpoints de apoyo para que puedas consultar y obtener el ID de lo que sea necesario para crear tu movimiento.
+<li><a href="/usuarios/listarUsuarios">Usuarios</a></li>
+<li><a href="/tipos-movimiento/listarTipoMovimiento">Tipos movimientos</a></li>
+<li><a href="/sitios/listarSitios">Sitios</a></li>
+<li><a href="/elementos/listarElementos">Elementos</a></li>
+
+<h3>Parametros del cuerpo</h3>
+
+| Parametro y Tipo | Descripcion
+|----------|--------
+| descripcion (string) | Descripcion del movimiento y de lo que se hara
+| cantidad (integer) | cantidad requerida en el movimiento
+| hora_ingreso (time) | no se
+| hora_salida (time) | no se 
+| estado (boolean) | no se 
+| caracterizacion (string) | no se
+| fecha_movimiento (date) | fecha en la que se solicito el movimiento creo NOSE
+| fecha_actualizacion (date) | no se
+| fk_usuario (integer) | Id del usuario que solicito el movimiento. Para ver los usuarios visite este endpoint <a href="/usuarios/listarUsuarios">usuarios</a>
+| fk_tipo_movimiento (integer) | ID del tipo de movimiento que se hace. Para ver los tipos de movimientos visite este endpoint <a href="/tipos-movimiento/listarTipoMovimiento">tipos movimientos</a>
+| fk_sitio (integer) | ID del sitio al que se va a hacer el movimiento. Para ver los sitios disponibles visite este endpoint <a href="/sitios/listarSitios">Sitios</a>
+| fk_elemento (integer) | ID del elemento que se solicita para el movimiento. Ver los elementos aqui <a href="/elementos/listarElementos">Elementos</a>
+
+### Body
+
+```json
+{
+  "descripcion": "string",
+  "cantidad": "integer",
+  "hora_ingreso": "time",
+  "hora_salida": "time",
+  "estado": "string",
+  "caracterizacion": "string",
+  "fecha_movimiento": "date",
+  "fecha_actualizacion": "date",
+  "fk_usuario": "integer",
+  "fk_tipo_movimiento": "integer",
+  "fk_sitio": "integer",
+  "fk_elemento": "integer"
+}
+```
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 201">
+  ```json
+  {message:"Se ha resgistrado el movimiento correctamente"}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"No se logro registrar el movimiento"}
+  ```
+  </TabItem>
+</Tabs>

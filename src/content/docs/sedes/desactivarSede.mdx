@@ -1,0 +1,43 @@
+---
+title: "Desactivar Sede"
+description: "Permite activar o desactivar una sede cambiando su estado."
+slug: "sedes/desactivarSede"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite cambiar el estado de una sede (activo/inactivo) utilizando su ID.
+
+Methodo:`GET`
+
+<h3>Endpoint</h3>
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/Sede/estado/:id_sede
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a las sedes
+
+
+<h3>Ejemplo de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 200">
+  ```json
+  {message: "Se desactivo la sede  correctamente"}
+```
+  </TabItem>
+
+  <TabItem label="Status 404">
+  ```json
+  {message:"No se desactivo la sede"}
+  ```
+  </TabItem>
+</Tabs>

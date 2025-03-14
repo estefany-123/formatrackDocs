@@ -1,0 +1,70 @@
+---
+title: "Listar centros"
+description: "Obtiene la lista de centros disponibles."
+slug: "centros/listarCentros"
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<h2>¿Que son los centros?</h2>
+
+Los centros son unidades academicas y operativas donde se desarrollan los programas de formacion técnica, tecnológica y complementaria que brinda la institución.Cada uno de estos centros se especializan en diferentes sectores productivos y areas del conocimiento como la salud, la inductria, el agro entre otros.
+
+
+<h3>Descripcion</h3>
+
+Este endpoint permite obtener la lista de centros disponibles en el sistema.
+
+Method : `GET`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/centros
+  ```
+  </TabItem>
+</Tabs>
+
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los centros
+
+
+<h3>Ejemplo de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 200">
+
+  ```json
+{
+    "id_centro": 1,
+    "nombre": "CGDSS1",
+    "estado": true,
+    "fecha_creacion": "2026-02-08T05:00:00.000Z",
+    "fecha_actualizacion": "2024-05-08T05:00:00.000Z",
+    "fk_municipio": 1
+  },
+  {
+    "id_centro": 5,
+    "nombre": "centr3",
+    "estado": true,
+    "fecha_creacion": "2021-12-12T05:00:00.000Z",
+    "fecha_actualizacion": "2024-05-07T05:00:00.000Z",
+    "fk_municipio": 1
+  }
+```
+  </TabItem>
+
+  <TabItem label="Status 500">
+  ```json
+  {message:"Error obteniendo los centros"}
+  ```
+  </TabItem>
+</Tabs>
+
+
+
+

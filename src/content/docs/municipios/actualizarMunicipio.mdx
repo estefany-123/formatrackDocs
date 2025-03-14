@@ -1,0 +1,54 @@
+---
+title: "Actualizar Municipio"
+description: "Permite actualizar un municipio existente en el sistema."
+slug: "municipios/actualizarMunicipio"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite actualizar un municipio específico utilizando su ID.
+
+Method: `PUT`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/municipios/:id
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los municipios
+
+
+### Body
+
+```json
+{
+  "nombre": "string",
+  "departamento": "string",
+  "estado": "boolean",
+  "fecha_creacion": "date",
+  "fecha_actualizacion": "date"
+}
+```
+
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 200">
+  ```json
+  {message:"Actualizado con exito"}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"Error actualizando"}
+  ```
+  </TabItem>
+</Tabs> 

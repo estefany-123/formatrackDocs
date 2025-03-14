@@ -1,0 +1,67 @@
+---
+title: "Registrar ficha"
+description: "Permite registrar una nueva ficha en el sistema."
+slug: "fichas/registrarFicha"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite registrar una nueva ficha con los datos proporcionados.
+
+Method: `POST`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/Fichas
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a las fichas
+
+
+<h3>Parametros del cuerpo</h3>
+
+| Parametro y Tipo | Descripcion
+|----------|--------
+| codigo_ficha (string) |  Codigo o id de la ficha creada
+| persona_encargada (string) |  Nombre de la persona lider encargada de la ficha
+| estado (boolean) |  Si se encuentra activo o inactivo la ficha
+| fecha_creacion (date) | Fecha en la que se registro la ficha
+| fecha_actualizacion (date) | Ultima fecha en la que se le hizo alguna modificacion
+| fk_programa (integer) | ID del programa de formacion al que pertenece esa ficha. Para conocer los programas de formacion disponible visite este endpoint <a href="/programas-formacion/listarProgramas">programas de formacion</a>
+
+
+### Body
+
+```json
+{
+  "codigo_ficha": "string",
+  "persona_encargada": "string",
+  "estado": "boolean",
+  "fecha_creacion": "date",
+  "fecha_actualizacion": "date",
+  "fk_programa": "integer"
+}
+```
+
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 201">
+  ```json
+  {message:"Se registro la ficha  correctamente"}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"No se registro la ficha"}
+  ```
+  </TabItem>
+</Tabs>

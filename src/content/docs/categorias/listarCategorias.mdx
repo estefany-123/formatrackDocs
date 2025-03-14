@@ -1,0 +1,63 @@
+---
+title: "Listar categorías"
+description: "Obtiene la lista de categorías disponibles."
+slug: "categorias/listarCategorias"
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<h2>¿Que son las categorias?</h2>
+
+Las categorias es la forma en la que clasificamos los elementos como por ejemplo pesticidas, alimentos, equipos electronicos y demas.
+
+<h3>Descripcion</h3>
+
+Este endpoint permite obtener la lista de categorías disponibles en el sistema.
+
+Method : `GET`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/categorias
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a las categorias
+
+
+<h3>Ejemplo de respuesta</h3>
+
+
+<Tabs>
+  <TabItem label="Status 200">
+
+  ```json
+{
+    "id_categoria": 1,
+    "nombre": "electronicos",
+    "estado": false,
+    "fecha_creacion": "2027-01-01T05:00:00.000Z",
+    "fecha_actualizacion": "2022-02-02T05:00:00.000Z"
+  },
+  {
+    "id_categoria": 2,
+    "nombre": "comidita",
+    "estado": false,
+    "fecha_creacion": "2021-01-01T05:00:00.000Z",
+    "fecha_actualizacion": "2022-02-02T05:00:00.000Z"
+  }
+```
+  </TabItem>
+
+  <TabItem label="Status 500">
+  ```json
+  {message:"Error obteniendo las categorias"}
+  ```
+  </TabItem>
+</Tabs>

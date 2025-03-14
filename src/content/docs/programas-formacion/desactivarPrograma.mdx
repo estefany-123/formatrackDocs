@@ -1,0 +1,43 @@
+---
+title: "Desactivar Programa de Formación"
+description: "Permite activar o desactivar un programa de formación cambiando su estado."
+slug: "programas-formacion/desactivarPrograma"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite cambiar el estado de un programa de formación (activo/inactivo) utilizando su ID.
+
+Method : `PUT`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/P.formacion/estado/:id_programa
+  ```
+  </TabItem>
+</Tabs>
+
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los programas de formacion
+
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 201">
+  ```json
+  {message:"Se desactivo el programa correctamente"}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"No se desactivo el programa"}
+  ```
+  </TabItem>
+</Tabs>
+

@@ -1,0 +1,67 @@
+---
+title: "Listar Municipios"
+description: "Obtiene la lista de todos los municipios registrados en el sistema."
+slug: "municipios/listarMunicipios"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<h2>¿Que son los municipios?</h2>
+
+Un municipio es una entidad territorial y administrativa que puede agrupar una o varias localidades. Es la unidad básica de organización territorial del Estado
+
+<h3>Descripcion</h3>
+
+Este endpoint permite listar todos los municipios registrados.
+
+
+
+Method : `GET`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/municipios
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los municipios
+
+
+<h3>Ejemplo de respuesta</h3>
+
+
+<Tabs>
+  <TabItem label="Status 200">
+
+  ```json
+{
+    "id_municipio": 2,
+    "nombre": "Pitalitacho",
+    "departamento": "Huila",
+    "estado": true,
+    "fecha_creacion": "2021-11-12T05:00:00.000Z",
+    "fecha_actualizacion": "2021-04-03T05:00:00.000Z"
+  },
+  {
+    "id_municipio": 1,
+    "nombre": "Saladoblanco g",
+    "departamento": "Huila",
+    "estado": false,
+    "fecha_creacion": "2015-10-09T05:00:00.000Z",
+    "fecha_actualizacion": "2046-05-07T05:00:00.000Z"
+  }
+```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"Error obteniendo los municipios"}
+  ```
+  </TabItem>
+</Tabs>
+

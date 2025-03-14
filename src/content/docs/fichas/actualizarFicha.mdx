@@ -1,0 +1,56 @@
+---
+title: "Actualizar ficha"
+description: "Actualiza los datos de una ficha existente en el sistema."
+slug: "fichas/actualizarFicha"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite actualizar la información de una ficha específica mediante su ID.
+
+Method: `PUT`
+
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/Fichas/:id_ficha
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a las fichas
+
+
+### Body
+
+```json
+{
+  "codigo_ficha": "string",
+  "persona_encargada": "string",
+  "estado": "boolean",
+  "fecha_creacion": "date",
+  "fecha_actualizacion": "date",
+  "fk_programa": "integer"
+}
+```
+
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 201">
+  ```json
+  {message:"Se actualizar la ficha correctamente"}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"No se actualizar la ficha"}
+  ```
+  </TabItem>
+</Tabs>

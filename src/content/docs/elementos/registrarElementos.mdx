@@ -1,0 +1,78 @@
+---
+title: "Registrar elementos"
+description: "Permite registrar un nuevo elemento en el sistema."
+slug: "elementos/registrarElementos"
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite registrar un nuevo elemento con los datos proporcionados.
+
+Method: `POST`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/api/elemento/register/
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los elementos
+
+
+<h3>Parametros del cuerpo</h3>
+
+
+| Parametro y Tipo | Descripcion
+|----------|--------
+| codigo_sena (string) |  Codigo que se le define al elemento dentro del centro al que fue asignado
+| codigo_unpsc (string) |  No se
+| nombre (string) |  Nombre por defecto del elemento
+| descripcion (string) | Algunos detalles adicionales del elemento
+| stock (integer) | Cantidad de dicho elemento en bodega
+| estado (boolean) | Si se encuentra activo o inactivo el elemento
+| actividad (string) | Nose
+| fecha_creacion (date) | Fecha en la que se registro el elemento
+| fecha_actualizacion (date) | Ultima fecha en la que se le hizo alguna modificacion
+| fk_unidad_medida (integer) | ID de la unidad de medida con la que se identifica dicho elemento. Para conocer las unidades de medida existentes puede ir al este endpoint <a href="/unidades-medida/listarUnidadesMedida">unidad medida</a>
+| fk_categoria (integer) | ID de la categoria a la que pertenece el elemento. Para conocer las categorias puede consultar en este endpoint <a href="/categorias/listarCategorias">categorias</a>
+
+### Body
+
+```json
+{
+  "codigo_sena": "string",
+  "codigo_unpsc": "string",
+  "nombre": "string",
+  "descripcion": "string",
+  "stock": "integer",
+  "estado": "boolean",
+  "actividad": "string",
+  "fecha_creacion": "date",
+  "fecha_actualizacion": "date",
+  "fk_unidad_medida": "integer",
+  "fk_categoria": "integer"
+}
+```
+
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 201">
+  ```json
+  {message:"El elemento se ha registrado correctamente"}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"No fue posible registrar el elemento"}
+  ```
+  </TabItem>
+</Tabs>

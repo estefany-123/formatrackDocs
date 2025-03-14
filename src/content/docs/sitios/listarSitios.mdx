@@ -1,0 +1,59 @@
+---
+title: "Listar Sitios"
+description: "Obtiene la lista de todos los sitios registrados en el sistema."
+slug: "sitios/listarSitios"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<h2>¿Que son los sitios?</h2>
+
+Es un lugar especifico compuesto por un tipo de sitio puede ser ambiente y su nombre como Y12 
+
+<h3>Descripcion</h3>
+
+Este endpoint permite listar todos los sitios registrados.
+
+Method : `GET`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/Sitio
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los sitios
+
+
+<h3>Ejemplo de respuesta</h3>
+
+
+<Tabs>
+  <TabItem label="Status 200">
+
+  ```json
+{
+    "id_sitio": 2,
+    "nombre": "Y8",
+    "persona_encargada": "Karlos Bravo",
+    "ubicacion": "ubicado al lado de via auditorio",
+    "estado": false,
+    "fecha_creacion": "2391-10-12T05:00:00.000Z",
+    "fecha_actualizacion": "2428-10-12T05:00:00.000Z",
+    "fk_tipo_sitio": 1,
+    "fk_area": 3
+  }
+```
+  </TabItem>
+
+  <TabItem label="Status 500">
+  ```json
+  {message:"Error al listar sitios"}
+  ```
+  </TabItem>
+</Tabs>

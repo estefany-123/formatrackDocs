@@ -1,0 +1,51 @@
+---
+title: "Actualizar Programa de Formación"
+description: "Permite actualizar un programa de formación existente en el sistema."
+slug: "programas-formacion/actualizarPrograma"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite actualizar un programa de formación específico utilizando su ID.
+
+Method: `PUT`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/P.formacion/:id_programa
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los programas de formacion
+
+### Body
+
+```json
+{
+  "nombre": "string",
+  "estado": "boolean",
+  "fecha_creacion": "date",
+  "fecha_actualizacion": "date",
+  "fk_area": "integer"
+}
+```
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 200">
+  ```json
+  {message:"Se actualizar el programa correctamente"}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"No se actualizo el programa"}
+  ```
+  </TabItem>
+</Tabs>

@@ -1,0 +1,60 @@
+---
+title: "Registrar categoría"
+description: "Permite registrar una nueva categoría en el sistema."
+slug: "categorias/registrarCategoria"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite registrar una nueva categoría con los datos proporcionados.
+
+Method: `POST`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/categorias
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a las categorias
+
+<h3>Parametros del cuerpo</h3>
+
+| Parametro y Tipo | Descripcion
+|----------|--------
+| nombre (string) |  Nombre que se le va a designar a dicha categoría
+| estado (boolean) | Si se encuentra activo o inactiva la categoría
+| fecha_creacion (date) | Fecha en la que se registro o creo la categoria
+| fecha_actualizacion (date) | Ultima fecha en la que se le hizo alguna modificacion
+
+### Body
+
+```json
+{
+  "nombre": "string",
+  "estado": "boolean",
+  "fecha_creacion": "date",
+  "fecha_actualizacion": "date"
+}
+```
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 201">
+  ```json
+  {message:"Categoria registrada exitosamente"}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 500">
+  ```json
+  {message:"Error registrando categoria"}
+  ```
+  </TabItem>
+</Tabs>

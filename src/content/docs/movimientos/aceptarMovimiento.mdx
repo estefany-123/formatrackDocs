@@ -1,0 +1,41 @@
+---
+title: "Aceptar Movimiento"
+description: "Cambia el estado de un movimiento a 'Aprobado' si está en 'Pendiente'."
+slug: "movimientos/aceptarMovimiento"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite aceptar un movimiento específico utilizando su ID.
+
+Method: `PUT`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/api/movimiento/aceptar/:id_movimiento
+  ```
+  </TabItem>
+</Tabs>
+
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los movimientos
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 201">
+  ```json
+  {message:"Su movimiento ha sido aceptado"}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"No se ha aceptado el movimiento"}
+  ```
+  </TabItem>
+</Tabs>

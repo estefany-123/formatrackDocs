@@ -1,0 +1,52 @@
+---
+title: "Buscar ficha por código"
+description: "Busca una ficha en el sistema utilizando su código."
+slug: "fichas/buscarFichaPorCodigo"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite buscar una ficha específica por su código.
+
+Methodo:`GET`
+
+<h3>Endpoint</h3>
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/Fichas/:codigo_ficha
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a las fichas
+
+
+<h3>Ejemplo de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 200">
+  ```json
+ {
+    "id_ficha": 1,
+    "codigo_ficha": 3215648,
+    "persona_encargada": "Carlos",
+    "estado": false,
+    "fecha_creacion": "2521-05-12T05:00:00.000Z",
+    "fecha_actualizacion": "2547-05-12T05:00:00.000Z",
+    "fk_programa": 2
+  }
+```
+  </TabItem>
+
+  <TabItem label="Status 404">
+  ```json
+  {message:"ficha no existe"}
+  ```
+  </TabItem>
+
+</Tabs>

@@ -1,0 +1,45 @@
+---
+title: "Cambiar estado de categoría"
+description: "Cambia el estado de una categoría (activa/inactiva) en el sistema."
+slug: "categorias/cambiarEstadoCategoria"
+---
+
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite cambiar el estado de una categoría específica mediante su ID.
+
+Method : `PUT`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/categorias/estado/:id
+  ```
+  </TabItem>
+</Tabs>
+
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a las categorias
+
+
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 200">
+  ```json
+  {message:"Estado actualizado con exito"}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 500">
+  ```json
+  {message:"Error cambiando el estado"}
+  ```
+  </TabItem>
+</Tabs>

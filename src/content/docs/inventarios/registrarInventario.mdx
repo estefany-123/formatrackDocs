@@ -1,0 +1,74 @@
+---
+title: "Registrar Inventario"
+description: "Permite registrar un nuevo elemento en el inventario."
+slug: "inventario/registrarInventario"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite registrar un nuevo elemento en el inventario con los datos proporcionados.
+
+Method: `POST`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/api/inventario/register/
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los inventarios
+
+
+<h3>Parametros del cuerpo</h3>
+
+| Parametro y Tipo | Descripcion
+|----------|--------
+| valor (decimal) |  nose
+| costo (decimal) |  nose
+| descripcion (string) | Descripcion del elemento y su uso 
+| stock (integer) | Cantidad de dicho elemento en bodega
+| estado (boolean) | Si el elemento esta activo o inactivo
+| fecha_creacion (date) | Fecha en la que se registro el elemento en el inventario
+| fecha_actualizacion (date) | Fecha en la que se le hizo alguna modificacion en el inventario 
+| fk_sitio (integer) | ID del sitio en el que se encuentra el inventario. Para ver los sitios existentes visite el siguiente endpoint <a href="/sitios/listarSitios">Sitios</a>
+| fk_elemento (integer) | ID del elemento que seregistrara al inventario. Conozca los elementos disponibles aqui <a href="/elementos/listarElementos">elementos</a>
+
+### Body
+
+```json
+{
+  "valor": "decimal",
+  "costo": "decimal",
+  "descripcion": "string",
+  "stock": "integer",
+  "estado": "string",
+  "fecha_creacion": "date",
+  "fecha_actualizacion": "date",
+  "fk_sitio": "integer",
+  "fk_elemento": "integer"
+}
+```
+
+
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 201">
+  ```json
+  {message:"El elemento se ha registrado en el inventario con exito"}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"No fue posible registrar el elemnto en el inventario"}
+  ```
+  </TabItem>
+</Tabs>
+

@@ -1,0 +1,63 @@
+---
+title: "Actualizar Inventario"
+description: "Permite actualizar los datos de un elemento en el inventario."
+slug: "inventario/actualizarInventario"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite actualizar un elemento del inventario utilizando su ID.
+
+Method: `PUT`
+
+<h1>No debe tener imagen</h1>
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/api/inventario/update/:id_inventario
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los inventarios
+
+
+
+### Body
+
+```json
+{
+  "valor": "decimal",
+  "costo": "decimal",
+  "descripcion": "string",
+  "stock": "integer",
+  "estado": "string",
+  "fecha_creacion": "date",
+  "fecha_actualizacion": "date",
+  "fk_sitio": "integer",
+  "fk_elemento": "integer"
+}
+```
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 201">
+  ```json
+  {message:"El elemento en el inventario ha sido actualizado"}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"No se logro realizar la actualizacion"}
+  ```
+  </TabItem>
+</Tabs>
+
+
+

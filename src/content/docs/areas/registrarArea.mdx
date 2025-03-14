@@ -1,0 +1,73 @@
+---
+title: "Registrar área"
+description: "Permite registrar una nueva área en el sistema."
+slug: "areas/registrarArea"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite registrar una nueva área con los datos proporcionados.
+
+Method: `POST`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/Areas
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a las areas
+
+<h3>Endpoint para los Datos del area</h3>
+
+Para agilizar la creacion de nuevas areas te ofrecemos este endpoint de apoyo para que puedas consultar y obtener el ID de la sede necesaria para crear tu area.
+<li><a href="/sedes/listarSedes">Sede</a></li>
+
+//hacer la nota de que necesita token a  TODAS
+
+
+<h3>Parametros del cuerpo</h3>
+
+| Parametro y Tipo | Descripcion
+|----------|--------
+| nombre (string) |  Nombre que se le va a designar a dicha area no mayor a (50)
+| persona_encargada (string) | Usuario que dirige el area en general
+| estado (boolean) | Si se encuentra activo o inactiva el area
+| fecha_creacion (date) | Fecha en la que se registro o creo el area
+| fecha_actualizacion (date) | Ultima fecha en la que se le hizo alguna modificacion
+| fk_sede (integer) |  ID de la sede en la que estar el area. Para consultar las sedes existentes consulte este endpoint <a href="/sedes/listarSedes">sedes</a>
+
+
+### Body
+
+```json
+{
+  "nombre": "string",
+  "persona_encargada": "string",
+  "estado": "boolean",
+  "fecha_creacion": "date",
+  "fecha_actualizacion": "date",
+  "fk_sede": "integer"
+}
+```
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 201">
+  ```json
+  {message:"Se registro el area correctamente"}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"No se registro el area"}
+  ```
+  </TabItem>
+</Tabs>

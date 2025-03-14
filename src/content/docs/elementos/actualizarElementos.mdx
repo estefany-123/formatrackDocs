@@ -1,0 +1,61 @@
+---
+title: "Actualizar elementos"
+description: "Actualiza los datos de un elemento existente en el sistema."
+slug: "elementos/actualizarElementos"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite actualizar la información de un elemento específico mediante su ID.
+
+Method: `PUT`
+
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/api/elemento/update/:id_elemento
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los elementos
+
+
+### Body
+
+```json
+{
+  "codigo_sena": "string",
+  "codigo_unpsc": "string",
+  "nombre": "string",
+  "descripcion": "string",
+  "stock": "integer",
+  "estado": "boolean",
+  "actividad": "string",
+  "fecha_creacion": "date",
+  "fecha_actualizacion": "date",
+  "fk_unidad_medida": "integer",
+  "fk_categoria": "integer"
+}
+```
+
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 201">
+  ```json
+  {message:"Se actualizo el elemento correctamente"}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 500">
+  ```json
+  {message:"No se actualizo el elemento"}
+  ```
+  </TabItem>
+</Tabs>

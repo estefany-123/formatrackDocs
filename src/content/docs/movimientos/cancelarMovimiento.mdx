@@ -1,0 +1,44 @@
+---
+title: "Cancelar Movimiento"
+description: "Cambia el estado de un movimiento a 'Rechazado' si está en 'Pendiente'."
+slug: "movimientos/cancelarMovimiento"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite cancelar un movimiento específico utilizando su ID.
+
+Methodo:`GET`
+
+<h3>Endpoint</h3>
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/api/movimiento/cancelar/:id_movimiento
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los movimientos
+
+
+<h3>Ejemplo de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 200">
+  ```json
+{message:"Se ha rechazado el movimiento correctamente"}
+```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"No se logro rechazar el movimiento"}
+  ```
+  </TabItem>
+</Tabs>
+

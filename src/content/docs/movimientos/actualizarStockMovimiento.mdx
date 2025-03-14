@@ -1,0 +1,41 @@
+---
+title: "Actualizar Stock por Movimiento"
+description: "Actualiza el stock basado en un movimiento específico."
+slug: "movimientos/actualizarStockMovimiento"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite actualizar el stock asociado a un movimiento utilizando su ID.
+
+
+Method: `PUT`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/api/movimiento/stock/:id_movimiento
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los movimientos
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 200">
+  ```json
+  {message:"Stock actualizado correctamente tras movimiento."}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"El id_movimiento es obligatorio."}
+  ```
+  </TabItem>
+</Tabs>

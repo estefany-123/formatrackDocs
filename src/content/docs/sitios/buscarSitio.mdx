@@ -1,0 +1,52 @@
+---
+title: "Buscar Sitio por Nombre"
+description: "Busca un sitio en el sistema utilizando su nombre."
+slug: "sitios/buscarSitio"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite buscar un sitio específico por su nombre.
+
+Methodo:`GET`
+
+<h3>Endpoint</h3>
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/Sitio/:nombre
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los sitios
+
+<h3>Ejemplo de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 200">
+  ```json
+{
+    "id_sitio": 2,
+    "nombre": "Y8",
+    "persona_encargada": "Karlos Bravo",
+    "ubicacion": "ubicado al lado de via auditorio",
+    "estado": false,
+    "fecha_creacion": "2391-10-12T05:00:00.000Z",
+    "fecha_actualizacion": "2428-10-12T05:00:00.000Z",
+    "fk_tipo_sitio": 1,
+    "fk_area": 3
+  }
+```
+  </TabItem>
+
+  <TabItem label="Status 404">
+  ```json
+  {message:"sitio no existe"}
+  ```
+  </TabItem>
+</Tabs>

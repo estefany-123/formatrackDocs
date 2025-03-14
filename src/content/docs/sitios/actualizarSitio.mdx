@@ -1,0 +1,55 @@
+---
+title: "Actualizar Sitio"
+description: "Permite actualizar un sitio existente en el sistema."
+slug: "sitios/actualizarSitio"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite actualizar un sitio específico utilizando su ID.
+
+Method: `PUT`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/Sitio/:id_sitio
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los sitios
+
+### Body
+
+```json
+{
+  "nombre": "string",
+  "persona_encargada": "string",
+  "ubicacion": "string",
+  "estado": "boolean",
+  "fecha_creacion": "date",
+  "fecha_actualizacion": "date",
+  "fk_tipo_sitio": "integer",
+  "fk_area": "integer"
+}
+```
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 201">
+  ```json
+  {message:"Se actualizar el sitio correctamente"}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"No se actualizar el sitio"}
+  ```
+  </TabItem>
+</Tabs>

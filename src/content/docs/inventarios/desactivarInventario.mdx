@@ -1,0 +1,46 @@
+---
+title: "Desactivar Inventario"
+description: "Cambia el estado de un elemento en el inventario entre activo e inactivo."
+slug: "inventario/desactivarInventario"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+
+Este endpoint permite activar o desactivar un elemento en el inventario utilizando su ID.
+
+
+Method : `PUT`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/api/inventario/desactivar/:id_inventario
+  ```
+  </TabItem>
+</Tabs>
+
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los inventarios
+
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 201">
+  ```json
+  {message:"Elemento del inventario desctivado exitosamente"}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"No se logro desactivar el elemento del inventario"}
+  ```
+  </TabItem>
+</Tabs>
+
+

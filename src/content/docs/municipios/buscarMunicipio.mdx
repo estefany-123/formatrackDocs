@@ -1,0 +1,51 @@
+---
+title: "Buscar Municipio por Nombre"
+description: "Busca un municipio en el sistema utilizando su nombre."
+slug: "municipios/buscarMunicipio"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite buscar un municipio específico por su nombre.
+
+
+Methodo:`GET`
+
+<h3>Endpoint</h3>
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/municipios/:nombre
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los municipios
+
+<h3>Ejemplo de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 200">
+  ```json
+{
+    "id_municipio": 2,
+    "nombre": "Pitalitacho",
+    "departamento": "Huila",
+    "estado": true,
+    "fecha_creacion": "2021-11-12T05:00:00.000Z",
+    "fecha_actualizacion": "2021-04-03T05:00:00.000Z"
+  }
+```
+  </TabItem>
+
+  <TabItem label="Status 404">
+  ```json
+  {message:"No se encontró ningún municipio con el nombre"}
+  ```
+  </TabItem>
+</Tabs>
+

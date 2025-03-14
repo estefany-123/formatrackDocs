@@ -1,0 +1,65 @@
+---
+title: "Registrar centro"
+description: "Permite registrar un nuevo centro en el sistema."
+slug: "centros/registrarCentro"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite registrar un nuevo centro con los datos proporcionados.
+
+Method: `POST`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/centros
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los centros
+
+
+<h3>Parametros del cuerpo</h3>
+
+
+| Parametro y Tipo | Descripcion
+|----------|--------
+| nombre (string) |  Nombre que se le va a designar a este centro
+| estado (boolean) | Si se encuentra activo o inactiva
+| fecha_creacion (date) | Fecha en la que se registro o creo el centro
+| fecha_actualizacion (date) | Ultima fecha en la que se le hizo alguna modificacion
+| fk_municipio (integer) | ID del municipio donde se encuentra el centro. Para saber cual es el id de cada municipio registrado consulte el siguiente endpoint <a href="/municipios/listarMunicipios">municipios</a>
+
+### Body
+
+```json
+{
+  "nombre": "string",
+  "estado": "boolean",
+  "fecha_creacion": "date",
+  "fecha_actualizacion": "date",
+  "fk_municipio": "integer"
+}
+```
+
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 201">
+  ```json
+  {message:"Centro registrado exitosamente"}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 500">
+  ```json
+  {message:"Error registrando centro"}
+  ```
+  </TabItem>
+</Tabs>

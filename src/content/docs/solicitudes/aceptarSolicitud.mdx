@@ -1,0 +1,42 @@
+---
+title: "Aceptar Solicitud"
+description: "Cambia el estado de una solicitud a 'Aceptada' si está en 'En Proceso'."
+slug: "solicitudes/aceptarSolicitud"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite aceptar una solicitud específica utilizando su ID.
+
+Method : `PUT`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/api/solicitud/aceptar/:id_solicitud
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a las solicitudes
+
+
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 201">
+  ```json
+  {message:"La solicitud ha sido aceptada"}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"No fue posible aceptar la solicitud"}
+  ```
+  </TabItem>
+</Tabs>

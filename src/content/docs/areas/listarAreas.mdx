@@ -1,0 +1,62 @@
+---
+title: "Listar áreas"
+description: "Obtiene la lista de áreas disponibles."
+slug: "areas/listarAreas"
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<h2>¿Que son las Areas?</h2>
+
+Las areas son lugares especificos, los cuales cada uno de estos se enfocan en diferentes ambitos como agroecologico que es todo sobre los recursos naturales o el tecnologico que maneja todas las herramientas digitales y sistemas de gestion.
+
+
+<h3>Descripcion</h3>
+
+Este endpoint permite obtener la lista de áreas disponibles en el sistema.
+
+Method : `GET`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/Areas
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a las areas
+
+
+<h3>Ejemplo de respuesta</h3>
+
+
+<Tabs>
+  <TabItem label="Status 200">
+
+  ```json
+{
+    "id_area": 3,
+    "nombre": "PAE2",
+    "persona_encargada": "don juan",
+    "estado": false,
+    "fecha_creacion": "2024-05-05T05:00:00.000Z",
+    "fecha_actualizacion": "2020-03-03T05:00:00.000Z",
+    "fk_sede": 1
+}
+```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"Error al listar todas las Areas registradas"}
+  ```
+  </TabItem>
+</Tabs>
+
+
+

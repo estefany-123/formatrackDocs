@@ -1,0 +1,50 @@
+---
+title: "Buscar Sede por Nombre"
+description: "Busca una sede en el sistema utilizando su nombre."
+slug: "sedes/buscarSede"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite buscar una sede específica por su nombre.
+
+Methodo:`GET`
+
+<h3>Endpoint</h3>
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/Sede/:nombre
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a las sedes
+
+<h3>Ejemplo de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 200">
+  ```json
+{
+    "id_sede": 2,
+    "nombre": "Comercio",
+    "estado": false,
+    "fecha_creacion": "2025-05-03T05:00:00.000Z",
+    "fecha_actualizacion": "2024-01-01T05:00:00.000Z",
+    "fk_centro": 1
+  }
+```
+  </TabItem>
+
+  <TabItem label="Status 404">
+  ```json
+  {message:"sede no existe"}
+  ```
+  </TabItem>
+</Tabs>
+

@@ -1,0 +1,64 @@
+---
+title: "Registrar Municipio"
+description: "Permite registrar un nuevo municipio en el sistema."
+slug: "municipios/registrarMunicipio"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Este endpoint permite registrar un nuevo municipio con los datos proporcionados.
+
+Method: `POST`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/municipios
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a los municipios
+
+
+<h3>Parametros del cuerpo</h3>
+
+| Parametro y Tipo | Descripcion
+|----------|--------
+| nombre (string) |  Nombre del municipio
+| departamento (string) | Departamento al que pertenece ese municipio
+| estado (boolean) | Si el municipio se encuentra activo o inactivo 
+| fecha_creacion (date) | Fecha en la que se registro el municipio
+| fecha_actualizacion (date) | Ultima fecha en la que se le hizo alguna actualizacion
+
+
+### Body
+
+```json
+{
+  "nombre": "string",
+  "departamento": "string",
+  "estado": "boolean",
+  "fecha_creacion": "date",
+  "fecha_actualizacion": "date"
+}
+```
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 201">
+  ```json
+  {message:"Municipio registrado exitosamente"}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 500">
+  ```json
+  {message:"Error registrando municipio"}
+  ```
+  </TabItem>
+</Tabs>

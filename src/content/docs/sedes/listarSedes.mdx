@@ -1,0 +1,63 @@
+---
+title: "Listar Sedes"
+description: "Obtiene la lista de todas las sedes registradas en el sistema."
+slug: "sedes/listarSedes"
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<h2>¿Que son las Sedes?</h2>
+
+Las sedes en el sena son las instalaciones físicas donde se desarrollan los procesos de formación y administrativos de la institución. Cada Centro de Formación puede tener una o varias sedes ubicadas en diferentes lugares para facilitar el acceso a los aprendices.
+
+<h3>Descripcion</h3>
+
+Este endpoint permite listar todas las sedes registradas.
+
+Method : `GET`
+
+<Tabs>
+  <TabItem label="Endpoint">
+  ```
+  http://localhost:3000/Sede
+  ```
+  </TabItem>
+</Tabs>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado | Valor | Descripcion
+|----------|-------| -------
+| Authorization |  Bearer `token` | Token con autorizacion para acceder a las sedes
+
+<h3>Ejemplo de respuesta</h3>
+
+
+<Tabs>
+  <TabItem label="Status 200">
+
+  ```json
+{
+    "id_sede": 1,
+    "nombre": "Yamboro",
+    "estado": true,
+    "fecha_creacion": "2021-02-15T05:00:00.000Z",
+    "fecha_actualizacion": "2025-02-15T05:00:00.000Z",
+    "fk_centro": 1
+  },
+  {
+    "id_sede": 2,
+    "nombre": "Comercio",
+    "estado": false,
+    "fecha_creacion": "2025-05-03T05:00:00.000Z",
+    "fecha_actualizacion": "2024-01-01T05:00:00.000Z",
+    "fk_centro": 1
+  }
+```
+  </TabItem>
+
+  <TabItem label="Status 500">
+  ```json
+  {message:"Error al listas sedes"}
+  ```
+  </TabItem>
+</Tabs>
