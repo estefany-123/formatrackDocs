@@ -35,8 +35,8 @@ Para agilizar la creacion de nuevos programas de formacion te ofrecemos este end
 |----------|--------
 | nombre (string) |  Nombre que hace referencia al programa de formacion
 | estado (boolean) | Si el programa se encuentra activo o inactivo
-| fecha_creacion (date) | Fecha en la que se registro el programa
-| fecha_actualizacion (date) | Fecha en la que se actualizo el programa
+| created_at (date) | Fecha en la que se registro el programa
+| updated_at (date) | Fecha en la que se actualizo el programa
 | fk_area (integer) |  ID del area en la que va a estar el programa. Para conocer las areas puede consultar este endpoint <a href="/areas/listarAreas">areas</a>
 
 ### Body
@@ -45,8 +45,8 @@ Para agilizar la creacion de nuevos programas de formacion te ofrecemos este end
 {
   "nombre": "string",
   "estado": "boolean",
-  "fecha_creacion": "date",
-  "fecha_actualizacion": "date",
+  "created_at": "date",
+  "updated_at": "date",
   "fk_area": "integer"
 }
 ```

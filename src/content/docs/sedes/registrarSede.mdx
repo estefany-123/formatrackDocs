@@ -34,8 +34,8 @@ Para agilizar la creacion de nuevas sedes te ofrecemos este endpoint de apoyo pa
 |----------|--------
 | nombre (string) |  Nombre que se le da a la sede
 | estado (boolean) | Si esta activa o inactiva la sede
-| fecha_creacion (date) | Fecha en la que se creo la sede
-| fecha_actualizacion (date) | Fecha en la que se actualizo algo de la sede
+| created_at (date) | Fecha en la que se creo la sede
+| updated_at (date) | Fecha en la que se actualizo algo de la sede
 | fk_centro (integer) | ID del centro al que pertenece la sede. Conozca las sedes en este endpoint <a href>="/centros/listarCentros">centros</a>
 
 ### Body
@@ -44,8 +44,8 @@ Para agilizar la creacion de nuevas sedes te ofrecemos este endpoint de apoyo pa
 {
   "nombre": "string",
   "estado": "boolean",
-  "fecha_creacion": "date",
-  "fecha_actualizacion": "date",
+  "created_at": "date",
+  "updated_at": "date",
   "fk_centro": "integer"
 }
 ```
