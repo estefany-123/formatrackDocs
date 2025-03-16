@@ -38,39 +38,34 @@ Method : `GET`
   ```json
 {
     "id_elemento": 2,
-    "codigo_sena": 145,
-    "codigo_unpsc": 589,
     "nombre": "Bulto Zana",
     "descripcion": "Utilizado para cocinar",
-    "stock": 3,
-    "estado": "Consumible",
-    "actividad": "Inactivo",
-    "fecha_creacion": "2025-02-13T05:00:00.000Z",
-    "fecha_actualizacion": "2025-02-13T05:00:00.000Z",
+    "valor": 65000,
+    "Consumible": true,
+    "no_consumible": false,
+    "estado":true,
+    "imagen_elemento": "zanahoria.png",
+    "created_at": "2025-02-13T05:00:00.000Z",
+    "updated_at": "2025-02-13T05:00:00.000Z",
     "fk_unidad_medida": 1,
     "fk_categoria": 1
+    "fk_caracteristica": 5
   },
   {
     "id_elemento": 3,
-    "codigo_sena": 123,
-    "codigo_unpsc": 567,
     "nombre": "Computadora",
     "descripcion": "Utilizado para programar",
-    "stock": 3,
-    "estado": "No Consumible",
-    "actividad": "Activo",
-    "fecha_creacion": "2025-02-13T05:00:00.000Z",
-    "fecha_actualizacion": "2025-02-13T05:00:00.000Z",
+    "valor": 2000000,
+    "Consumible": false,
+    "no_consumible": true,
+    "estado": false,
+    "imagen_elemento": "Asus.png",
+    "created_at": "2025-02-13T05:00:00.000Z",
+    "updated_at": "2025-02-13T05:00:00.000Z",
     "fk_unidad_medida": 1,
     "fk_categoria": 1
+    "fk_caracteristica":2
   }
 ```
   </TabItem>
-
-  <TabItem label="Status 500">
-  ```json
-  {message:"Error al consultar en el sistema"}
-  ```
-  </TabItem>
 </Tabs>
-

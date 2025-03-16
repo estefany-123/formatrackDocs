@@ -34,14 +34,17 @@ Method: `PUT`
   "cantidad": "integer",
   "hora_ingreso": "time",
   "hora_salida": "time",
-  "estado": "string",
-  "caracterizacion": "string",
-  "fecha_movimiento": "date",
-  "fecha_actualizacion": "date",
+  "aceptado": "boolean",
+  "en_proceso": "boolean",
+  "cancelado": "boolean",
+  "devolutivo": "boolean",
+  "no_devolutivo": "boolean",
+  "created_at": "date",
+  "updated_at": "date",
+  "fk_sitio": "integer",
   "fk_usuario": "integer",
   "fk_tipo_movimiento": "integer",
-  "fk_sitio": "integer",
-  "fk_elemento": "integer"
+  "fk_inventario": "integer"
 }
 ```
 

@@ -30,33 +30,35 @@ Method: `POST`
 
 | Parametro y Tipo | Descripcion
 |----------|--------
-| codigo_sena (string) |  Codigo que se le define al elemento dentro del centro al que fue asignado
-| codigo_unpsc (string) |  No se
 | nombre (string) |  Nombre por defecto del elemento
 | descripcion (string) | Algunos detalles adicionales del elemento
-| stock (integer) | Cantidad de dicho elemento en bodega
+| valor (integer) | valor por la unidad del elemento
+| consumible (boolean) | Determina que el elemento es consumible
+| no_consumible (boolean) | Determina que el elemento es no consumible
 | estado (boolean) | Si se encuentra activo o inactivo el elemento
-| actividad (string) | Nose
+| imagen_elemento (string) | Imagen relacionada con el elemento a registrar
 | fecha_creacion (date) | Fecha en la que se registro el elemento
 | fecha_actualizacion (date) | Ultima fecha en la que se le hizo alguna modificacion
 | fk_unidad_medida (integer) | ID de la unidad de medida con la que se identifica dicho elemento. Para conocer las unidades de medida existentes puede ir al este endpoint <a href="/unidades-medida/listarUnidadesMedida">unidad medida</a>
 | fk_categoria (integer) | ID de la categoria a la que pertenece el elemento. Para conocer las categorias puede consultar en este endpoint <a href="/categorias/listarCategorias">categorias</a>
+| fk_caracteristica (integer) | ID de la caracteritica a la que pertenece el elemento. Para conocer las caracteristicas puede consultar en este endpoint <a href="/caracteristicas/listarCaracteristicas">caracteristica</a>
 
 ### Body
 
 ```json
 {
-  "codigo_sena": "string",
-  "codigo_unpsc": "string",
   "nombre": "string",
   "descripcion": "string",
-  "stock": "integer",
+  "valor": "integer",
+  "consumible": "boolean",
+  "no_consumible": "boolean",
   "estado": "boolean",
-  "actividad": "string",
-  "fecha_creacion": "date",
-  "fecha_actualizacion": "date",
+  "imagen_elemento": "string",
+  "created_at": "date",
+  "updated_at": "date",
   "fk_unidad_medida": "integer",
   "fk_categoria": "integer"
+  "fk_caracteristica": "integer"
 }
 ```
 

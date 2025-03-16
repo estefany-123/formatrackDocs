@@ -28,13 +28,10 @@ Method: `POST`
 
 | Parametro y Tipo | Descripcion
 |----------|--------
-| valor (decimal) |  nose
-| costo (decimal) |  nose
-| descripcion (string) | Descripcion del elemento y su uso 
 | stock (integer) | Cantidad de dicho elemento en bodega
 | estado (boolean) | Si el elemento esta activo o inactivo
-| fecha_creacion (date) | Fecha en la que se registro el elemento en el inventario
-| fecha_actualizacion (date) | Fecha en la que se le hizo alguna modificacion en el inventario 
+| created_at (date) | Fecha en la que se registro el elemento en el inventario
+| updated_at (date) | Fecha en la que se le hizo alguna modificacion en el inventario 
 | fk_sitio (integer) | ID del sitio en el que se encuentra el inventario. Para ver los sitios existentes visite el siguiente endpoint <a href="/sitios/listarSitios">Sitios</a>
 | fk_elemento (integer) | ID del elemento que seregistrara al inventario. Conozca los elementos disponibles aqui <a href="/elementos/listarElementos">elementos</a>
 
@@ -42,13 +39,10 @@ Method: `POST`
 
 ```json
 {
-  "valor": "decimal",
-  "costo": "decimal",
-  "descripcion": "string",
   "stock": "integer",
   "estado": "string",
-  "fecha_creacion": "date",
-  "fecha_actualizacion": "date",
+  "created_at": "date",
+  "updated_at": "date",
   "fk_sitio": "integer",
   "fk_elemento": "integer"
 }

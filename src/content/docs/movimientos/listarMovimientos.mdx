@@ -43,21 +43,18 @@ Method : `GET`
     "cantidad": 12,
     "hora_ingreso": "10:00:00",
     "hora_salida": "00:00:00",
-    "estado": "Aprobado",
-    "caracterizacion": "No Devolutivo",
-    "fecha_movimiento": "2025-02-13T05:00:00.000Z",
-    "fecha_actualizacion": "2025-02-13T05:00:00.000Z",
+    "aceptado":false,
+    "en_proceso":true,
+    "cancelado":false,
+    "devolutivo":false,
+    "no_devolutivo":true,
+    "created_at": "2025-02-13T05:00:00.000Z",
+    "updated_at": "2025-02-13T05:00:00.000Z",
     "fk_sitio": 2,
     "fk_usuario": 1,
     "fk_tipo_movimiento": 1,
-    "fk_elemento": 2
+    "fk_inventario": 2
   }
 ```
-  </TabItem>
-
-  <TabItem label="Status 500">
-  ```json
-  {message:"Error al consultar en el sistema"}
-  ```
   </TabItem>
 </Tabs>

@@ -29,17 +29,18 @@ Method: `PUT`
 
 ```json
 {
-  "codigo_sena": "string",
-  "codigo_unpsc": "string",
   "nombre": "string",
   "descripcion": "string",
-  "stock": "integer",
+  "valor": "integer",
+  "consumible": "boolean",
+  "no_consumible": "boolean",
   "estado": "boolean",
-  "actividad": "string",
-  "fecha_creacion": "date",
-  "fecha_actualizacion": "date",
+  "imagen_elemento": "string",
+  "created_at": "date",
+  "updated_at": "date",
   "fk_unidad_medida": "integer",
-  "fk_categoria": "integer"
+  "fk_categoria": "integer",
+  "fk_caracteristica": "integer"
 }
 ```
 
@@ -53,7 +54,7 @@ Method: `PUT`
   ```
   </TabItem>
 
-  <TabItem label="Status 500">
+  <TabItem label="Status 401">
   ```json
   {message:"No se actualizo el elemento"}
   ```

@@ -31,8 +31,8 @@ Method: `POST`
 |----------|--------
 | nombre (string) |  Nombre que se le va a designar a este centro
 | estado (boolean) | Si se encuentra activo o inactiva
-| fecha_creacion (date) | Fecha en la que se registro o creo el centro
-| fecha_actualizacion (date) | Ultima fecha en la que se le hizo alguna modificacion
+| created_at (date) | Fecha en la que se registro o creo el centro
+| updated_at (date) | Ultima fecha en la que se le hizo alguna modificacion
 | fk_municipio (integer) | ID del municipio donde se encuentra el centro. Para saber cual es el id de cada municipio registrado consulte el siguiente endpoint <a href="/municipios/listarMunicipios">municipios</a>
 
 ### Body
@@ -41,8 +41,8 @@ Method: `POST`
 {
   "nombre": "string",
   "estado": "boolean",
-  "fecha_creacion": "date",
-  "fecha_actualizacion": "date",
+  "created_at": "date",
+  "updated_at": "date",
   "fk_municipio": "integer"
 }
 ```
@@ -57,7 +57,7 @@ Method: `POST`
   ```
   </TabItem>
 
-  <TabItem label="Status 500">
+  <TabItem label="Status 401">
   ```json
   {message:"Error registrando centro"}
   ```

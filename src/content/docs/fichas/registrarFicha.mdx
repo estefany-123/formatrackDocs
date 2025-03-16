@@ -31,8 +31,8 @@ Method: `POST`
 | codigo_ficha (string) |  Codigo o id de la ficha creada
 | persona_encargada (string) |  Nombre de la persona lider encargada de la ficha
 | estado (boolean) |  Si se encuentra activo o inactivo la ficha
-| fecha_creacion (date) | Fecha en la que se registro la ficha
-| fecha_actualizacion (date) | Ultima fecha en la que se le hizo alguna modificacion
+| created_at (date) | Fecha en la que se registro la ficha
+| updated_at (date) | Ultima fecha en la que se le hizo alguna modificacion
 | fk_programa (integer) | ID del programa de formacion al que pertenece esa ficha. Para conocer los programas de formacion disponible visite este endpoint <a href="/programas-formacion/listarProgramas">programas de formacion</a>
 
 
@@ -43,8 +43,8 @@ Method: `POST`
   "codigo_ficha": "string",
   "persona_encargada": "string",
   "estado": "boolean",
-  "fecha_creacion": "date",
-  "fecha_actualizacion": "date",
+  "created_at": "date",
+  "updated_at": "date",
   "fk_programa": "integer"
 }
 ```

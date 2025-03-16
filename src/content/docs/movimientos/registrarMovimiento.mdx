@@ -35,18 +35,21 @@ Para agilizar la creacion de nuevos movimientos te ofrecemos estos endpoints de 
 
 | Parametro y Tipo | Descripcion
 |----------|--------
-| descripcion (string) | Descripcion del movimiento y de lo que se hara
-| cantidad (integer) | cantidad requerida en el movimiento
-| hora_ingreso (time) | no se
-| hora_salida (time) | no se 
-| estado (boolean) | no se 
-| caracterizacion (string) | no se
-| fecha_movimiento (date) | fecha en la que se solicito el movimiento creo NOSE
-| fecha_actualizacion (date) | no se
+| descripcion (string) | Descripcion del movimiento y de lo que se hara.
+| cantidad (integer) | cantidad requerida en el movimiento.
+| hora_ingreso (time) | Si se realizo un tipo de movimento de ingreso se marca la hora en la cual se realizo el movimiento.
+| hora_salida (time) | Si se realizo un tipo de movimiento de salida se marca la hora en la cual se realizo el movimiento.
+| aceptado (boolean) | En caso de ser aceptado el movimiento.
+| en_proceso (boolean) | Cuando el movimiento se encuentra en proceso.
+| cancelado (boolean) | Se estblece cuando se ha rechazado el movimiento.
+| devolutivo (boolean) | Se determina que el elemento solicitado del inventraio es de estado devolutivo
+| no_devolutivo (boolean) | Se determina que el elemento solicitado del inventario ed de estado no_devolutivo.
+| created_at (date) | fecha en la que se solicito el movimiento.
+| updated_at (date) | fecha en lacual se actuallzo el movimiento.
+| fk_sitio (integer) | ID del sitio al que se va a hacer el movimiento. Para ver los sitios disponibles visite este endpoint <a href="/sitios/listarSitios">Sitios</a>
 | fk_usuario (integer) | Id del usuario que solicito el movimiento. Para ver los usuarios visite este endpoint <a href="/usuarios/listarUsuarios">usuarios</a>
 | fk_tipo_movimiento (integer) | ID del tipo de movimiento que se hace. Para ver los tipos de movimientos visite este endpoint <a href="/tipos-movimiento/listarTipoMovimiento">tipos movimientos</a>
-| fk_sitio (integer) | ID del sitio al que se va a hacer el movimiento. Para ver los sitios disponibles visite este endpoint <a href="/sitios/listarSitios">Sitios</a>
-| fk_elemento (integer) | ID del elemento que se solicita para el movimiento. Ver los elementos aqui <a href="/elementos/listarElementos">Elementos</a>
+| fk_inventario (integer) | ID del inventario que se solicita para realizar el movimiento del elemento. Ver los elementos del inventario aqui <a href="/inventario/listarInventarios">Inventarios</a>
 
 ### Body
 
@@ -56,14 +59,17 @@ Para agilizar la creacion de nuevos movimientos te ofrecemos estos endpoints de 
   "cantidad": "integer",
   "hora_ingreso": "time",
   "hora_salida": "time",
-  "estado": "string",
-  "caracterizacion": "string",
-  "fecha_movimiento": "date",
-  "fecha_actualizacion": "date",
+  "aceptado": "boolean",
+  "en_proceso": "boolean",
+  "cancelado": "boolean",
+  "devolutivo": "boolean",
+  "no_devolutivo": "boolean",
+  "created_at": "date",
+  "updated_at": "date",
+  "fk_sitio": "integer",
   "fk_usuario": "integer",
   "fk_tipo_movimiento": "integer",
-  "fk_sitio": "integer",
-  "fk_elemento": "integer"
+  "fk_inventario": "integer"
 }
 ```
 

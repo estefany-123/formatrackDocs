@@ -38,8 +38,8 @@ Para agilizar la creacion de nuevas areas te ofrecemos este endpoint de apoyo pa
 | nombre (string) |  Nombre que se le va a designar a dicha area no mayor a (50)
 | persona_encargada (string) | Usuario que dirige el area en general
 | estado (boolean) | Si se encuentra activo o inactiva el area
-| fecha_creacion (date) | Fecha en la que se registro o creo el area
-| fecha_actualizacion (date) | Ultima fecha en la que se le hizo alguna modificacion
+| created_at (date) | Fecha en la que se registro o creo el area
+| updated_at (date) | Ultima fecha en la que se le hizo alguna modificacion
 | fk_sede (integer) |  ID de la sede en la que estar el area. Para consultar las sedes existentes consulte este endpoint <a href="/sedes/listarSedes">sedes</a>
 
 
@@ -50,8 +50,8 @@ Para agilizar la creacion de nuevas areas te ofrecemos este endpoint de apoyo pa
   "nombre": "string",
   "persona_encargada": "string",
   "estado": "boolean",
-  "fecha_creacion": "date",
-  "fecha_actualizacion": "date",
+  "created_at": "date",
+  "updated_at": "date",
   "fk_sede": "integer"
 }
 ```
