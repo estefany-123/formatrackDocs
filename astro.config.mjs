@@ -22,10 +22,10 @@ export default defineConfig({
 							label: 'Areas',
 							items: [
 								{ label: 'Listar Áreas', slug: 'areas/listarAreas' },
-								{ label: 'Buscar Área por Nombre', slug: 'areas/buscarAreaPorNombre' },
+								{ label: 'Buscar Área', slug: 'areas/buscarArea' },
 								{ label: 'Registrar Área', slug: 'areas/registrarArea' },
 								{ label: 'Actualizar Área', slug: 'areas/actualizarArea' },
-								{ label: 'Desactivar Área', slug: 'areas/desactivarArea' },
+								{ label: 'Cambiar Estado del Área', slug: 'areas/cambiarEstadoDelArea' },
 							],
 						},
 
@@ -36,13 +36,14 @@ export default defineConfig({
 							  { label: 'Registrar Categoría', slug: 'categorias/registrarCategoria' },
 							  { label: 'Actualizar Categoría', slug: 'categorias/actualizarCategoria' },
 							  { label: 'Cambiar Estado de Categoría', slug: 'categorias/cambiarEstadoCategoria' },
+							  { label: 'Buscar Categoría', slug: 'categorias/buscarCategoria' }
 							],
 						},
 						{
 							label: 'Centros',
 							items: [
 							  { label: 'Listar Centros', slug: 'centros/listarCentros' },
-							  { label: 'Buscar Centro por Nombre', slug: 'centros/buscarCentroPorNombre' },
+							  { label: 'Buscar Centro', slug: 'centros/buscarCentro' },
 							  { label: 'Registrar Centro', slug: 'centros/registrarCentro' },
 							  { label: 'Actualizar Centro', slug: 'centros/actualizarCentro' },
 							  { label: 'Cambiar Estado de Centro', slug: 'centros/cambiarEstadoCentro' },
@@ -52,49 +53,48 @@ export default defineConfig({
 							label: 'Elementos',
 							items: [
 							  { label: 'Listar Elementos', slug: 'elementos/listarElementos' },
-							  { label: 'Buscar Elementos por Nombre', slug: 'elementos/buscarElementosPorNombre' },
-							  { label: 'Registrar Elementos', slug: 'elementos/registrarElementos' },
-							  { label: 'Actualizar Elementos', slug: 'elementos/actualizarElementos' },
-							  { label: 'Desactivar Elementos', slug: 'elementos/desactivarElementos' },
+							  { label: 'Buscar Elemento', slug: 'elementos/buscarElementos' },
+							  { label: 'Registrar Elemento', slug: 'elementos/registrarElementos' },
+							  { label: 'Actualizar Elemento', slug: 'elementos/actualizarElementos' },
+							  { label: 'Cambiar Estado del Elemento', slug: 'elementos/cambiarEstadoElementos' },
 							],
 						},
 						{
 							label: 'Fichas',
 							items: [
 							  { label: 'Listar Fichas', slug: 'fichas/listarFichas' },
-							  { label: 'Buscar Ficha por Código', slug: 'fichas/buscarFichaPorCodigo' },
+							  { label: 'Buscar Ficha', slug: 'fichas/buscarFicha' },
 							  { label: 'Registrar Ficha', slug: 'fichas/registrarFicha' },
 							  { label: 'Actualizar Ficha', slug: 'fichas/actualizarFicha' },
-							  { label: 'Desactivar Ficha', slug: 'fichas/desactivarFicha' },
+							  { label: 'Cambiar Estado de la Ficha', slug: 'fichas/cambiarEstadoFicha' },
 							],
 						},
 						{
 							label: "Inventarios",
 							items: [
 							  { label: "Listar Inventarios", slug: "inventario/listarInventarios" },
-							  { label: "Buscar Inventarios Por Estado", slug: "inventario/buscarInventariosPorEstado" },
+							  { label: "Buscar Inventario", slug: "inventario/buscarInventarios" },
 							  { label: "Registrar Inventario", slug: "inventario/registrarInventario" },
 							  { label: "Actualizar Inventario", slug: "inventario/actualizarInventario" },
-							  { label: "Desactivar Inventario", slug: "inventario/desactivarInventario" }
+							  { label: "Cambiar Estado del Inventario", slug: "inventario/cambiarEstadoInventario" }
 							]
 						},
 						{
 							"label": "Movimientos",
 							"items": [
 							  { "label": "Listar Movimientos", "slug": "movimientos/listarMovimientos" },
-							  { "label": "Buscar Movimientos por Estado", "slug": "movimientos/buscarMovimientos" },
+							  { "label": "Buscar Movimientos", "slug": "movimientos/buscarMovimientos" },
 							  { "label": "Registrar Movimiento", "slug": "movimientos/registrarMovimiento" },
 							  { "label": "Actualizar Movimiento", "slug": "movimientos/actualizarMovimiento" },
 							  { "label": "Aceptar Movimiento", "slug": "movimientos/aceptarMovimiento" },
 							  { "label": "Cancelar Movimiento", "slug": "movimientos/cancelarMovimiento" },
-							  { "label": "Actualizar Stock por Movimiento", "slug": "movimientos/actualizarStockMovimiento" }
 							]
 						},
 						{
 							"label": "Municipios",
 							"items": [
 							  { "label": "Listar Municipios", "slug": "municipios/listarMunicipios" },
-							  { "label": "Buscar Municipio por Nombre", "slug": "municipios/buscarMunicipio" },
+							  { "label": "Buscar Municipio", "slug": "municipios/buscarMunicipio" },
 							  { "label": "Registrar Municipio", "slug": "municipios/registrarMunicipio" },
 							  { "label": "Actualizar Municipio", "slug": "municipios/actualizarMunicipio" },
 							  { "label": "Cambiar Estado de Municipio", "slug": "municipios/cambiarEstadoMunicipio" }
@@ -104,82 +104,70 @@ export default defineConfig({
 							"label": "Programas de Formación",
 							"items": [
 							  { "label": "Listar Programas de Formación", "slug": "programas-formacion/listarProgramas" },
-							  { "label": "Buscar Programa de Formación por Nombre", "slug": "programas-formacion/buscarPrograma" },
+							  { "label": "Buscar Programa de Formación", "slug": "programas-formacion/buscarPrograma" },
 							  { "label": "Registrar Programa de Formación", "slug": "programas-formacion/registrarPrograma" },
 							  { "label": "Actualizar Programa de Formación", "slug": "programas-formacion/actualizarPrograma" },
-							  { "label": "Desactivar Programa de Formación", "slug": "programas-formacion/desactivarPrograma" }
+							  { "label": "Cambiar Estado del Programa de Formación", "slug": "programas-formacion/cambiarEstadoPrograma" }
 							]
 						},
 						{
 							"label": "Roles",
 							"items": [
 							  { "label": "Listar Roles", "slug": "roles/listarRoles" },
-							  { "label": "Buscar Rol por Nombre", "slug": "roles/buscarRol" },
+							  { "label": "Buscar Rol", "slug": "roles/buscarRol" },
 							  { "label": "Registrar Rol", "slug": "roles/registrarRol" },
 							  { "label": "Actualizar Rol", "slug": "roles/actualizarRol" },
-							  { "label": "Desactivar Rol", "slug": "roles/desactivarRol" }
+							  { "label": "Cambiar Estado del Rol", "slug": "roles/cambiarEstadoRol" }
 							]
 						},
 						{
 							"label": "Sedes",
 							"items": [
 							  { "label": "Listar Sedes", "slug": "sedes/listarSedes" },
-							  { "label": "Buscar Sede por Nombre", "slug": "sedes/buscarSede" },
+							  { "label": "Buscar Sede", "slug": "sedes/buscarSede" },
 							  { "label": "Registrar Sede", "slug": "sedes/registrarSede" },
 							  { "label": "Actualizar Sede", "slug": "sedes/actualizarSede" },
-							  { "label": "Desactivar Sede", "slug": "sedes/desactivarSede" }
+							  { "label": "Cambiar Estado de la Sede", "slug": "sedes/cambiarEstadoSede" }
 							]
 						},
 						{
 							"label": "Sitios",
 							"items": [
 							  { "label": "Listar Sitios", "slug": "sitios/listarSitios" },
-							  { "label": "Buscar Sitio por Nombre", "slug": "sitios/buscarSitio" },
+							  { "label": "Buscar Sitio", "slug": "sitios/buscarSitio" },
 							  { "label": "Registrar Sitio", "slug": "sitios/registrarSitio" },
 							  { "label": "Actualizar Sitio", "slug": "sitios/actualizarSitio" },
-							  { "label": "Desactivar Sitio", "slug": "sitios/desactivarSitio" }
-							]
-						},
-						{
-							"label": "Solicitudes",
-							"items": [
-							  { "label": "Listar Solicitudes", "slug": "solicitudes/listarSolicitudes" },
-							  { "label": "Buscar Solicitudes por Estado", "slug": "solicitudes/buscarSolicitudes" },
-							  { "label": "Registrar Solicitud", "slug": "solicitudes/registrarSolicitud" },
-							  { "label": "Actualizar Solicitud", "slug": "solicitudes/actualizarSolicitud" },
-							  { "label": "Aceptar Solicitud", "slug": "solicitudes/aceptarSolicitud" },
-							  { "label": "Rechazar Solicitud", "slug": "solicitudes/rechazarSolicitud" },
-							  { "label": "Actualizar Stock por Solicitud", "slug": "solicitudes/actualizarStockSolicitud" }
+							  { "label": "Cambiar Estado del Sitio", "slug": "sitios/cambiarEstadoSitio" }
 							]
 						},
 						{
 							"label": "Tipos de Movimiento",
 							"items": [
 							  { "label": "Listar Tipos de Movimiento", "slug": "tipos-movimiento/listarTipoMovimiento" },
-							  { "label": "Buscar Tipos de Movimiento por Estado", "slug": "tipos-movimiento/buscarTipoMovimiento" },
+							  { "label": "Buscar Tipos de Movimiento", "slug": "tipos-movimiento/buscarTipoMovimiento" },
 							  { "label": "Registrar Tipo de Movimiento", "slug": "tipos-movimiento/registrarTipoMovimiento" },
 							  { "label": "Actualizar Tipo de Movimiento", "slug": "tipos-movimiento/actualizarTipoMovimiento" },
-							  { "label": "Desactivar Tipo de Movimiento", "slug": "tipos-movimiento/desactivarTipoMovimiento" }
+							  { "label": "Cambiar Estado del Tipo de Movimiento", "slug": "tipos-movimiento/cambiarEstadoTipoMovimiento" }
 							]
 						},
 						{
 							"label": "Tipos de Sitio",
 							"items": [
 							  { "label": "Listar Tipos de Sitio", "slug": "tipos-sitio/listarTiposSitio" },
-							  { "label": "Buscar Tipo de Sitio por Nombre", "slug": "tipos-sitio/buscarTipoSitio" },
+							  { "label": "Buscar Tipo de Sitio", "slug": "tipos-sitio/buscarTipoSitio" },
 							  { "label": "Registrar Tipo de Sitio", "slug": "tipos-sitio/registrarTipoSitio" },
 							  { "label": "Actualizar Tipo de Sitio", "slug": "tipos-sitio/actualizarTipoSitio" },
-							  { "label": "Cambiar Estado de Tipo de Sitio", "slug": "tipos-sitio/cambiarEstadoTipoSitio" }
+							  { "label": "Cambiar Estado del Tipo de Sitio", "slug": "tipos-sitio/cambiarEstadoTipoSitio" }
 							]
 						},
 						{
 							"label": "Unidades de Medida",
 							"items": [
 							  { "label": "Listar Unidades de Medida", "slug": "unidades-medida/listarUnidadesMedida" },
-							  { "label": "Buscar Unidad de Medida por Nombre", "slug": "unidades-medida/buscarUnidadMedida" },
+							  { "label": "Buscar Unidad de Medida", "slug": "unidades-medida/buscarUnidadMedida" },
 							  { "label": "Registrar Unidad de Medida", "slug": "unidades-medida/registrarUnidadMedida" },
 							  { "label": "Actualizar Unidad de Medida", "slug": "unidades-medida/actualizarUnidadMedida" },
-							  { "label": "Desactivar Unidad de Medida", "slug": "unidades-medida/desactivarUnidadMedida" }
+							  { "label": "Cambiar Estado de la Unidad de Medida", "slug": "unidades-medida/cambiarEstadoUnidadMedida" }
 							]
 						},
 						{
@@ -194,7 +182,7 @@ export default defineConfig({
 							"label": "Usuarios",
 							"items": [
 							  { "label": "Listar Usuarios", "slug": "usuarios/listarUsuarios" },
-							  { "label": "Buscar Usuario por Documento", "slug": "usuarios/buscarUsuario" },
+							  { "label": "Buscar Usuario", "slug": "usuarios/buscarUsuario" },
 							  { "label": "Registrar Usuario", "slug": "usuarios/registrarUsuario" },
 							  { "label": "Actualizar Usuario", "slug": "usuarios/actualizarUsuario" },
 							  { "label": "Cambiar Estado de Usuario", "slug": "usuarios/cambiarEstadoUsuario" },
@@ -204,30 +192,71 @@ export default defineConfig({
 							]
 						},
 						{
-							"label": "Verificaciones",
+							"label": "Rutas",
 							"items": [
-							  { "label": "Listar Verificaciones", "slug": "verificaciones/listarVerificaciones" },
-							  { "label": "Buscar Verificación por Fecha", "slug": "verificaciones/buscarVerificacion" },
-							  { "label": "Registrar Verificación", "slug": "verificaciones/registrarVerificacion" },
-							  { "label": "Actualizar Verificación", "slug": "verificaciones/actualizarVerificacion" }
+								{ "label": "Registrar Ruta", "slug": "rutas/registrarRuta" },
+								{ "label": "Actualizar Ruta", "slug": "rutas/actualizarRuta" },
+								{ "label": "Cambiar Estado de la Ruta", "slug": "rutas/cambiarEstadoRuta" },
+								{ "label": "Listar Rutas", "slug": "rutas/listarRutas" },
+								{ "label": "Buscar Ruta", "slug": "rutas/buscarRuta" }
+							]
+						},
+						{
+							"label": "Modulos",
+							"items": [
+								{ "label": "Registrar Modulo", "slug": "modulos/registrarModulo" },
+								{ "label": "Actualizar Modulo", "slug": "modulos/actualizarModulo" },
+								{ "label": "Cambiar Estado del Modulo", "slug": "modulos/cambiarEstadoModulo" },
+								{ "label": "Listar Modulos", "slug": "modulos/listarModulos" },
+								{ "label": "Buscar Modulo", "slug": "modulos/buscarModulo" }
+							]
+						},
+						{
+							"label": "Caracteristicas",
+							"items": [
+								{ "label": "Registrar Caracteristica", "slug": "caracteristicas/registrarCaracteristica" },
+								{ "label": "Actualizar Caracteristica", "slug": "caracteristicas/actualizarCaracteristica" },
+								{ "label": "Cambiar Estado del Caracteristica", "slug": "caracteristicas/cambiarEstadoCaracteristica" },
+								{ "label": "Listar Caracteristicas", "slug": "caracteristicas/listarCaracteristicas" },
+								{ "label": "Buscar Caracteristica", "slug": "caracteristicas/buscarCaracteristica" }
 							]
 						},
 					]
 				},
 				{
-						label: 'Requerimientos De usuario',
-						items :[
+						label:'Requerimientos De usuario',
+						"items" :[
+							{
+								label: 'Requerimientos Funcionales',
+								"items": [
+									
+								],
+							},
+							{
+								label: 'Requerimientos No Funcionales',
+								"items": [
+									
+								],
+							},
 							{
 								label: 'Requerimientos tecnicos',
 								items: [
-									{ label: 'Software', slug: 'tecnicos/requeriTecni' },
+									{ label: 'Software', slug: 'tecnicos/requeriTecni' }
 								],
 							},
 							
 						]
 				},
-				
-				
+				{
+					"label":"Modelado de datos UML",
+					items:[
+						{"label":"Diagramas de Casos de Uso", "slug":"modeloDatos/diagramCasos"},
+						{"label":"Diagramas de Secuencia", "slug":"modeloDatos/diagramSecuencia"},
+						{"label":"Diagrama de Clases", "slug":"modeloDatos/diagramClass"},
+						{"label":"Modelo Entidad-Relacion (ER)", "slug":"modeloDatos/modelER"},
+						{"label":"Modelo Logico", "slug":"modeloDatos/logicModel"},
+					]
+				},
 				{
 					"label": 'Formatrack',
 					"items": [

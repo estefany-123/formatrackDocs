@@ -7,7 +7,9 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 Este endpoint permite buscar un sitio específico por su nombre.
 
-Methodo:`GET`
+<p> 
+<strong>Método: </strong><span class="sl-badge note small astro-avdet4wd">PUT</span>
+</p>
 
 <h3>Endpoint</h3>
 
@@ -18,6 +20,9 @@ Methodo:`GET`
   ```
   </TabItem>
 </Tabs>
+
+<aside aria-label="Nota" class="starlight-aside starlight-aside--note"> <p class="starlight-aside__title" aria-hidden="true"> <svg aria-hidden="true" class="starlight-aside__icon astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 11a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Zm.38-3.92a1 1 0 0 0-.76 0 1 1 0 0 0-.33.21 1.15 1.15 0 0 0-.21.33 1 1 0 0 0 .21 1.09c.097.088.209.16.33.21A1 1 0 0 0 13 8a1.05 1.05 0 0 0-.29-.71 1 1 0 0 0-.33-.21ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"></path></svg> Nota </p> 
+Es necesario el envío del token de acceso <code>access_token</code> para hacer uso de este endpoint. Para ver cómo generar el token, vea <a href="/usuarios/login">como generar token de acceso.</a></aside>
 
 <h3>Encabezados de Solicitud</h3>
 
