@@ -3,64 +3,87 @@ title: "Registrar ficha"
 description: "Permite registrar una nueva ficha en el sistema."
 slug: "fichas/registrarFicha"
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { API_BASE_URL } from "../../../utils/constants.ts";
+import ApiEndpoint from "../../../components/ApiEndpoint.astro";
 
 Este endpoint permite registrar una nueva ficha con los datos proporcionados.
 
-<p> 
-<strong>Método: </strong><span class="sl-badge note small astro-avdet4wd">PUT</span>
+<p>
+  <strong>Método: </strong>
+  <span class="sl-badge caution small astro-avdet4wd">POST</span>
 </p>
 
 <Tabs>
   <TabItem label="Endpoint">
-  ```
-  http://localhost:3000/Fichas
-  ```
+    <ApiEndpoint url={`${API_BASE_URL}/ficha`} />
   </TabItem>
 </Tabs>
 
-<aside aria-label="Nota" class="starlight-aside starlight-aside--note"> <p class="starlight-aside__title" aria-hidden="true"> <svg aria-hidden="true" class="starlight-aside__icon astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 11a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Zm.38-3.92a1 1 0 0 0-.76 0 1 1 0 0 0-.33.21 1.15 1.15 0 0 0-.21.33 1 1 0 0 0 .21 1.09c.097.088.209.16.33.21A1 1 0 0 0 13 8a1.05 1.05 0 0 0-.29-.71 1 1 0 0 0-.33-.21ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"></path></svg> Nota </p> 
-Es necesario el envío del token de acceso <code>access_token</code> para hacer uso de este endpoint. Para ver cómo generar el token, vea <a href="/usuarios/login">como generar token de acceso.</a></aside>
+<aside aria-label="Nota" class="starlight-aside starlight-aside--note">
+  {" "}
+  <p class="starlight-aside__title" aria-hidden="true">
+    {" "}
+    <svg
+      aria-hidden="true"
+      class="starlight-aside__icon astro-c6vsoqas"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      style="--sl-icon-size: 1em;"
+    >
+      <path d="M12 11a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Zm.38-3.92a1 1 0 0 0-.76 0 1 1 0 0 0-.33.21 1.15 1.15 0 0 0-.21.33 1 1 0 0 0 .21 1.09c.097.088.209.16.33.21A1 1 0 0 0 13 8a1.05 1.05 0 0 0-.29-.71 1 1 0 0 0-.33-.21ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"></path>
+    </svg>
+    Nota{" "}
+  </p>
+  Es necesario el envío del token de acceso <code>access_token</code> para hacer
+  uso de este endpoint. Para ver cómo generar el token, vea{" "}
+  <a href="/usuarios/login">como generar token de acceso.</a>
+</aside>
 
 <h3>Encabezados de Solicitud</h3>
 
-| Encabezado | Valor | Descripcion
-|----------|-------| -------
-| Authorization |  Bearer `token` | Token con autorizacion para acceder a las fichas
-
+| Encabezado    | Valor          | Descripcion                                      |
+| ------------- | -------------- | ------------------------------------------------ |
+| Authorization | Bearer `token` | Token con autorizacion para acceder a las fichas |
 
 <h3>Parametros del cuerpo</h3>
 
-| Parametro y Tipo | Descripcion
-|----------|--------
-| codigo_ficha (string) |  Codigo o id de la ficha creada
-| persona_encargada (string) |  Nombre de la persona lider encargada de la ficha
-| estado (boolean) |  Si se encuentra activo o inactivo la ficha
-| created_at (date) | Fecha en la que se registro la ficha
-| updated_at (date) | Ultima fecha en la que se le hizo alguna modificacion
-| fk_programa (integer) | ID del programa de formacion al que pertenece esa ficha. Para conocer los programas de formacion disponible visite este endpoint <a href="/programas-formacion/listarProgramas">programas de formacion</a>
-
+| Parametro y Tipo      | Descripcion                                                                                                                                                                                                |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| codigo_ficha (string) | Codigo o id de la ficha creada                                                                                                                                                                             |
+| estado (boolean)      | Si se encuentra activo o inactivo la ficha                                                                                                                                                                 |
+| created_at (date)     | Fecha en la que se registro la ficha                                                                                                                                                                       |
+| updated_at (date)     | Ultima fecha en la que se le hizo alguna modificacion                                                                                                                                                      |
+| fk_programa (integer) | ID del programa de formacion al que pertenece esa ficha. Para conocer los programas de formacion disponible visite este endpoint <a href="/programas-formacion/listarProgramas">programas de formacion</a> |
 
 ### Body
 
 ```json
 {
   "codigo_ficha": "string",
-  "persona_encargada": "string",
   "estado": "boolean",
-  "created_at": "date",
-  "updated_at": "date",
   "fk_programa": "integer"
 }
 ```
-
 
 <h3>Ejemplos de respuesta</h3>
 
 <Tabs>
   <TabItem label="Status 201">
   ```json
-  {message:"Se registro la ficha  correctamente"}
+ {
+    "idFicha": 6,
+    "codigoFicha": 107058462,
+    "estado": true,
+    "createdAt": "2025-06-20T07:50:26.032Z",
+    "updatedAt": "2025-06-20T07:50:26.032Z",
+    "fkPrograma": {
+        "idPrograma": 1
+    }
+}
   ```
   </TabItem>
 
