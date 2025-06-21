@@ -3,50 +3,75 @@ title: "Registrar Sitio"
 description: "Permite registrar un nuevo sitio en el sistema."
 slug: "sitios/registrarSitio"
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { API_BASE_URL } from "../../../utils/constants.ts";
+import ApiEndpoint from "../../../components/ApiEndpoint.astro";
 
 Este endpoint permite registrar un nuevo sitio con los datos proporcionados.
 
-<p> 
-<strong>Método: </strong><span class="sl-badge note small astro-avdet4wd">PUT</span>
+<p>
+  <strong>Método: </strong>
+  <span class="sl-badge caution small astro-avdet4wd">POST</span>
 </p>
 
 <Tabs>
   <TabItem label="Endpoint">
-  ```
-  http://localhost:3000/Sitio
-  ```
+    <ApiEndpoint url={`${API_BASE_URL}/sitios`} />
   </TabItem>
 </Tabs>
 
-<aside aria-label="Nota" class="starlight-aside starlight-aside--note"> <p class="starlight-aside__title" aria-hidden="true"> <svg aria-hidden="true" class="starlight-aside__icon astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 11a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Zm.38-3.92a1 1 0 0 0-.76 0 1 1 0 0 0-.33.21 1.15 1.15 0 0 0-.21.33 1 1 0 0 0 .21 1.09c.097.088.209.16.33.21A1 1 0 0 0 13 8a1.05 1.05 0 0 0-.29-.71 1 1 0 0 0-.33-.21ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"></path></svg> Nota </p> 
-Es necesario el envío del token de acceso <code>access_token</code> para hacer uso de este endpoint. Para ver cómo generar el token, vea <a href="/usuarios/login">como generar token de acceso.</a></aside>
+<aside aria-label="Nota" class="starlight-aside starlight-aside--note">
+  {" "}
+  <p class="starlight-aside__title" aria-hidden="true">
+    {" "}
+    <svg
+      aria-hidden="true"
+      class="starlight-aside__icon astro-c6vsoqas"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      style="--sl-icon-size: 1em;"
+    >
+      <path d="M12 11a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Zm.38-3.92a1 1 0 0 0-.76 0 1 1 0 0 0-.33.21 1.15 1.15 0 0 0-.21.33 1 1 0 0 0 .21 1.09c.097.088.209.16.33.21A1 1 0 0 0 13 8a1.05 1.05 0 0 0-.29-.71 1 1 0 0 0-.33-.21ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"></path>
+    </svg>
+    Nota{" "}
+  </p>
+  Es necesario el envío del token de acceso <code>access_token</code> para hacer
+  uso de este endpoint. Para ver cómo generar el token, vea{" "}
+  <a href="/usuarios/login">como generar token de acceso.</a>
+</aside>
 
 <h3>Encabezados de Solicitud</h3>
 
-| Encabezado | Valor | Descripcion
-|----------|-------| -------
-| Authorization |  Bearer `token` | Token con autorizacion para acceder a los sitios
+| Encabezado    | Valor          | Descripcion                                      |
+| ------------- | -------------- | ------------------------------------------------ |
+| Authorization | Bearer `token` | Token con autorizacion para acceder a los sitios |
 
 <h3>Endpoint para los Datos del area</h3>
 
 Para agilizar la creacion de nuevos sitios te ofrecemos este endpoint de apoyo para que puedas consultar y obtener el ID del tipo de sitio y area necesarios para crear tu sitio.
-<li><a href="/tipos-sitio/listarTiposSitio">Tipo sitio</a></li>
-<li><a href="/areas/listarAreas">Areas</a></li>
 
+<li>
+  <a href="/tipos-sitio/listarTiposSitio">Tipo sitio</a>
+</li>
+<li>
+  <a href="/areas/listarAreas">Areas</a>
+</li>
 
 <h3>Parametros del cuerpo</h3>
 
-| Parametro y Tipo | Descripcion
-|----------|--------
-| nombre (string) |  Nombre que se dara al sitio
-| persona_encargada (string) | Nombre de la persona encargada del sitio
-| ubicacion (string) | Nose
-| estado (boolean) | Si esta activo o inactivo dicho sitio
-| created_at (date) | fecha en la que se creo o registro el sitio
-| updated_at (date) | Fecha en la que se actualizo el sitio
-| fk_tipo_sitio (integer) | ID del tipo de sitio al que pertenece este sitio. Para ver los tipos de sitios disponibles visite este endpoint <a href="/tipos-sitio/listarTiposSitio">tipo sitio</a>
-| fk_area (integer) | ID del area en la cual va a estar el sitio. Para ver las areas visite este endpoint <a href="/areas/listarAreas">areas</a>
+| Parametro y Tipo           | Descripcion                                                                                                                                                            |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| nombre (string)            | Nombre que se dara al sitio                                                                                                                                            |
+| persona_encargada (string) | Nombre de la persona encargada del sitio                                                                                                                               |
+| ubicacion (string)         | Nose                                                                                                                                                                   |
+| estado (boolean)           | Si esta activo o inactivo dicho sitio                                                                                                                                  |
+| created_at (date)          | fecha en la que se creo o registro el sitio                                                                                                                            |
+| updated_at (date)          | Fecha en la que se actualizo el sitio                                                                                                                                  |
+| fk_tipo_sitio (integer)    | ID del tipo de sitio al que pertenece este sitio. Para ver los tipos de sitios disponibles visite este endpoint <a href="/tipos-sitio/listarTiposSitio">tipo sitio</a> |
+| fk_area (integer)          | ID del area en la cual va a estar el sitio. Para ver las areas visite este endpoint <a href="/areas/listarAreas">areas</a>                                             |
 
 ### Body
 
@@ -56,8 +81,6 @@ Para agilizar la creacion de nuevos sitios te ofrecemos este endpoint de apoyo p
   "persona_encargada": "string",
   "ubicacion": "string",
   "estado": "boolean",
-  "created_at": "date",
-  "updated_at": "date",
   "fk_tipo_sitio": "integer",
   "fk_area": "integer"
 }
@@ -68,7 +91,21 @@ Para agilizar la creacion de nuevos sitios te ofrecemos este endpoint de apoyo p
 <Tabs>
   <TabItem label="Status 201">
   ```json
-  {message:"Se registro el sitio correctamente"}
+  {
+    "idSitio": 6,
+    "nombre": "Y1",
+    "personaEncargada": "yurgen perdomo",
+    "ubicacion": "frente a",
+    "estado": true,
+    "createdAt": "2025-06-21T08:28:46.989Z",
+    "updatedAt": "2025-06-21T08:28:46.989Z",
+    "fkArea": {
+        "idArea": 1
+    },
+    "fkTipoSitio": {
+        "idTipo": 1
+    }
+}
   ```
   </TabItem>
 
@@ -78,4 +115,3 @@ Para agilizar la creacion de nuevos sitios te ofrecemos este endpoint de apoyo p
   ```
   </TabItem>
 </Tabs>
-

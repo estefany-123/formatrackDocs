@@ -3,45 +3,68 @@ title: "Registrar Sede"
 description: "Permite registrar una nueva sede en el sistema."
 slug: "sedes/registrarSede"
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { API_BASE_URL } from "../../../utils/constants.ts";
+import ApiEndpoint from "../../../components/ApiEndpoint.astro";
 
 Este endpoint permite registrar una nueva sede con los datos proporcionados.
 
-<p> 
-<strong>Método: </strong><span class="sl-badge note small astro-avdet4wd">PUT</span>
+<p>
+  <strong>Método: </strong>
+  <span class="sl-badge caution small astro-avdet4wd">POST</span>
 </p>
 
 <Tabs>
   <TabItem label="Endpoint">
-  ```
-  http://localhost:3000/Sede
-  ```
+    <ApiEndpoint url={`${API_BASE_URL}/sedes`} />
   </TabItem>
 </Tabs>
-
-<aside aria-label="Nota" class="starlight-aside starlight-aside--note"> <p class="starlight-aside__title" aria-hidden="true"> <svg aria-hidden="true" class="starlight-aside__icon astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 11a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Zm.38-3.92a1 1 0 0 0-.76 0 1 1 0 0 0-.33.21 1.15 1.15 0 0 0-.21.33 1 1 0 0 0 .21 1.09c.097.088.209.16.33.21A1 1 0 0 0 13 8a1.05 1.05 0 0 0-.29-.71 1 1 0 0 0-.33-.21ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"></path></svg> Nota </p> 
-Es necesario el envío del token de acceso <code>access_token</code> para hacer uso de este endpoint. Para ver cómo generar el token, vea <a href="/usuarios/login">como generar token de acceso.</a></aside>
+<aside aria-label="Nota" class="starlight-aside starlight-aside--note">
+  {" "}
+  <p class="starlight-aside__title" aria-hidden="true">
+    {" "}
+    <svg
+      aria-hidden="true"
+      class="starlight-aside__icon astro-c6vsoqas"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      style="--sl-icon-size: 1em;"
+    >
+      <path d="M12 11a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Zm.38-3.92a1 1 0 0 0-.76 0 1 1 0 0 0-.33.21 1.15 1.15 0 0 0-.21.33 1 1 0 0 0 .21 1.09c.097.088.209.16.33.21A1 1 0 0 0 13 8a1.05 1.05 0 0 0-.29-.71 1 1 0 0 0-.33-.21ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"></path>
+    </svg>
+    Nota{" "}
+  </p>
+  Es necesario el envío del token de acceso <code>access_token</code> para hacer
+  uso de este endpoint. Para ver cómo generar el token, vea{" "}
+  <a href="/usuarios/login">como generar token de acceso.</a>
+</aside>
 
 <h3>Encabezados de Solicitud</h3>
 
-| Encabezado | Valor | Descripcion
-|----------|-------| -------
-| Authorization |  Bearer `token` | Token con autorizacion para acceder a las sedes
+| Encabezado    | Valor          | Descripcion                                     |
+| ------------- | -------------- | ----------------------------------------------- |
+| Authorization | Bearer `token` | Token con autorizacion para acceder a las sedes |
 
 <h3>Endpoint para los Datos de la sede</h3>
 
 Para agilizar la creacion de nuevas sedes te ofrecemos este endpoint de apoyo para que puedas consultar y obtener el ID del centro necesario para crear tu sede.
-<li><a href="/centros/listarCentros">Centro</a></li>
+
+<li>
+  <a href="/centros/listarCentros">Centro</a>
+</li>
 
 <h3>Parametros del cuerpo</h3>
 
-| Parametro y Tipo | Descripcion
-|----------|--------
-| nombre (string) |  Nombre que se le da a la sede
-| estado (boolean) | Si esta activa o inactiva la sede
-| created_at (date) | Fecha en la que se creo la sede
-| updated_at (date) | Fecha en la que se actualizo algo de la sede
-| fk_centro (integer) | ID del centro al que pertenece la sede. Conozca las sedes en este endpoint <a href>="/centros/listarCentros">centros</a>
+| Parametro y Tipo    | Descripcion                                                                                                              |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| nombre (string)     | Nombre que se le da a la sede                                                                                            |
+| estado (boolean)    | Si esta activa o inactiva la sede                                                                                        |
+| created_at (date)   | Fecha en la que se creo la sede                                                                                          |
+| updated_at (date)   | Fecha en la que se actualizo algo de la sede                                                                             |
+| fk_centro (integer) | ID del centro al que pertenece la sede. Conozca las sedes en este endpoint <a href="/centros/listarCentros">centros</a> |
 
 ### Body
 
@@ -49,8 +72,6 @@ Para agilizar la creacion de nuevas sedes te ofrecemos este endpoint de apoyo pa
 {
   "nombre": "string",
   "estado": "boolean",
-  "created_at": "date",
-  "updated_at": "date",
   "fk_centro": "integer"
 }
 ```
@@ -60,7 +81,16 @@ Para agilizar la creacion de nuevas sedes te ofrecemos este endpoint de apoyo pa
 <Tabs>
   <TabItem label="Status 201">
   ```json
-  {message:"Se registro la sede correctamente"}
+  {
+    "idSede": 3,
+    "nombre": "Prueba",
+    "estado": true,
+    "createdAt": "2025-06-21T07:59:09.986Z",
+    "updatedAt": "2025-06-21T07:59:09.986Z",
+    "fkCentro": {
+        "idCentro": 1
+    }
+}
   ```
   </TabItem>
 
