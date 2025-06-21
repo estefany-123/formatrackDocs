@@ -3,46 +3,69 @@ title: "Registrar Programa de Formación"
 description: "Permite registrar un nuevo programa de formación en el sistema."
 slug: "programas-formacion/registrarPrograma"
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { API_BASE_URL } from "../../../utils/constants.ts";
+import ApiEndpoint from "../../../components/ApiEndpoint.astro";
 
 Este endpoint permite registrar un nuevo programa de formación con los datos proporcionados.
 
-<p> 
-<strong>Método: </strong><span class="sl-badge note small astro-avdet4wd">PUT</span>
+<p>
+  <strong>Método: </strong>
+  <span class="sl-badge caution small astro-avdet4wd">POST</span>
 </p>
 
 <Tabs>
   <TabItem label="Endpoint">
-  ```
-  http://localhost:3000/P.formacion
-  ```
+    <ApiEndpoint url={`${API_BASE_URL}/programas-formacion`} />
   </TabItem>
 </Tabs>
 
-<aside aria-label="Nota" class="starlight-aside starlight-aside--note"> <p class="starlight-aside__title" aria-hidden="true"> <svg aria-hidden="true" class="starlight-aside__icon astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 11a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Zm.38-3.92a1 1 0 0 0-.76 0 1 1 0 0 0-.33.21 1.15 1.15 0 0 0-.21.33 1 1 0 0 0 .21 1.09c.097.088.209.16.33.21A1 1 0 0 0 13 8a1.05 1.05 0 0 0-.29-.71 1 1 0 0 0-.33-.21ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"></path></svg> Nota </p> 
-Es necesario el envío del token de acceso <code>access_token</code> para hacer uso de este endpoint. Para ver cómo generar el token, vea <a href="/usuarios/login">como generar token de acceso.</a></aside>
+<aside aria-label="Nota" class="starlight-aside starlight-aside--note">
+  {" "}
+  <p class="starlight-aside__title" aria-hidden="true">
+    {" "}
+    <svg
+      aria-hidden="true"
+      class="starlight-aside__icon astro-c6vsoqas"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      style="--sl-icon-size: 1em;"
+    >
+      <path d="M12 11a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Zm.38-3.92a1 1 0 0 0-.76 0 1 1 0 0 0-.33.21 1.15 1.15 0 0 0-.21.33 1 1 0 0 0 .21 1.09c.097.088.209.16.33.21A1 1 0 0 0 13 8a1.05 1.05 0 0 0-.29-.71 1 1 0 0 0-.33-.21ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"></path>
+    </svg>
+    Nota{" "}
+  </p>
+  Es necesario el envío del token de acceso <code>access_token</code> para hacer
+  uso de este endpoint. Para ver cómo generar el token, vea{" "}
+  <a href="/usuarios/login">como generar token de acceso.</a>
+</aside>
 
 <h3>Encabezados de Solicitud</h3>
 
-| Encabezado | Valor | Descripcion
-|----------|-------| -------
-| Authorization |  Bearer `token` | Token con autorizacion para acceder a los programas de formacion
+| Encabezado    | Valor          | Descripcion                                                      |
+| ------------- | -------------- | ---------------------------------------------------------------- |
+| Authorization | Bearer `token` | Token con autorizacion para acceder a los programas de formacion |
 
 <h3>Endpoint para los Datos del area</h3>
 
 Para agilizar la creacion de nuevos programas de formacion te ofrecemos este endpoint de apoyo para que puedas consultar y obtener el ID del area a la que pertenecera el programa de formacion .
-<li><a href="/areas/listarAreas">Areas</a></li>
 
+<li>
+  <a href="/areas/listarAreas">Areas</a>
+</li>
 
 <h3>Parametros del cuerpo</h3>
 
-| Parametro y Tipo | Descripcion
-|----------|--------
-| nombre (string) |  Nombre que hace referencia al programa de formacion
-| estado (boolean) | Si el programa se encuentra activo o inactivo
-| created_at (date) | Fecha en la que se registro el programa
-| updated_at (date) | Fecha en la que se actualizo el programa
-| fk_area (integer) |  ID del area en la que va a estar el programa. Para conocer las areas puede consultar este endpoint <a href="/areas/listarAreas">areas</a>
+| Parametro y Tipo  | Descripcion                                                                                                                               |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| nombre (string)   | Nombre que hace referencia al programa de formacion                                                                                       |
+| estado (boolean)  | Si el programa se encuentra activo o inactivo                                                                                             |
+| created_at (date) | Fecha en la que se registro el programa                                                                                                   |
+| updated_at (date) | Fecha en la que se actualizo el programa                                                                                                  |
+| fk_area (integer) | ID del area en la que va a estar el programa. Para conocer las areas puede consultar este endpoint <a href="/areas/listarAreas">areas</a> |
 
 ### Body
 
@@ -50,8 +73,6 @@ Para agilizar la creacion de nuevos programas de formacion te ofrecemos este end
 {
   "nombre": "string",
   "estado": "boolean",
-  "created_at": "date",
-  "updated_at": "date",
   "fk_area": "integer"
 }
 ```
@@ -61,7 +82,16 @@ Para agilizar la creacion de nuevos programas de formacion te ofrecemos este end
 <Tabs>
   <TabItem label="Status 201">
   ```json
-  {message:"Se registro el programa correctamente"}
+  {
+    "idPrograma": 6,
+    "nombre": "ADSO",
+    "estado": true,
+    "createdAt": "2025-06-21T07:34:43.396Z",
+    "updatedAt": "2025-06-21T07:34:43.396Z",
+    "fkArea": {
+        "idArea": 1
+    }
+}
   ```
   </TabItem>
 
