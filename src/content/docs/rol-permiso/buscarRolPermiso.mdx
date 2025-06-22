@@ -1,29 +1,23 @@
 ---
-title: "Listar Asignaciones de Fichas a Usuarios"
-description: "Obtiene la lista de todas las asignaciones de fichas a usuarios registradas en el sistema."
-slug: "usuario-ficha/listarUsuarioFicha"
+title: "Buscar rol-permiso"
+description: "Busca un rol-permiso en el sistema."
+slug: "rol-permiso/buscarRolPermiso"
 ---
 
 import { Tabs, TabItem } from "@astrojs/starlight/components";
 import { API_BASE_URL } from "../../../utils/constants.ts";
 import ApiEndpoint from "../../../components/ApiEndpoint.astro";
 
-<h2>¿Que son los usuario-ficha?</h2>
-
-La tabla usuario_fichas representa la asignación de usuarios a fichas de formación específicas. Cada registro en esta tabla indica qué usuario participa en una ficha determinada, permitiendo llevar un control sobre los aprendices y su vinculación a programas formativos. Esta relación es fundamental para gestionar adecuadamente la trazabilidad académica y administrativa dentro del sistema.
-
-<h3>Descripcion</h3>
-
-Este endpoint permite obtener la lista de usuario-ficha disponibles en el sistema.
+Este endpoint permite buscar un rol-permiso.
 
 <p>
   <strong>Método: </strong>
-  <span class="sl-badge success small astro-avdet4wd"> GET</span>
+  <span class="sl-badge success small astro-avdet4wd">GET</span>
 </p>
 
 <Tabs>
   <TabItem label="Endpoint">
-    <ApiEndpoint url={`${API_BASE_URL}/usuario-ficha`} />
+    <ApiEndpoint url={`${API_BASE_URL}/rol-permiso/:idRolPermiso`} />
   </TabItem>
 </Tabs>
 
@@ -60,27 +54,19 @@ Este endpoint permite obtener la lista de usuario-ficha disponibles en el sistem
 
 <Tabs>
   <TabItem label="Status 200">
-
-```json
-[
-  {
-    "idUsuarioFicha": 1,
-    "createdAt": "2025-06-17T21:24:52.323Z",
-    "updatedAt": "2025-06-17T21:24:52.323Z"
-  },
-  {
-    "idUsuarioFicha": 2,
-    "createdAt": "2025-04-17T21:24:52.373Z",
-    "updatedAt": "2025-04-17T21:24:52.373Z"
-  }
-]
+  ```json
+{
+    "idRolPermiso": 4,
+    "estado": false,
+    "createdAt": "2025-06-18T02:27:25.310Z",
+    "updatedAt": "2025-06-18T02:27:25.310Z"
+}
 ```
-
   </TabItem>
 
-  <TabItem label="Status 400">
+  <TabItem label="Status 404">
   ```json
-  {message:"Error al listar todas los usuario-ficha registradas"}
+  {message:"rol-Permiso no existe"}
   ```
   </TabItem>
 </Tabs>

@@ -1,29 +1,23 @@
 ---
-title: "Listar Asignaciones de Fichas a Usuarios"
-description: "Obtiene la lista de todas las asignaciones de fichas a usuarios registradas en el sistema."
-slug: "usuario-ficha/listarUsuarioFicha"
+title: "Buscar Usuario ficha"
+description: "Busca un usuario ficha en el sistema."
+slug: "usuario-ficha/buscarUsuarioFicha"
 ---
 
 import { Tabs, TabItem } from "@astrojs/starlight/components";
 import { API_BASE_URL } from "../../../utils/constants.ts";
 import ApiEndpoint from "../../../components/ApiEndpoint.astro";
 
-<h2>¿Que son los usuario-ficha?</h2>
-
-La tabla usuario_fichas representa la asignación de usuarios a fichas de formación específicas. Cada registro en esta tabla indica qué usuario participa en una ficha determinada, permitiendo llevar un control sobre los aprendices y su vinculación a programas formativos. Esta relación es fundamental para gestionar adecuadamente la trazabilidad académica y administrativa dentro del sistema.
-
-<h3>Descripcion</h3>
-
-Este endpoint permite obtener la lista de usuario-ficha disponibles en el sistema.
+Este endpoint permite buscar un Usuario Ficha.
 
 <p>
   <strong>Método: </strong>
-  <span class="sl-badge success small astro-avdet4wd"> GET</span>
+  <span class="sl-badge success small astro-avdet4wd">GET</span>
 </p>
 
 <Tabs>
   <TabItem label="Endpoint">
-    <ApiEndpoint url={`${API_BASE_URL}/usuario-ficha`} />
+    <ApiEndpoint url={`${API_BASE_URL}/usuario-ficha/:idUsuarioFicha`} />
   </TabItem>
 </Tabs>
 
@@ -36,6 +30,7 @@ Este endpoint permite obtener la lista de usuario-ficha disponibles en el sistem
       class="starlight-aside__icon astro-c6vsoqas"
       width="16"
       height="16"
+      Z
       viewBox="0 0 24 24"
       fill="currentColor"
       style="--sl-icon-size: 1em;"
@@ -60,27 +55,18 @@ Este endpoint permite obtener la lista de usuario-ficha disponibles en el sistem
 
 <Tabs>
   <TabItem label="Status 200">
-
-```json
-[
-  {
+  ```json
+{
     "idUsuarioFicha": 1,
     "createdAt": "2025-06-17T21:24:52.323Z",
     "updatedAt": "2025-06-17T21:24:52.323Z"
-  },
-  {
-    "idUsuarioFicha": 2,
-    "createdAt": "2025-04-17T21:24:52.373Z",
-    "updatedAt": "2025-04-17T21:24:52.373Z"
-  }
-]
+}
 ```
-
   </TabItem>
 
-  <TabItem label="Status 400">
+  <TabItem label="Status 404">
   ```json
-  {message:"Error al listar todas los usuario-ficha registradas"}
+  {message:"usuario ficha no existe"}
   ```
   </TabItem>
 </Tabs>

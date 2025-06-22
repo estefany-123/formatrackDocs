@@ -1,29 +1,23 @@
 ---
-title: "Listar Asignaciones de Fichas a Usuarios"
-description: "Obtiene la lista de todas las asignaciones de fichas a usuarios registradas en el sistema."
-slug: "usuario-ficha/listarUsuarioFicha"
+title: "Actualizar permiso"
+description: "Actualiza los datos de un permiso existente en el sistema."
+slug: "permisos/actualizarPermiso"
 ---
 
 import { Tabs, TabItem } from "@astrojs/starlight/components";
 import { API_BASE_URL } from "../../../utils/constants.ts";
 import ApiEndpoint from "../../../components/ApiEndpoint.astro";
 
-<h2>¿Que son los usuario-ficha?</h2>
-
-La tabla usuario_fichas representa la asignación de usuarios a fichas de formación específicas. Cada registro en esta tabla indica qué usuario participa en una ficha determinada, permitiendo llevar un control sobre los aprendices y su vinculación a programas formativos. Esta relación es fundamental para gestionar adecuadamente la trazabilidad académica y administrativa dentro del sistema.
-
-<h3>Descripcion</h3>
-
-Este endpoint permite obtener la lista de usuario-ficha disponibles en el sistema.
+Este endpoint permite actualizar la información de un permiso específico mediante su ID.
 
 <p>
   <strong>Método: </strong>
-  <span class="sl-badge success small astro-avdet4wd"> GET</span>
+  <span class="sl-badge note small astro-avdet4wd">PATCH</span>
 </p>
 
 <Tabs>
   <TabItem label="Endpoint">
-    <ApiEndpoint url={`${API_BASE_URL}/usuario-ficha`} />
+    <ApiEndpoint url={`${API_BASE_URL}/permisos/:idPermiso`} />
   </TabItem>
 </Tabs>
 
@@ -56,31 +50,31 @@ Este endpoint permite obtener la lista de usuario-ficha disponibles en el sistem
 | Content-Type  | application/json | Indica que los datos esran manejados en fromato JSON |
 | Authorization | Bearer `token`   | Token con autorizacion para acceder a las areas      |
 
-<h3>Ejemplo de respuesta</h3>
+### Body
+
+```json
+{
+  "nombre": "string"
+}
+```
+
+<h3>Ejemplos de respuesta</h3>
 
 <Tabs>
   <TabItem label="Status 200">
-
-```json
-[
-  {
-    "idUsuarioFicha": 1,
-    "createdAt": "2025-06-17T21:24:52.323Z",
-    "updatedAt": "2025-06-17T21:24:52.323Z"
-  },
-  {
-    "idUsuarioFicha": 2,
-    "createdAt": "2025-04-17T21:24:52.373Z",
-    "updatedAt": "2025-04-17T21:24:52.373Z"
-  }
-]
-```
-
+  ```json
+{
+    "idPermiso": 4,
+    "permiso": "login",
+    "createdAt": "2025-06-18T02:34:03.159Z",
+    "updatedAt": "2025-06-18T02:34:03.159Z"
+}
+  ```
   </TabItem>
 
   <TabItem label="Status 400">
   ```json
-  {message:"Error al listar todas los usuario-ficha registradas"}
+  {message:"No se actualizo el area"}
   ```
   </TabItem>
 </Tabs>
