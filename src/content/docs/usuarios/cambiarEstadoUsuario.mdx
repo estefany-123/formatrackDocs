@@ -4,10 +4,78 @@ description: "Permite activar o desactivar un usuario cambiando su estado."
 slug: "usuarios/cambiarEstadoUsuario"
 ---
 
-Este endpoint permite cambiar el estado de un usuario (activo/inactivo) utilizando su ID.
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { API_BASE_URL } from "../../../utils/constants.ts";
+import ApiEndpoint from "../../../components/ApiEndpoint.astro";
 
-| Variable | Valor                                        |
-| -------- | -------------------------------------------- |
-| URL      | [/usuarios/estado/:id](/usuarios/estado/:id) |
-| Method   | `PUT`                                        |
-| Headers  | Authorization : Bearer `token`               |
+<p>
+  <strong>Método: </strong>
+  <span class="sl-badge note small astro-avdet4wd">PATCH</span>
+</p>
+Este endpoint permite cambiar el estado de un usuario (activo/inactivo) utilizando
+su ID.
+
+<Tabs>
+  <TabItem label="Endpoint">
+    <ApiEndpoint url={`${API_BASE_URL}/usuarios/estado/:id`} />
+  </TabItem>
+</Tabs>
+
+<aside aria-label="Nota" class="starlight-aside starlight-aside--note">
+  {" "}
+  <p class="starlight-aside__title" aria-hidden="true">
+    {" "}
+    <svg
+      aria-hidden="true"
+      class="starlight-aside__icon astro-c6vsoqas"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      style="--sl-icon-size: 1em;"
+    >
+      <path d="M12 11a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Zm.38-3.92a1 1 0 0 0-.76 0 1 1 0 0 0-.33.21 1.15 1.15 0 0 0-.21.33 1 1 0 0 0 .21 1.09c.097.088.209.16.33.21A1 1 0 0 0 13 8a1.05 1.05 0 0 0-.29-.71 1 1 0 0 0-.33-.21ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"></path>
+    </svg>
+    Nota{" "}
+  </p>
+  Es necesario el envío del token de acceso <code>access_token</code> para hacer
+  uso de este endpoint. Para ver cómo generar el token, vea{" "}
+  <a href="/usuarios/login">como generar token de acceso.</a>
+</aside>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado    | Valor            | Descripcion                                          |
+| ------------- | ---------------- | ---------------------------------------------------- |
+| Content-Type  | application/json | Indica que los datos esran manejados en fromato JSON |
+| Authorization | Bearer `token`   | Token con autorizacion para acceder a las areas      |
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 200">
+  ```json
+{
+    "idUsuario": 1,
+    "documento": 1083880307,
+    "nombre": "Estefanita",
+    "apellido": "Escalante",
+    "edad": 19,
+    "telefono": "3026064814",
+    "correo": "hola@gmail.com",
+    "estado": true,
+    "cargo": "cargo1",
+    "password": "yurgen123",
+    "createdAt": "2025-05-18T05:52:59.690Z",
+    "updatedAt": "2025-05-18T05:52:59.690Z",
+    "perfil": "perfilhjdhudsfiuhdsfihiudshfid"
+}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"No se desactivo el usuario"}
+  ```
+  </TabItem>
+</Tabs>

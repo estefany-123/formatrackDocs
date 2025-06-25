@@ -413,6 +413,14 @@ export default defineConfig({
                 { label: "Eliminar Usuario", slug: "usuarios/eliminarUsuario" },
                 { label: "Iniciar Sesión", slug: "usuarios/login" },
                 { label: "Cerrar Sesión", slug: "usuarios/logout" },
+                {
+                  label: "Recuperar Contraseña",
+                  slug: "usuarios/recuperarContraseña",
+                },
+                {
+                  label: "Reestablecer contraseña",
+                  slug: "usuarios/reestablecer-contrasena",
+                },
               ],
             },
             {

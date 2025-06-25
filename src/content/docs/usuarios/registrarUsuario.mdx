@@ -4,13 +4,74 @@ description: "Permite registrar un nuevo usuario en el sistema."
 slug: "usuarios/registrarUsuario"
 ---
 
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { API_BASE_URL } from "../../../utils/constants.ts";
+import ApiEndpoint from "../../../components/ApiEndpoint.astro";
+
 Este endpoint permite registrar un nuevo usuario con los datos proporcionados, encriptando la contraseña.
 
-| Variable | Valor                          |
-| -------- | ------------------------------ |
-| URL      | [/usuarios](/usuarios)         |
-| Method   | `POST`                         |
-| Headers  | Authorization : Bearer `token` |
+<p>
+  <strong>Método: </strong>
+  <span class="sl-badge caution small astro-avdet4wd">POST</span>
+</p>
+
+<Tabs>
+  <TabItem label="Endpoint">
+    <ApiEndpoint url={`${API_BASE_URL}/usuarios `} />
+  </TabItem>
+</Tabs>
+
+<aside aria-label="Nota" class="starlight-aside starlight-aside--note">
+  {" "}
+  <p class="starlight-aside__title" aria-hidden="true">
+    {" "}
+    <svg
+      aria-hidden="true"
+      class="starlight-aside__icon astro-c6vsoqas"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      style="--sl-icon-size: 1em;"
+    >
+      <path d="M12 11a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Zm.38-3.92a1 1 0 0 0-.76 0 1 1 0 0 0-.33.21 1.15 1.15 0 0 0-.21.33 1 1 0 0 0 .21 1.09c.097.088.209.16.33.21A1 1 0 0 0 13 8a1.05 1.05 0 0 0-.29-.71 1 1 0 0 0-.33-.21ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"></path>
+      Nota{" "}
+    </svg>
+  </p>
+  Es necesario el envío del token de acceso <code>access_token</code> para hacer
+  uso de este endpoint. Para ver cómo generar el token, vea{" "}
+  <a href="/usuarios/login">como generar token de acceso.</a>
+</aside>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado    | Valor          | Descripcion                                       |
+| ------------- | -------------- | ------------------------------------------------- |
+| Authorization | Bearer `token` | Token con autorizacion para acceder a los centros |
+
+<h3>Endpoint para los Datos del Usuario</h3>
+
+Para agilizar la creacion de nuevos usuarios te ofrecemos este endpoint de apoyo para que puedas consultar y obtener el ID del rol necesaria para crear tu usuario.
+
+<li>
+  <a href="/roles/listarRoles">roles</a>
+</li>
+
+<h3>Parametros del cuerpo</h3>
+
+| Parametro y Tipo   | Descripcion                                                                                                                                                |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| documento (string) | documento del usuario a crear                                                                                                                              |
+| nombre (string)    | Nombre del usuario                                                                                                                                         |
+| apellido (string)  | apellido del usuario                                                                                                                                       |
+| edad (number)      | edad del usuario                                                                                                                                           |
+| estado (string)    | Si se encuentra activo o inactiva                                                                                                                          |
+| cargo (boolean)    | cargo al que se le asigna al usuario                                                                                                                       |
+| password (string)  | password del usuario                                                                                                                                       |
+| perfil (string)    | perfil del usuario                                                                                                                                         |
+| created_at (date)  | Fecha en la que se registro el usuario                                                                                                                     |
+| updated_at (date)  | Ultima fecha en la que se le hizo alguna modificacion al usuario                                                                                           |
+| fkrol (number)     | ID del rol al cual pertenece el usuario. Para saber cual es el id del rol registrado consulte el siguiente endpoint <a href="/roles/listarRoles">roles</a> |
 
 ### Body
 
@@ -19,13 +80,49 @@ Este endpoint permite registrar un nuevo usuario con los datos proporcionados, e
   "documento": "string",
   "nombre": "string",
   "apellido": "string",
-  "edad": "integer",
+  "edad": "number",
   "telefono": "string",
   "correo": "string",
   "estado": "boolean",
   "cargo": "string",
   "password": "string",
-  "fecha_registro": "date",
-  "fecha_actualizacion": "date"
+  "perfil": "string",
+  "fkrol": "number"
 }
 ```
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 201">
+  ```json
+{
+    "idUsuario": 10,
+    "documento": 1082775461,
+    "nombre": "Alejandro",
+    "apellido": "Bonilla",
+    "edad": 17,
+    "telefono": "7896321045",
+    "correo": "alejo@gmail.com",
+    "estado": true,
+    "cargo": "nuevo1234",
+    "password": "$2b$10$.FWo5pzp5JIMwp7eSNtjLOotFlV722wbJ5lttxhnkxtbz9zHzwqKC",
+    "createdAt": "2025-06-25T03:02:56.190Z",
+    "updatedAt": "2025-06-25T03:02:56.190Z",
+    "perfil": "ygdsagdjgsssssssaqsssdg"
+}
+  ```
+  </TabItem>
+
+  <TabItem label="Status 401">
+  ```json
+    {message:"No se registro el usuario"}
+
+```
+</TabItem>
+</Tabs>
+
+
+
+
+

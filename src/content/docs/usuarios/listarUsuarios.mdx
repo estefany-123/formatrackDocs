@@ -4,10 +4,105 @@ description: "Obtiene la lista de todos los usuarios registrados en el sistema."
 slug: "usuarios/listarUsuarios"
 ---
 
-Este endpoint permite listar todos los usuarios registrados.
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { API_BASE_URL } from "../../../utils/constants.ts";
+import ApiEndpoint from "../../../components/ApiEndpoint.astro";
 
-| Variable | Valor                          |
-| -------- | ------------------------------ |
-| URL      | [/usuarios](/usuarios)         |
-| Method   | `GET`                          |
-| Headers  | Authorization : Bearer `token` |
+<h2>¿Que son las Usuarios?</h2>
+
+Los usuarios representan a las personas que interactúan con el sistema, ya sea para registrar información, consultar datos o realizar tareas administrativas. Cada usuario cuenta con un perfil propio que define su rol y sus permisos dentro de la plataforma.
+
+Por ejemplo, un administrador puede tener acceso total al sistema, mientras que un aprendiz solo puede visualizar su ficha o el estado de sus asignaciones.
+
+El sistema permite registrar datos personales como el nombre, documento, edad, correo y teléfono, además de información clave como el rol, el estado (activo o inactivo) y el perfil asignado. Esto garantiza que cada persona tenga un acceso controlado y personalizado, adaptado a sus responsabilidades.
+
+<h3>Descripcion</h3>
+
+<p>
+  <strong>Método: </strong>
+  <span class="sl-badge success small astro-avdet4wd"> GET</span>
+</p>
+Este endpoint permite listar todos los usuarios registrados.
+<Tabs>
+  <TabItem label="Endpoint">
+    <ApiEndpoint url={`${API_BASE_URL}/usuarios`} />
+  </TabItem>
+</Tabs>
+
+<aside aria-label="Nota" class="starlight-aside starlight-aside--note">
+  {" "}
+  <p class="starlight-aside__title" aria-hidden="true">
+    {" "}
+    <svg
+      aria-hidden="true"
+      class="starlight-aside__icon astro-c6vsoqas"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      style="--sl-icon-size: 1em;"
+    >
+      <path d="M12 11a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Zm.38-3.92a1 1 0 0 0-.76 0 1 1 0 0 0-.33.21 1.15 1.15 0 0 0-.21.33 1 1 0 0 0 .21 1.09c.097.088.209.16.33.21A1 1 0 0 0 13 8a1.05 1.05 0 0 0-.29-.71 1 1 0 0 0-.33-.21ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"></path>
+    </svg>
+    Nota{" "}
+  </p>
+  Es necesario el envío del token de acceso <code>access_token</code> para hacer
+  uso de este endpoint. Para ver cómo generar el token, vea{" "}
+  <a href="/usuarios/login">como generar token de acceso.</a>
+</aside>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado    | Valor            | Descripcion                                          |
+| ------------- | ---------------- | ---------------------------------------------------- |
+| Content-Type  | application/json | Indica que los datos esran manejados en fromato JSON |
+| Authorization | Bearer `token`   | Token con autorizacion para acceder a las areas      |
+
+<h3>Ejemplo de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 200">
+
+```json
+[
+  {
+    "idUsuario": 4,
+    "documento": 4900873,
+    "nombre": "yepeto",
+    "apellido": "parado",
+    "edad": 19,
+    "telefono": "3241562459",
+    "correo": "yepeto@gmail.com",
+    "estado": true,
+    "cargo": "nuevo1",
+    "password": "$2b$10$vVFrB/5z5H7mVFM6TK9abeReT/vH61sOsMWei1N0g7bKosgsVS.9K",
+    "createdAt": "2025-06-18T04:07:04.770Z",
+    "updatedAt": "2025-06-18T04:07:04.770Z",
+    "perfil": "eiurfewoiieoviowvowri"
+  },
+  {
+    "idUsuario": 5,
+    "documento": 123456789,
+    "nombre": "yepeto",
+    "apellido": "parado",
+    "edad": 19,
+    "telefono": "3241562459",
+    "correo": "yepeto@gmail.com",
+    "estado": true,
+    "cargo": "nuevo1",
+    "password": "$2b$10$j/z5Mgt76SBvl/NHiLHYf.YqPPnqar9D1TDW61i30Rksyd3L8Syfy",
+    "createdAt": "2025-06-18T04:24:56.754Z",
+    "updatedAt": "2025-06-18T04:24:56.754Z",
+    "perfil": "eiurfewoiieoviowvowri"
+  }
+]
+```
+
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"Error al listar todas las Areas registradas"}
+  ```
+  </TabItem>
+</Tabs>

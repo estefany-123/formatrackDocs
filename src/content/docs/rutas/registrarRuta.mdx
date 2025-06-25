@@ -1,5 +1,110 @@
 ---
-title: "Registrar elementos"
-description: "Permite registrar un nuevo elemento en el sistema."
+title: "Registrar rutas"
+description: "Permite registrar una nueva ruta en el sistema."
 slug: "rutas/registrarRuta"
 ---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { API_BASE_URL } from "../../../utils/constants.ts";
+import ApiEndpoint from "../../../components/ApiEndpoint.astro";
+
+<p>
+  <strong>Método: </strong>
+  <span class="sl-badge caution small astro-avdet4wd">POST</span>
+</p>
+
+Este endpoint permite registrar una nueva ruta con los datos proporcionados.
+
+<Tabs>
+  <TabItem label="Endpoint">
+    <ApiEndpoint url={`${API_BASE_URL}/rutas`} />
+  </TabItem>
+</Tabs>
+
+<aside aria-label="Nota" class="starlight-aside starlight-aside--note">
+  {" "}
+  <p class="starlight-aside__title" aria-hidden="true">
+    {" "}
+    <svg
+      aria-hidden="true"
+      class="starlight-aside__icon astro-c6vsoqas"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      style="--sl-icon-size: 1em;"
+    >
+      <path d="M12 11a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Zm.38-3.92a1 1 0 0 0-.76 0 1 1 0 0 0-.33.21 1.15 1.15 0 0 0-.21.33 1 1 0 0 0 .21 1.09c.097.088.209.16.33.21A1 1 0 0 0 13 8a1.05 1.05 0 0 0-.29-.71 1 1 0 0 0-.33-.21ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"></path>
+    </svg>
+    Nota{" "}
+  </p>
+  Es necesario el envío del token de acceso <code>access_token</code> para hacer
+  uso de este endpoint. Para ver cómo generar el token, vea{" "}
+  <a href="/usuarios/login">como generar token de acceso.</a>
+</aside>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado    | Valor            | Descripcion                                          |
+| ------------- | ---------------- | ---------------------------------------------------- |
+| Content-Type  | application/json | Indica que los datos esran manejados en fromato JSON |
+| Authorization | Bearer `token`   | Token con autorizacion para acceder a las areas      |
+
+<h3>Endpoint para los Datos de las rutas</h3>
+
+Para agilizar la creacion de nuevas rutas te ofrecemos estos endpoints de apoyo para que puedas consultar y obtener el ID unico del modulo el cual es necesario para crear tu ruta.
+
+<li>
+  <a href="/modulos/listarModulos">Modulo</a>
+</li>
+
+<h3>Parametros del cuerpo</h3>
+
+| Parametro y Tipo     | Descripcion                                                                                                                                     |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| nombre (string)      | Nombre que se le va a designar a dicha ruta no mayor a (50)                                                                                     |
+| description (string) | Descripción detallada de la ruta a crear                                                                                                        |
+| estado (boolean)     | Si se encuentra activo o inactiva la ruta                                                                                                       |
+| descripcion (string) | Descripcion respecto a la ruta a crear                                                                                                          |
+| createdAt (date)     | fecha de creació de la ruta .Esta se crea automaticamente                                                                                       |
+| updatedAt (date)     | fecha de actualización de la ruta.Esta se crea automaticamente                                                                                  |
+| fkModulo (number)    | ID del modulo a la ruta perteneciente. Para consultar los modulos existentes consulte este endpoint <a href="/modulos/listarModulos">Modulo</a> |
+
+### Body
+
+```json
+{
+  "nombre": "string",
+  "descripcion": "string",
+  "urlDestino": "string",
+  "estado": "boolean",
+  "fkModulo": "number"
+}
+```
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 201">
+  ```json
+{
+    "idRuta": 1,
+    "nombre": "Home1",
+    "descripcion": "Esto es para home",
+    "urlDestino": "8000/home",
+    "estado": true,
+    "createdAt": "2025-06-24T22:34:14.463Z",
+    "updatedAt": "2025-06-24T22:34:14.463Z",
+    "fkModulo": {
+        "idModulo": 1
+    }
+}
+```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"No se registro la ruta"}
+  ```
+  </TabItem>
+</Tabs>

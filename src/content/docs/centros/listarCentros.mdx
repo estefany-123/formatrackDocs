@@ -1,26 +1,34 @@
 ---
 title: "Listar centros"
-description: "Obtiene la lista de centros disponibles."
+description: "Obtiene la lista de los centros disponibles."
 slug: "centros/listarCentros"
 ---
 
 import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { API_BASE_URL } from "../../../utils/constants.ts";
+import ApiEndpoint from "../../../components/ApiEndpoint.astro";
 
 <h2>¿Que son los centros?</h2>
 
-Los centros son unidades academicas y operativas donde se desarrollan los programas de formacion técnica, tecnológica y complementaria que brinda la institución.Cada uno de estos centros se especializan en diferentes sectores productivos y areas del conocimiento como la salud, la inductria, el agro entre otros.
+Los centros representan las sedes principales de formación o gestión dentro del sistema institucional. Cada centro agrupa diversas áreas, programas, ambientes y personal administrativo o formativo, sirviendo como núcleo organizativo para coordinar las actividades educativas y logísticas.
+
+Por ejemplo, un centro puede ser el Centro Agroecológico y Empresarial, que reúne ambientes de formación rural, zonas administrativas y laboratorios específicos para el desarrollo de programas técnicos o tecnológicos.
+
+Registrar los centros permite al sistema estructurar la información territorial y académica, facilitando el seguimiento, asignación de recursos y control de operaciones en cada sede o regional.
 
 <h3>Descripcion</h3>
 
-Este endpoint permite obtener la lista de centros disponibles en el sistema.
+Este endpoint permite obtener la lista de los centros disponibles en el sistema.
 
 <p>
   <strong>Método: </strong>
-  <span class="sl-badge note small astro-avdet4wd">PUT</span>
+  <span class="sl-badge success small astro-avdet4wd"> GET</span>
 </p>
 
 <Tabs>
-  <TabItem label="Endpoint">``` http://localhost:3000/centros ```</TabItem>
+  <TabItem label="Endpoint">
+    <ApiEndpoint url={`${API_BASE_URL}/centros`} />
+  </TabItem>
 </Tabs>
 
 <aside aria-label="Nota" class="starlight-aside starlight-aside--note">
@@ -37,7 +45,8 @@ Este endpoint permite obtener la lista de centros disponibles en el sistema.
       style="--sl-icon-size: 1em;"
     >
       <path d="M12 11a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Zm.38-3.92a1 1 0 0 0-.76 0 1 1 0 0 0-.33.21 1.15 1.15 0 0 0-.21.33 1 1 0 0 0 .21 1.09c.097.088.209.16.33.21A1 1 0 0 0 13 8a1.05 1.05 0 0 0-.29-.71 1 1 0 0 0-.33-.21ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"></path>
-    </svg> Nota{" "}
+    </svg>
+    Nota{" "}
   </p>
   Es necesario el envío del token de acceso <code>access_token</code> para hacer
   uso de este endpoint. Para ver cómo generar el token, vea{" "}
@@ -46,9 +55,10 @@ Este endpoint permite obtener la lista de centros disponibles en el sistema.
 
 <h3>Encabezados de Solicitud</h3>
 
-| Encabezado    | Valor          | Descripcion                                       |
-| ------------- | -------------- | ------------------------------------------------- |
-| Authorization | Bearer `token` | Token con autorizacion para acceder a los centros |
+| Encabezado    | Valor            | Descripcion                                          |
+| ------------- | ---------------- | ---------------------------------------------------- |
+| Content-Type  | application/json | Indica que los datos esran manejados en fromato JSON |
+| Authorization | Bearer `token`   | Token con autorizacion para acceder a las areas      |
 
 <h3>Ejemplo de respuesta</h3>
 
@@ -56,23 +66,35 @@ Este endpoint permite obtener la lista de centros disponibles en el sistema.
   <TabItem label="Status 200">
 
 ```json
-{
-  "id_centro": 1,
-  "nombre": "CGDSS1",
-  "estado": true,
-  "created_at": "2026-02-08T05:00:00.000Z",
-  "updated_at": "2024-05-08T05:00:00.000Z",
-  "fk_municipio": 1
-},
-{
-  "id_centro": 5,
-  "nombre": "centr3",
-  "estado": true,
-  "created_at": "2021-12-12T05:00:00.000Z",
-  "updated_at": "2024-05-07T05:00:00.000Z",
-  "fk_municipio": 1
-}
+[
+  {
+    "idCentro": 20,
+    "nombre": "SDFFG",
+    "estado": true,
+    "createdAt": "2025-04-25T01:34:59.884Z",
+    "updatedAt": "2025-04-25T01:34:59.884Z",
+    "fkMunicipio": {
+      "idMunicipio": 1
+    }
+  },
+  {
+    "idCentro": 20,
+    "nombre": "CGDSS",
+    "estado": true,
+    "createdAt": "2025-06-25T01:34:59.884Z",
+    "updatedAt": "2025-06-25T01:34:59.884Z",
+    "fkMunicipio": {
+      "idMunicipio": 1
+    }
+  }
+]
 ```
 
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"Error al listar todas los centros  registrados"}
+  ```
+  </TabItem>
 </Tabs>
-</TabItem>

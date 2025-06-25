@@ -4,21 +4,88 @@ description: "Permite registrar un nuevo tipo de sitio en el sistema."
 slug: "tipos-sitio/registrarTipoSitio"
 ---
 
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { API_BASE_URL } from "../../../utils/constants.ts";
+import ApiEndpoint from "../../../components/ApiEndpoint.astro";
+
+<p>
+  <strong>Método: </strong>
+  <span class="sl-badge caution small astro-avdet4wd">POST</span>
+</p>
+
 Este endpoint permite registrar un nuevo tipo de sitio con los datos proporcionados.
 
-| Variable | Valor                          |
-| -------- | ------------------------------ |
-| URL      | [/tipoSitio](/tipoSitio)       |
-| Method   | `POST`                         |
-| Headers  | Authorization : Bearer `token` |
+<Tabs>
+  <TabItem label="Endpoint">
+    <ApiEndpoint url={`${API_BASE_URL}/tipos_sitio`} />
+  </TabItem>
+</Tabs>
+
+<aside aria-label="Nota" class="starlight-aside starlight-aside--note">
+  {" "}
+  <p class="starlight-aside__title" aria-hidden="true">
+    {" "}
+    <svg
+      aria-hidden="true"
+      class="starlight-aside__icon astro-c6vsoqas"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      style="--sl-icon-size: 1em;"
+    >
+      <path d="M12 11a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Zm.38-3.92a1 1 0 0 0-.76 0 1 1 0 0 0-.33.21 1.15 1.15 0 0 0-.21.33 1 1 0 0 0 .21 1.09c.097.088.209.16.33.21A1 1 0 0 0 13 8a1.05 1.05 0 0 0-.29-.71 1 1 0 0 0-.33-.21ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"></path>
+    </svg>
+    Nota{" "}
+  </p>
+  Es necesario el envío del token de acceso <code>access_token</code> para hacer
+  uso de este endpoint. Para ver cómo generar el token, vea{" "}
+  <a href="/usuarios/login">como generar token de acceso.</a>
+</aside>
+
+<h3>Encabezados de Solicitud</h3>
+
+| Encabezado    | Valor            | Descripcion                                          |
+| ------------- | ---------------- | ---------------------------------------------------- |
+| Content-Type  | application/json | Indica que los datos esran manejados en fromato JSON |
+| Authorization | Bearer `token`   | Token con autorizacion para acceder a las areas      |
+
+<h3>Parametros del cuerpo</h3>
+
+| Parametro y Tipo | Descripcion                                                          |
+| ---------------- | -------------------------------------------------------------------- |
+| nombre (string)  | Nombre que se le va a designar a dicho tipo de sitio no mayor a (50) |
+| estado (boolean) | Si se encuentra activo o inactiva el area                            |
+| createdAt (date) | fecha de creació del area.Esta se crea automaticamente               |
+| updatedAt (date) | fecha de actualización del area.Esta se crea automaticamente         |
 
 ### Body
 
 ```json
 {
   "nombre": "string",
-  "estado": "boolean",
-  "fecha_creacion": "date",
-  "fecha_actualizacion": "date"
+  "estado": "boolean"
 }
 ```
+
+<h3>Ejemplos de respuesta</h3>
+
+<Tabs>
+  <TabItem label="Status 201">
+  ```json
+{
+    "idTipo": 4,
+    "nombre": "Laboratorio",
+    "estado": true,
+    "createdAt": "2025-06-24T21:48:39.923Z",
+    "updatedAt": "2025-06-24T21:48:39.923Z"
+}
+```
+  </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"No se registro el Tipo de Sitio"}
+  ```
+  </TabItem>
+</Tabs>

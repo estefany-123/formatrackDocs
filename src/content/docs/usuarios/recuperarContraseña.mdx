@@ -1,7 +1,7 @@
 ---
-title: "Actualizar ruta"
-description: "Actualiza los datos de una ruta  existente en el sistema."
-slug: "rutas/actualizarRuta"
+title: "Recuperar contraseña del  Usuario"
+description: "Permite recuperar el password digitado en el momento del registro   en el sistema."
+slug: "usuarios/recuperarContraseña"
 ---
 
 import { Tabs, TabItem } from "@astrojs/starlight/components";
@@ -10,13 +10,13 @@ import ApiEndpoint from "../../../components/ApiEndpoint.astro";
 
 <p>
   <strong>Método: </strong>
-  <span class="sl-badge note small astro-avdet4wd">PATCH</span>
+  <span class="sl-badge caution small astro-avdet4wd">POST</span>
 </p>
-Este endpoint permite actualizar la información de una ruta específica mediante su
-ID.
+Este endpoint permite recuperar la contraseña de un usuario.
+
 <Tabs>
   <TabItem label="Endpoint">
-    <ApiEndpoint url={`${API_BASE_URL}/rutas/update/:id`} />
+    <ApiEndpoint url={`${API_BASE_URL}/auth/forgot-password`} />
   </TabItem>
 </Tabs>
 
@@ -53,7 +53,7 @@ ID.
 
 ```json
 {
-  "nombre": "string"
+  "correo": "string"
 }
 ```
 
@@ -63,20 +63,15 @@ ID.
   <TabItem label="Status 200">
   ```json
 {
-    "idRuta": 1,
-    "nombre": "Home1",
-    "descripcion": "Esto es para home",
-    "urlDestino": "8000/home",
-    "estado": false,
-    "createdAt": "2025-06-24T22:34:14.463Z",
-    "updatedAt": "2025-06-24T22:34:14.463Z"
+    "status": 200,
+    "message": "Revisa tu correo"
 }
   ```
   </TabItem>
 
   <TabItem label="Status 400">
   ```json
-  {message:"No se actualizó la ruta"}
+  {message:"Error al recuperar contraseña de usuario"}
   ```
   </TabItem>
 </Tabs>
