@@ -464,10 +464,6 @@ export default defineConfig({
                   slug: "caracteristicas/actualizarCaracteristica",
                 },
                 {
-                  label: "Cambiar Estado del Caracteristica",
-                  slug: "caracteristicas/cambiarEstadoCaracteristica",
-                },
-                {
                   label: "Listar Caracteristicas",
                   slug: "caracteristicas/listarCaracteristicas",
                 },

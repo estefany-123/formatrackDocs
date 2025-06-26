@@ -1,58 +1,86 @@
 ---
+
 title: "Registrar elementos"
 description: "Permite registrar un nuevo elemento en el sistema."
 slug: "elementos/registrarElementos"
+
 ---
 
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { API_BASE_URL } from "../../../utils/constants.ts";
+import ApiEndpoint from "../../../components/ApiEndpoint.astro";
 
 Este endpoint permite registrar un nuevo elemento con los datos proporcionados.
 
-<p> 
-<strong>Método: </strong><span class="sl-badge note small astro-avdet4wd">PUT</span>
+<p>
+  <strong>Método: </strong>
+  <span class="sl-badge caution small astro-avdet4wd">POST</span>
 </p>
 
 <Tabs>
   <TabItem label="Endpoint">
-  ```
-  http://localhost:3000/api/elemento/register/
-  ```
+    <ApiEndpoint url={`${API_BASE_URL}/elementos`} />
   </TabItem>
 </Tabs>
 
-<aside aria-label="Nota" class="starlight-aside starlight-aside--note"> <p class="starlight-aside__title" aria-hidden="true"> <svg aria-hidden="true" class="starlight-aside__icon astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 11a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Zm.38-3.92a1 1 0 0 0-.76 0 1 1 0 0 0-.33.21 1.15 1.15 0 0 0-.21.33 1 1 0 0 0 .21 1.09c.097.088.209.16.33.21A1 1 0 0 0 13 8a1.05 1.05 0 0 0-.29-.71 1 1 0 0 0-.33-.21ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"></path></svg> Nota </p> 
-Es necesario el envío del token de acceso <code>access_token</code> para hacer uso de este endpoint. Para ver cómo generar el token, vea <a href="/usuarios/login">como generar token de acceso.</a></aside>
+<aside aria-label="Nota" class="starlight-aside starlight-aside--note">
+  {" "}
+  <p class="starlight-aside__title" aria-hidden="true">
+    {" "}
+    <svg
+      aria-hidden="true"
+      class="starlight-aside__icon astro-c6vsoqas"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      style="--sl-icon-size: 1em;"
+    >
+      <path d="M12 11a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Zm.38-3.92a1 1 0 0 0-.76 0 1 1 0 0 0-.33.21 1.15 1.15 0 0 0-.21.33 1 1 0 0 0 .21 1.09c.097.088.209.16.33.21A1 1 0 0 0 13 8a1.05 1.05 0 0 0-.29-.71 1 1 0 0 0-.33-.21ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"></path>
+      Nota{" "}
+    </svg>
+  </p>
+  Es necesario el envío del token de acceso <code>access_token</code> para hacer
+  uso de este endpoint. Para ver cómo generar el token, vea{" "}
+  <a href="/usuarios/login">como generar token de acceso.</a>
+</aside>
 
 <h3>Encabezados de Solicitud</h3>
 
-| Encabezado | Valor | Descripcion
-|----------|-------| -------
-| Authorization |  Bearer `token` | Token con autorizacion para acceder a los elementos
+| Encabezado    | Valor          | Descripcion                                         |
+| ------------- | -------------- | --------------------------------------------------- |
+| Authorization | Bearer `token` | Token con autorizacion para acceder a los elementos |
 
 <h3>Endpoint para los Datos del Elemento</h3>
 
 Para agilizar la creacion de nuevos elementos te ofrecemos estos endpoint de apoyo para que puedas consultar y obtener los ID de las unidades de medidad, categorias y caracteristicas necesaria para crear tu elementos.
-<li><a href="/unidades-medida/listarUnidadesMedida">Sede</a></li>
-<li><a href="/categorias/listarCategorias">Sede</a></li>
-<li><a href="/caracteristicas/listarCaracteristicas">Sede</a></li>
+
+<li>
+  <a href="/unidades-medida/listarUnidadesMedida">Unidades de medida</a>
+</li>
+<li>
+  <a href="/categorias/listarCategorias">Categorias</a>
+</li>
+<li>
+  <a href="/caracteristicas/listarCaracteristicas">caracteristicas</a>
+</li>
 
 <h3>Parametros del cuerpo</h3>
 
-
-| Parametro y Tipo | Descripcion
-|----------|--------
-| nombre (string) |  Nombre por defecto del elemento
-| descripcion (string) | Algunos detalles adicionales del elemento
-| valor (integer) | valor por la unidad del elemento
-| consumible (boolean) | Determina que el elemento es consumible
-| no_consumible (boolean) | Determina que el elemento es no consumible
-| estado (boolean) | Si se encuentra activo o inactivo el elemento
-| imagen_elemento (string) | Imagen relacionada con el elemento a registrar
-| fecha_creacion (date) | Fecha en la que se registro el elemento
-| fecha_actualizacion (date) | Ultima fecha en la que se le hizo alguna modificacion
-| fk_unidad_medida (integer) | ID de la unidad de medida con la que se identifica dicho elemento. Para conocer las unidades de medida existentes puede ir al este endpoint <a href="/unidades-medida/listarUnidadesMedida">unidad medida</a>
-| fk_categoria (integer) | ID de la categoria a la que pertenece el elemento. Para conocer las categorias puede consultar en este endpoint <a href="/categorias/listarCategorias">categorias</a>
-| fk_caracteristica (integer) | ID de la caracteritica a la que pertenece el elemento. Para conocer las caracteristicas puede consultar en este endpoint <a href="/caracteristicas/listarCaracteristicas">caracteristica</a>
+| Parametro y Tipo           | Descripcion                                                                                                                                                                                                   |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| nombre (string)            | Nombre por defecto del elemento                                                                                                                                                                               |
+| descripcion (string)       | Algunos detalles adicionales del elemento                                                                                                                                                                     |
+| perecedero (boolean)       | Determina que el elemento es perecedero                                                                                                                                                                       |
+| noPerecedero (boolean)     | Determina que el elemento es no perecedero                                                                                                                                                                    |
+| estado (boolean)           | Si se encuentra activo o inactivo el elemento                                                                                                                                                                 |
+| imagenElemento (string)    | Imagen relacionada con el elemento a registrar                                                                                                                                                                |
+| fechaUso (date)            | Fecha de uso del elemento                                                                                                                                                                                     |
+| fkCategoria (date)         | ID de la categoria a la cual se encuentra relacionada el elemento. Para conocer las categorias existentes puede dirigirse a este endpoint <a href="/categorias/listarCategorias">Categorias</a>               |
+| fkUnidadMedida (integer)   | ID de la unidad de medida con la que se identifica dicho elemento. Para conocer las unidades de medida existentes puede ir al este endpoint <a href="/unidades-medida/listarUnidadesMedida">unidad medida</a> |
+| fkCaracteristica (integer) | ID de la caracteristica a la que pertenece el elemento. Para conocer las caracteristicas puede consultar en este endpoint <a href="/caracteristicas/listarCaracteristicas">caracteristicas</a>                |
+| createdAt (date)           | fecha de creacion del elemento. Esta se genera automaticamente.                                                                                                                                               |
+| updatedAt (date)           | fecha de actualización del elemento. Esta se genera automaticamente                                                                                                                                           |
 
 ### Body
 
@@ -60,26 +88,50 @@ Para agilizar la creacion de nuevos elementos te ofrecemos estos endpoint de apo
 {
   "nombre": "string",
   "descripcion": "string",
-  "valor": "integer",
-  "consumible": "boolean",
-  "no_consumible": "boolean",
+  "perecedero": "boolean",
+  "noPerecedero": "boolean",
   "estado": "boolean",
-  "imagen_elemento": "string",
-  "created_at": "date",
-  "updated_at": "date",
-  "fk_unidad_medida": "integer",
-  "fk_categoria": "integer"
-  "fk_caracteristica": "integer"
+  "imagenElemento": "string",
+  "fechaUso": "date",
+  "fkCategoria": "number",
+  "fkUnidadMedida": "number",
+  "fkCaracteristica": "number"
 }
 ```
-
 
 <h3>Ejemplos de respuesta</h3>
 
 <Tabs>
   <TabItem label="Status 201">
   ```json
-  {message:"El elemento se ha registrado correctamente"}
+  {
+    "idElemento": 5,
+    "nombre": "pc",
+    "descripcion": "eqipo de computo",
+    "perecedero": false,
+    "noPerecedero": true,
+    "estado": true,
+    "fechaVencimiento": null,
+    "fechaUso": "12-02-1242",
+    "baja": false,
+    "createdAt": "2025-06-26T02:15:55.253Z",
+    "updatedAt": "2025-06-26T02:15:55.253Z",
+    "imagenElemento": [
+        {
+            "id": 1,
+            "url": ""
+        }
+    ],
+    "fkCaracteristica": {
+        "idCaracteristica": 1
+    },
+    "fkCategoria": {
+        "idCategoria": 6
+    },
+    "fkUnidadMedida": {
+        "idUnidad": 1
+    }
+}
   ```
   </TabItem>
 

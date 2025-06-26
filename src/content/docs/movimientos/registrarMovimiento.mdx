@@ -3,58 +3,90 @@ title: "Registrar Movimiento"
 description: "Permite registrar un nuevo movimiento en el sistema."
 slug: "movimientos/registrarMovimiento"
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { API_BASE_URL } from "../../../utils/constants.ts";
+import ApiEndpoint from "../../../components/ApiEndpoint.astro";
 
 Este endpoint permite registrar un nuevo movimiento con los datos proporcionados.
 
-<p> 
-<strong>Método: </strong><span class="sl-badge note small astro-avdet4wd">PUT</span>
+<p>
+  <strong>Método: </strong>
+  <span class="sl-badge caution small astro-avdet4wd">POST</span>
 </p>
 
 <Tabs>
   <TabItem label="Endpoint">
-  ```
-  http://localhost:3000/api/movimiento/register/
-  ```
+    <ApiEndpoint url={`${API_BASE_URL}/movimientos`} />
   </TabItem>
 </Tabs>
 
-<aside aria-label="Nota" class="starlight-aside starlight-aside--note"> <p class="starlight-aside__title" aria-hidden="true"> <svg aria-hidden="true" class="starlight-aside__icon astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 11a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Zm.38-3.92a1 1 0 0 0-.76 0 1 1 0 0 0-.33.21 1.15 1.15 0 0 0-.21.33 1 1 0 0 0 .21 1.09c.097.088.209.16.33.21A1 1 0 0 0 13 8a1.05 1.05 0 0 0-.29-.71 1 1 0 0 0-.33-.21ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"></path></svg> Nota </p> 
-Es necesario el envío del token de acceso <code>access_token</code> para hacer uso de este endpoint. Para ver cómo generar el token, vea <a href="/usuarios/login">como generar token de acceso.</a></aside>
+<aside aria-label="Nota" class="starlight-aside starlight-aside--note">
+  {" "}
+  <p class="starlight-aside__title" aria-hidden="true">
+    {" "}
+    <svg
+      aria-hidden="true"
+      class="starlight-aside__icon astro-c6vsoqas"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      style="--sl-icon-size: 1em;"
+    >
+      <path d="M12 11a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Zm.38-3.92a1 1 0 0 0-.76 0 1 1 0 0 0-.33.21 1.15 1.15 0 0 0-.21.33 1 1 0 0 0 .21 1.09c.097.088.209.16.33.21A1 1 0 0 0 13 8a1.05 1.05 0 0 0-.29-.71 1 1 0 0 0-.33-.21ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"></path>
+      Nota{" "}
+    </svg>
+  </p>
+  Es necesario el envío del token de acceso <code>access_token</code> para hacer
+  uso de este endpoint. Para ver cómo generar el token, vea{" "}
+  <a href="/usuarios/login">como generar token de acceso.</a>
+</aside>
 
 <h3>Encabezados de Solicitud</h3>
 
-| Encabezado | Valor | Descripcion
-|----------|-------| -------
-| Authorization |  Bearer `token` | Token con autorizacion para acceder a los movimientos
+| Encabezado    | Valor          | Descripcion                                           |
+| ------------- | -------------- | ----------------------------------------------------- |
+| Authorization | Bearer `token` | Token con autorizacion para acceder a los movimientos |
 
 <h3>Endpoint para los Datos del area</h3>
 
 Para agilizar la creacion de nuevos movimientos te ofrecemos estos endpoints de apoyo para que puedas consultar y obtener el ID de lo que sea necesario para crear tu movimiento.
-<li><a href="/usuarios/listarUsuarios">Usuarios</a></li>
-<li><a href="/tipos-movimiento/listarTipoMovimiento">Tipos movimientos</a></li>
-<li><a href="/sitios/listarSitios">Sitios</a></li>
-<li><a href="/elementos/listarElementos">Elementos</a></li>
+
+<li>
+  <a href="/usuarios/listarUsuarios">Usuarios</a>
+</li>
+<li>
+  <a href="/tipos-movimiento/listarTipoMovimiento">Tipos movimientos</a>
+</li>
+<li>
+  <a href="/sitios/listarSitios">Sitios</a>
+</li>
+<li>
+  <a href="/inventario/listarInventarios">Inventarios</a>
+</li>
 
 <h3>Parametros del cuerpo</h3>
 
-| Parametro y Tipo | Descripcion
-|----------|--------
-| descripcion (string) | Descripcion del movimiento y de lo que se hara.
-| cantidad (integer) | cantidad requerida en el movimiento.
-| hora_ingreso (time) | Si se realizo un tipo de movimento de ingreso se marca la hora en la cual se realizo el movimiento.
-| hora_salida (time) | Si se realizo un tipo de movimiento de salida se marca la hora en la cual se realizo el movimiento.
-| aceptado (boolean) | En caso de ser aceptado el movimiento.
-| en_proceso (boolean) | Cuando el movimiento se encuentra en proceso.
-| cancelado (boolean) | Se estblece cuando se ha rechazado el movimiento.
-| devolutivo (boolean) | Se determina que el elemento solicitado del inventraio es de estado devolutivo
-| no_devolutivo (boolean) | Se determina que el elemento solicitado del inventario es de estado no_devolutivo.
-| created_at (date) | fecha en la que se solicito el movimiento.
-| updated_at (date) | fecha en lacual se actuallzo el movimiento.
-| fk_sitio (integer) | ID del sitio al que se va a hacer el movimiento. Para ver los sitios disponibles visite este endpoint <a href="/sitios/listarSitios">Sitios</a>
-| fk_usuario (integer) | Id del usuario que solicito el movimiento. Para ver los usuarios visite este endpoint <a href="/usuarios/listarUsuarios">usuarios</a>
-| fk_tipo_movimiento (integer) | ID del tipo de movimiento que se hace. Para ver los tipos de movimientos visite este endpoint <a href="/tipos-movimiento/listarTipoMovimiento">tipos movimientos</a>
-| fk_inventario (integer) | ID del inventario que se solicita para realizar el movimiento del elemento. Ver los elementos del inventario aqui <a href="/inventario/listarInventarios">Inventarios</a>
+| Parametro y Tipo           | Descripcion                                                                                                                                                               |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| descripcion (string)       | Descripcion del movimiento y de lo que se hara.                                                                                                                           |
+| cantidad (integer)         | cantidad requerida en el movimiento.                                                                                                                                      |
+| horaIngreso (time)         | Si se realizo un tipo de movimento de ingreso se marca la hora en la cual se realizo el movimiento.                                                                       |
+| horaSalida (time)          | Si se realizo un tipo de movimiento de salida se marca la hora en la cual se realizo el movimiento.                                                                       |
+| aceptado (boolean)         | En caso de ser aceptado el movimiento.                                                                                                                                    |
+| enProceso (boolean)        | Cuando el movimiento se encuentra en proceso.                                                                                                                             |
+| cancelado (boolean)        | Se estblece cuando se ha rechazado el movimiento.                                                                                                                         |
+| devolutivo (boolean)       | Se determina que el elemento solicitado del inventraio es de estado devolutivo                                                                                            |
+| noDevolutivo (boolean)     | Se determina que el elemento solicitado del inventario es de estado no_devolutivo.                                                                                        |
+| fechaDevolucion (date)     | Fecha de devolución de dicho elemento.                                                                                                                                    |
+| lugarDestino (string)      | Lugar de destino del movimento a realizar.                                                                                                                                |
+| createdAt (date)           | fecha en la que se solicito el movimiento.                                                                                                                                |
+| updatedAt (date)           | fecha en lacual se actuallzo el movimiento.                                                                                                                               |
+| fkSitio (integer)          | ID del sitio al que se va a hacer el movimiento. Para ver los sitios disponibles visite este endpoint <a href="/sitios/listarSitios">Sitios</a>                           |
+| fkUsuario (integer)        | Id del usuario que solicito el movimiento. Para ver los usuarios visite este endpoint <a href="/usuarios/listarUsuarios">usuarios</a>                                     |
+| fkTipoMovimiento (integer) | ID del tipo de movimiento que se hace. Para ver los tipos de movimientos visite este endpoint <a href="/tipos-movimiento/listarTipoMovimiento">tipos movimientos</a>      |
+| fkInventario (integer)     | ID del inventario que se solicita para realizar el movimiento del elemento. Ver los elementos del inventario aqui <a href="/inventario/listarInventarios">Inventarios</a> |
 
 ### Body
 
@@ -62,19 +94,20 @@ Para agilizar la creacion de nuevos movimientos te ofrecemos estos endpoints de 
 {
   "descripcion": "string",
   "cantidad": "integer",
-  "hora_ingreso": "time",
-  "hora_salida": "time",
+  "horaIngreso": "time",
+  "horaSalida": "time",
+  "codigos": "string",
   "aceptado": "boolean",
-  "en_proceso": "boolean",
+  "enProceso": "boolean",
   "cancelado": "boolean",
   "devolutivo": "boolean",
-  "no_devolutivo": "boolean",
-  "created_at": "date",
-  "updated_at": "date",
-  "fk_sitio": "integer",
-  "fk_usuario": "integer",
-  "fk_tipo_movimiento": "integer",
-  "fk_inventario": "integer"
+  "fechaDevolucion": "date",
+  "noDevolutivo": "boolean",
+  "lugarDestino": "string",
+  "fkSitio": "integer",
+  "fkUsuario": "integer",
+  "fkTipoMovimiento": "integer",
+  "fkInventario": "integer"
 }
 ```
 
@@ -83,13 +116,68 @@ Para agilizar la creacion de nuevos movimientos te ofrecemos estos endpoints de 
 <Tabs>
   <TabItem label="Status 201">
   ```json
-  {message:"Se ha resgistrado el movimiento correctamente"}
+  {
+    "idMovimiento": 11,
+    "descripcion": "Entrega de equipos para formación",
+    "cantidad": 3,
+    "horaIngreso": null,
+    "horaSalida": null,
+    "aceptado": false,
+    "enProceso": true,
+    "cancelado": false,
+    "devolutivo": null,
+    "noDevolutivo": null,
+    "fechaDevolucion": null,
+    "lugarDestino": null,
+    "createdAt": "2025-06-26T07:29:00.500Z",
+    "updatedAt": "2025-06-26T07:29:00.500Z",
+    "fkInventario": {
+        "idInventario": 4,
+        "stock": 12,
+        "estado": true,
+        "createdAt": "2025-06-26T04:44:51.354Z",
+        "updatedAt": "2025-06-26T04:44:51.354Z",
+        "fkElemento": {
+            "idElemento": 5,
+            "nombre": "todo en uno ",
+            "descripcion": "eqipo de computo",
+            "perecedero": false,
+            "noPerecedero": true,
+            "estado": true,
+            "fechaVencimiento": null,
+            "fechaUso": "1242-12-02",
+            "baja": false,
+            "createdAt": "2025-06-26T02:15:55.253Z",
+            "updatedAt": "2025-06-26T04:08:21.750Z",
+            "fkCaracteristica": {
+                "idCaracteristica": 1,
+                "nombre": "Procesador",
+                "simbolo": "564545",
+                "createdAt": "2025-06-26T02:07:09.871Z",
+                "updatedAt": "2025-06-26T02:07:09.871Z"
+            }
+        }
+    },
+    "fkSitio": {
+        "idSitio": 6
+    },
+    "fkTipoMovimiento": {
+        "idTipo": 1,
+        "nombre": "Asignacion",
+        "estado": false,
+        "createdAt": "2025-06-26T01:01:58.853Z",
+        "updatedAt": "2025-06-26T01:12:05.684Z"
+    },
+    "fkUsuario": {
+        "idUsuario": 5
+    }
+}
   ```
   </TabItem>
 
   <TabItem label="Status 400">
   ```json
-  {message:"No se logro registrar el movimiento"}
+  {message:"No fue posible registrar el Movimiento"}
   ```
   </TabItem>
 </Tabs>

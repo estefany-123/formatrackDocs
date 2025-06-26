@@ -3,73 +3,102 @@ title: "Listar elementos"
 description: "Obtiene la lista de elementos disponibles."
 slug: "elementos/listarElementos"
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { API_BASE_URL } from "../../../utils/constants.ts";
+import ApiEndpoint from "../../../components/ApiEndpoint.astro";
 
 <h2>¿Que son los elementos?</h2>
-Los elementos son los componentes escenciales que ayudan a que los aprendices tengan los recursos materiales necesarios para que adquieran sus habilidades necesarias
+
+Los Elementos son las unidades físicas o materiales registradas en el sistema que
+pueden ser asignadas, prestadas, almacenadas o gestionadas dentro del inventario
+de la institución.
 
 <h3>Descripcion</h3>
 
 Este endpoint permite obtener la lista de elementos disponibles en el sistema.
 
-<p> 
-<strong>Método: </strong><span class="sl-badge note small astro-avdet4wd">PUT</span>
+<p>
+  <strong>Método: </strong>
+  <span class="sl-badge success small astro-avdet4wd">GET</span>
 </p>
 
 <Tabs>
   <TabItem label="Endpoint">
-  ```
-  http://localhost:3000/api/elemento/
-  ```
+    <ApiEndpoint url={`${API_BASE_URL}/elementos`} />
   </TabItem>
 </Tabs>
 
-<aside aria-label="Nota" class="starlight-aside starlight-aside--note"> <p class="starlight-aside__title" aria-hidden="true"> <svg aria-hidden="true" class="starlight-aside__icon astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 11a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Zm.38-3.92a1 1 0 0 0-.76 0 1 1 0 0 0-.33.21 1.15 1.15 0 0 0-.21.33 1 1 0 0 0 .21 1.09c.097.088.209.16.33.21A1 1 0 0 0 13 8a1.05 1.05 0 0 0-.29-.71 1 1 0 0 0-.33-.21ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"></path></svg> Nota </p> 
-Es necesario el envío del token de acceso <code>access_token</code> para hacer uso de este endpoint. Para ver cómo generar el token, vea <a href="/usuarios/login">como generar token de acceso.</a></aside>
+<aside aria-label="Nota" class="starlight-aside starlight-aside--note">
+  {" "}
+  <p class="starlight-aside__title" aria-hidden="true">
+    {" "}
+    <svg
+      aria-hidden="true"
+      class="starlight-aside__icon astro-c6vsoqas"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      style="--sl-icon-size: 1em;"
+    >
+      <path d="M12 11a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Zm.38-3.92a1 1 0 0 0-.76 0 1 1 0 0 0-.33.21 1.15 1.15 0 0 0-.21.33 1 1 0 0 0 .21 1.09c.097.088.209.16.33.21A1 1 0 0 0 13 8a1.05 1.05 0 0 0-.29-.71 1 1 0 0 0-.33-.21ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"></path>
+      Nota{" "}
+    </svg>
+  </p>
+  Es necesario el envío del token de acceso <code>access_token</code> para hacer
+  uso de este endpoint. Para ver cómo generar el token, vea{" "}
+  <a href="/usuarios/login">como generar token de acceso.</a>
+</aside>
 
 <h3>Encabezados de Solicitud</h3>
 
-| Encabezado | Valor | Descripcion
-|----------|-------| -------
-| Authorization |  Bearer `token` | Token con autorizacion para acceder a los elementos
-
+| Encabezado    | Valor          | Descripcion                                         |
+| ------------- | -------------- | --------------------------------------------------- |
+| Authorization | Bearer `token` | Token con autorizacion para acceder a los elementos |
 
 <h3>Ejemplo de respuesta</h3>
 
 <Tabs>
   <TabItem label="Status 200">
 
-  ```json
+```json
 {
-    "id_elemento": 2,
-    "nombre": "Bulto Zana",
-    "descripcion": "Utilizado para cocinar",
-    "valor": 65000,
-    "Consumible": true,
-    "no_consumible": false,
-    "estado":true,
-    "imagen_elemento": "zanahoria.png",
-    "created_at": "2025-02-13T05:00:00.000Z",
-    "updated_at": "2025-02-13T05:00:00.000Z",
-    "fk_unidad_medida": 1,
-    "fk_categoria": 1
-    "fk_caracteristica": 5
+  "idElemento": 5,
+  "nombre": "pc",
+  "descripcion": "eqipo de computo",
+  "perecedero": false,
+  "noPerecedero": true,
+  "estado": true,
+  "fechaVencimiento": null,
+  "fechaUso": "12-02-1242",
+  "baja": false,
+  "createdAt": "2025-06-26T02:15:55.253Z",
+  "updatedAt": "2025-06-26T02:15:55.253Z",
+  "imagenElemento": [
+    {
+      "id": 1,
+      "url": ""
+    }
+  ],
+  "fkCaracteristica": {
+    "idCaracteristica": 1
   },
-  {
-    "id_elemento": 3,
-    "nombre": "Computadora",
-    "descripcion": "Utilizado para programar",
-    "valor": 2000000,
-    "Consumible": false,
-    "no_consumible": true,
-    "estado": false,
-    "imagen_elemento": "Asus.png",
-    "created_at": "2025-02-13T05:00:00.000Z",
-    "updated_at": "2025-02-13T05:00:00.000Z",
-    "fk_unidad_medida": 1,
-    "fk_categoria": 1
-    "fk_caracteristica":2
+  "fkCategoria": {
+    "idCategoria": 6
+  },
+  "fkUnidadMedida": {
+    "idUnidad": 1
   }
+}
 ```
+
   </TabItem>
+
+  <TabItem label="Status 400">
+  ```json
+  {message:"Error al listar todos los elementos registrados"}
+  ```
+  </TabItem>
+ 
 </Tabs>
