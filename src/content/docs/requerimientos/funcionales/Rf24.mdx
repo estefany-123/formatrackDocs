@@ -1,7 +1,23 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF24:  Listar Programas de Formación "
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf24"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF24Case from "../../../../assets/requerimientos/GET-Pogramas.png";
+
+<h3>Descripción</h3>
+En la presente vista encontraremos principalmente una tabla en donde se listara la
+información de los programas de formación, que será la siguiente, nombre del programa,
+fecha de creación , fecha de actualización , estado y acciones en donde encontrara
+los iconos de editar y cambiar estado, esta tabla contara con una paginado para no
+saturar la vista si se encuentra un número elevado de programas registrados, de igual
+manera cuenta con un filtrado por nombre y por fecha como todas las vistas de nuestro
+programa. Por otro lado, podemos apreciar un botón ubicado en la parte superior izquierda
+el cual función para desplegar un formulario y que se nos permite la creación de
+los programas de formación, y por último encontramos un botón de color azul en la
+parte superior derecha el cual nos redirecciona a la vista de gestión Fichas.
+
+<h3>Mockup</h3>
+<Image src={RF24Case} alt="RF24Case" width={3148} height={2270} />

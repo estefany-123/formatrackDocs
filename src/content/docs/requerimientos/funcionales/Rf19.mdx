@@ -1,7 +1,23 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF19:  Listar Áreas"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf19"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF19Case from "../../../../assets/requerimientos/Areas.png";
+
+<h3>Descripción</h3>
+En este apartado se dará a conocer el listado de las áreas registradas en el sistema
+mediante una tabla la cual contiene la siguiente información nombre del área , fecha
+de creación, fecha de actualización, estado y por ultimo dos botones de acciones
+uno para editar y otro para cambiar el estado del área, esta también contiene un
+paginado para no saturar la vista si se encuentra un número elevado de áreas registradas,
+por otro lado cuento con un filtrado por nombre y por fecha como todas las vistas
+de nuestro programa. Podemos apreciar un botón ubicado en la parte superior derecha
+el cual función para desplegar el formulario y que se nos permite la creación de
+las áreas, y por último encontramos un botón en la parte superior izquierda el cual
+nos redirecciona a la vista de gestión de usuarios.
+
+<h3>Mockup</h3>
+<Image src={RF19Case} alt="RF19Case" width={3148} height={2270} />

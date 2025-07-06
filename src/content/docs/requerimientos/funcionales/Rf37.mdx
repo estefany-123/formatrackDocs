@@ -1,7 +1,21 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF37: Modificar el Estado del Sitio"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf37"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF37Case from "../../../../assets/requerimientos/GET-Sitio.png";
+
+<h3>Descripción</h3>
+Para poder realizar el respectivo cambio de estado de un sitio se tendrá que dirigir
+al encabezado de acciones ubicado en la tabla en él encontrará un icono de cesta
+de basura de color rojo al dar click en él se cambiará automáticamente el estado
+del sitio deseada
+
+<h3>Instrucciones para Cambiar el Estado de un sitio Específica</h3>
+Para poder realizar la correcta modificación del estado de un sitio en especifico
+debera dirigirse al botón ubicado en la parte derecha en un icono de cesta de basura
+y dar click en este.
+<h3>Mockup</h3>
+<Image src={RF37Case} alt="RF37Case" width={3148} height={2270} />

@@ -480,7 +480,112 @@ export default defineConfig({
           items: [
             {
               label: "Requerimientos Funcionales",
-              items: [],
+              items: [
+                {
+                  label: "Registrar áreas",
+                  slug: "requerimientos/Rf15",
+                },
+                {
+                  label: "Actualizar áreas",
+                  slug: "requerimientos/Rf16",
+                },
+                {
+                  label: " Modificar el Estado del  Áreas",
+                  slug: "requerimientos/Rf17",
+                },
+                {
+                  label: "Buscarqueda del  Áreas",
+                  slug: "requerimientos/Rf18",
+                },
+                {
+                  label: "Listar Áreas",
+                  slug: "requerimientos/Rf19",
+                },
+                {
+                  label: "Registrar Programas de Formación",
+                  slug: "requerimientos/Rf20",
+                },
+                {
+                  label: "Actualizar Programas de Formación",
+                  slug: "requerimientos/Rf21",
+                },
+                {
+                  label: "Modificar el Estado del  Programa",
+                  slug: "requerimientos/Rf22",
+                },
+                {
+                  label: "Buscar Programa de Formación",
+                  slug: "requerimientos/Rf23",
+                },
+                {
+                  label: "Listar Programas de Formación",
+                  slug: "requerimientos/Rf24",
+                },
+                {
+                  label: "Registrar Ficha",
+                  slug: "requerimientos/Rf25",
+                },
+                {
+                  label: "Actualizar Ficha",
+                  slug: "requerimientos/Rf26",
+                },
+                {
+                  label: "AModificar el Estado de la Ficha",
+                  slug: "requerimientos/Rf27",
+                },
+                {
+                  label: "Buscar  Ficha",
+                  slug: "requerimientos/Rf28",
+                },
+                {
+                  label: " Listar Fichas",
+                  slug: "requerimientos/Rf29",
+                },
+                {
+                  label: " Registrar Sede",
+                  slug: "requerimientos/Rf30",
+                },
+                {
+                  label: " Actualizar Sede",
+                  slug: "requerimientos/Rf31",
+                },
+                {
+                  label: "Modificar el Estado de la sede",
+                  slug: "requerimientos/Rf32",
+                },
+                {
+                  label: "Buscar  Sede ",
+                  slug: "requerimientos/Rf33",
+                },
+                {
+                  label: "Listar Sedes",
+                  slug: "requerimientos/Rf34",
+                },
+                {
+                  label: "Registrar Sitio",
+                  slug: "requerimientos/Rf35",
+                },
+                {
+                  label: "Actualizar Sitio",
+                  slug: "requerimientos/Rf36",
+                },
+                {
+                  label: "Modificar el Estado del Sitio",
+                  slug: "requerimientos/Rf37",
+                },
+                {
+                  label: "Buscar  Sitio",
+                  slug: "requerimientos/Rf38",
+                },
+                {
+                  label: "Listar Sitio",
+                  slug: "requerimientos/Rf39",
+                },
+                {
+                  label: "Asignar Permisos",
+                  slug: "requerimientos/Rf98",
+                },
+              ],
             },
             {
               label: "Requerimientos No Funcionales",

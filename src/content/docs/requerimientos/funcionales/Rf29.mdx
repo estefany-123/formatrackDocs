@@ -1,7 +1,24 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF29:  Listar Fichas"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf29"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF29Case from "../../../../assets/requerimientos/GET-Fichas.png";
+
+<h3>Descripción</h3>
+En la presente vista encontraremos principalmente una tabla en donde se listara la
+información de las fichas, que será la siguiente, código ficha , fecha de creación
+, fecha de actualización , estado y acciones en donde encontrara los iconos de editar
+y cambiar estado, esta tabla contara con una paginado para no saturar la vista si
+se encuentra un número elevado de fichas registradas, de igual manera cuenta con
+un filtrado por nombre y por fecha como todas las vistas de nuestro programa. Por
+otro lado, podemos apreciar un botón de color azul ubicado en la parte superior izquierda
+que tiene por nombre (Añadir ficha ) el cual función para desplegar un formulario
+y que se nos permite la creación de las fichas, y por último encontramos un botón
+de color azul en la parte superior derecha que tiene por nombre (Gestionar Programas)
+el cual nos redirecciona a la vista de gestión de programas.
+
+<h3>Mockup</h3>
+<Image src={RF29Case} alt="RF29Case" width={3148} height={2270} />

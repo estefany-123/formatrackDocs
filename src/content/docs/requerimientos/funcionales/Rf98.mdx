@@ -1,7 +1,21 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF98 : Asignar Permisos"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf98"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF98Case from "../../../../assets/requerimientos/POST-Permisos.png";
+
+<h3>Descripción</h3>
+En este apartado, se presenta un botón azul con la etiqueta "Asignar" ubicado en
+la parte derecha de la tabla de roles. Al hacer clic sobre este botón, se despliega
+un modal (ventana emergente) que permite configurar los permisos disponibles para
+el rol seleccionado.
+
+Dentro del modal, se muestran múltiples opciones organizadas en forma de checkboxes, correspondientes a los diferentes módulos o funcionalidades del sistema. El usuario podrá marcar aquellas opciones que desee habilitar para el rol en cuestión, permitiendo así el acceso a vistas o acciones específicas, como la gestión de usuarios, visualización de fichas o registro masivo de datos.
+
+Además, se incluye un selector para establecer el estado del rol (por ejemplo, activo o inactivo) y un botón inferior de color azul con la etiqueta "Guardar", que permite confirmar y aplicar los cambios realizados en la asignación de permisos.
+
+<h3>Mockup</h3>
+<Image src={RF98Case} alt="RF98Case" width={3148} height={2270} />

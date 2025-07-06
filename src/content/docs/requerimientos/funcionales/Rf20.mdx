@@ -1,7 +1,22 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF20 : Registrar Programas de Formación"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf20"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF20Case from "../../../../assets/requerimientos/POST-programa.png";
+
+<h3>Descripción</h3>
+Para poder realizar el respectivo registro de un programa de formación deberá ingresar
+en el botón (añadir Programa) de color azul ubicado en la parte superior izquierda
+de la vista al ingresar se desplegará un formulario en donde deberá ingresar el nombre
+del programa, el estado y el área luego dará click en guardar y así el programa se
+creará correctamente.
+
+<h3>Datos a ingresar para poder realizar el respectivo registro</h3>
+Para poder registrar un Programa se necesita la siguiente información Nombre del
+programa, estado, área
+
+<h3>Mockup</h3>
+<Image src={RF20Case} alt="RF20Case" width={3148} height={2270} />
