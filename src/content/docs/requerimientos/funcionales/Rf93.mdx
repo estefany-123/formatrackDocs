@@ -1,7 +1,42 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF93: Gestionar Reportes"
+description: "Este requerimiento permite a los usuarios visualizar, filtrar, generar y descargar reportes del sistema."
 slug: "requerimientos/Rf93"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF93Case from "../../../../assets/requerimientos/reportes.png";
+
+<h3>Descripción</h3>
+
+Este requerimiento permite a los usuarios del sistema acceder a una sección de **reportes** desde el módulo lateral. Desde allí, pueden seleccionar el tipo de reporte a consultar (por ejemplo, elementos por caducar), aplicar diversos filtros y visualizar el resultado en una tabla interactiva. También pueden obtener una **vista previa en PDF** y descargar el informe generado.
+
+<h3>Entradas</h3>
+
+- Tipo de reporte a generar (desde un menú desplegable).
+- Fecha de inicio y fecha fin (para acotar el período de búsqueda).
+- Sitio (ubicación específica del elemento).
+- Nombre del elemento (opcional).
+
+<h3>Instrucciones para gestionar un reporte</h3>
+
+1. Ingrese al módulo lateral izquierdo y seleccione la opción **Reportes**.
+2. En el campo "Seleccionar reporte", escoja el tipo de reporte que desea visualizar (por ejemplo: _Elementos por caducar_).
+3. Aplique los filtros necesarios como fecha, sitio o nombre del elemento.
+4. Presione el botón **Aplicar filtros**.
+5. Verifique los resultados que se muestran en la tabla.
+6. Revise la **vista previa en PDF** que se genera automáticamente.
+7. Haga clic en **Descargar PDF** para obtener el archivo.
+
+<h3>Salidas</h3>
+
+- Visualización en tabla de los resultados del filtro aplicado.
+- Generación automática de un PDF con los datos filtrados.
+- Descarga del archivo PDF desde la interfaz.
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+
+<Image src={RF93Case} alt="RF93Case" width={1015} height={729} />

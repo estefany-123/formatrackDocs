@@ -63,16 +63,28 @@ Este endpoint permite Reestablecer la contraseña de un usuario.
 <Tabs>
   <TabItem label="Status 200">
   ```json
-{
-   
+  {
+    "status": 200,
+    "message": "Contraseña actualizada correctamente"
 }
-  ```
-  </TabItem>
 
-  <TabItem label="Status 400">
-  ```json
+````
+</TabItem>
 
-```
+<TabItem label="Status 400">
+```json
+{
+  "statusCode": 400,
+  "timestamp": "2025-07-10T03:36:02.071Z",
+  "path": "/auth/reset-password?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJkYW5pZWxpdGFob3lvczIwMDBAZ21haWwuY29tIiwiaWF0IjoxNzUwNDI0NDIyLCJleHAiOjE3NTA0MjgwMjJ9.btOKQuM3GwSVQZmefZ7bXiiA2f_y0ZOXENvk9_bqFdw",
+  "response": {
+      "message": "Email confirmation token expired",
+      "error": "Bad Request",
+      "statusCode": 400
+    }
+}
+````
+
 </TabItem>
 </Tabs>
 

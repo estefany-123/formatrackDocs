@@ -1,7 +1,36 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF97: Dar de baja al elemento"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder dar de baja un elemento desde el formulario de movimiento en Formatrack."
 slug: "requerimientos/Rf97"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF97Case from "../../../../assets/requerimientos/dar de baja .png";
+
+<h3>Entradas</h3>- Descripción del movimiento - Hora de ingreso y salida - Tipo de
+bien (Devolutivo o No Devolutivo) - Usuario responsable - Tipo de movimiento: **Dar
+de Baja** - Sitio - Elemento del inventario - Código del elemento seleccionado{" "}
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Descripción</h3>
+Esta funcionalidad permite al administrador registrar la **baja definitiva de un
+elemento** desde el formulario de movimiento. Esta opción está disponible dentro
+del campo **Tipo de Movimiento**, al seleccionar “Dar de Baja”.
+
+Una vez seleccionado, se habilitan los campos correspondientes donde se debe ingresar la información del elemento, junto con su código único.
+
+<h3>Instrucciones para dar de baja un elemento</h3>
+1. Ve al módulo **Bodega** y selecciona **Movimientos** en el menú lateral. 2. Haz
+clic en el botón **Añadir Movimiento**. 3. En el campo **Tipo de Movimiento**, elige
+la opción **Dar de Baja**. 4. Completa los demás campos requeridos del formulario.
+5. Selecciona el código del elemento que será dado de baja. 6. Presiona el botón
+**Guardar** para registrar el cambio.
+
+<h3>Salidas</h3>- El sistema actualiza el estado del elemento a **inactivo**. - Se
+registra un nuevo movimiento de tipo "Dar de Baja". - El elemento ya no se encontrará
+disponible en el inventario activo.
+
+<h3>Mockup</h3>
+<Image src={RF97Case} alt="RF97Case" width={3148} height={2270} />

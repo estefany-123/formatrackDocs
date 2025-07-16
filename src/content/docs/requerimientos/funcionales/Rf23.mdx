@@ -1,5 +1,5 @@
 ---
-title: "RF23: Buscar Programa de Formación "
+title: "RF23 : Buscar Programa de Formación"
 description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf23"
 ---
@@ -7,13 +7,21 @@ slug: "requerimientos/Rf23"
 import { Image } from "astro:assets";
 import RF23Case from "../../../../assets/requerimientos/GET-Pogramas.png";
 
-<h3>Descripción</h3>
-Para poder realizar la respectiva búsqueda del programa de formación en la parte
-superior de la tabla encontrará el filtrado por nombre y el filtrado por fechas en
-donde solo deberá ingresar el valor correspondiente y se realizar el respectivo filtrado
+<h3>Entradas</h3>
+Se deberá ingresar texto en el input de buscar para filtrar los programas por nombre.
+También se podrá filtrar por los programas registrados en un rango de fechas.
 
-<h3>Instrucciones para realizar la busqueda de un Programa </h3>
-Se deberá ingresar el respectivo valor en los inputs ya sea en el filtrado por nombre
-o por fecha
+<h3>Descripción</h3>
+En la vista de programas de formación encontraremos tres inputs en la parte superior
+derecha de la tabla. Uno para ingresar el texto a buscar por nombre del programa,
+y los otros dos para establecer un límite de fechas: fecha de inicio y fecha fin.
+Esto permitirá filtrar la información de forma precisa según los criterios definidos.
+
+<h3>Salidas</h3>
+Información filtrada en la tabla según los criterios establecidos.
+
+<h3>Prioridad</h3>
+Alta
+
 <h3>Mockup</h3>
 <Image src={RF23Case} alt="RF23Case" width={3148} height={2270} />

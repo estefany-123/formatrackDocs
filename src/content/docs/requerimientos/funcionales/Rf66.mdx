@@ -1,7 +1,23 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF66 : Registrar Tipo de Movimiento"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf66"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF66Case from "../../../../assets/requerimientos/registrar tipo de movimiento .png";
+
+<h3>Entradas</h3>
+Se deberá llenar la información correspondiente para el registro del tipo de movimiento como lo son el nombre y el estado.
+
+<h3>Descripción</h3>
+En la vista Tipos de Movimientos, en la parte superior izquierda de la tabla, encontraremos un botón azul el cual debemos seleccionar para que nos despliegue un modal el cual debemos llenar para poder registrar un tipo de movimiento; posteriormente debemos dar en guardar para que el registro sea exitoso.
+
+<h3>Salidas</h3>
+Mensaje de Registro Exitoso y Redireccionamiento al listado de los tipos de movimiento.
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF66Case} alt="RF66Case" width={3148} height={2270} />

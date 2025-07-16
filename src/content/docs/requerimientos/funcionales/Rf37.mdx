@@ -8,14 +8,21 @@ import { Image } from "astro:assets";
 import RF37Case from "../../../../assets/requerimientos/GET-Sitio.png";
 
 <h3>Descripción</h3>
-Para poder realizar el respectivo cambio de estado de un sitio se tendrá que dirigir
-al encabezado de acciones ubicado en la tabla en él encontrará un icono de cesta
-de basura de color rojo al dar click en él se cambiará automáticamente el estado
-del sitio deseada
+Para modificar el estado de un sitio registrado, debe dirigirse a la tabla de sitios
+y ubicar la columna **Acciones**. En dicha columna encontrará un ícono de **cesta
+de basura roja**, el cual deberá seleccionar para cambiar automáticamente el estado
+del sitio (de activo a inactivo o viceversa).
 
-<h3>Instrucciones para Cambiar el Estado de un sitio Específica</h3>
-Para poder realizar la correcta modificación del estado de un sitio en especifico
-debera dirigirse al botón ubicado en la parte derecha en un icono de cesta de basura
-y dar click en este.
+<h3>Instrucciones para cambiar el estado de un sitio específico</h3>
+1. Ingrese a la vista general de sitios. 2. Diríjase a la columna **Acciones** en
+la tabla. 3. Haga clic en el ícono de **cesta de basura** correspondiente al sitio
+que desea modificar. 4. El estado del sitio se cambiará automáticamente.
+
+<h3>Salidas</h3>
+Mensaje de cambio de estado exitoso y actualización inmediata del estado en la tabla.
+
+<h3>Prioridad</h3>
+Alta
+
 <h3>Mockup</h3>
 <Image src={RF37Case} alt="RF37Case" width={3148} height={2270} />

@@ -1,7 +1,30 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF85 : Buscar Rol"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf85"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF85Case from "../../../../assets/requerimientos/GET roles .png";
+
+<h3>Entradas</h3>
+Se deberá ingresar texto en el input de buscar para filtrar los roles por nombre.
+En caso tal también se podrá filtrar los roles que hay registrados en un rango de
+fechas.
+
+<h3>Descripción</h3>
+En la vista de roles encontraremos tres inputs en la parte superior derecha de la
+tabla en donde encontraremos el input de buscar para ingresar el texto correspondiente
+a buscar y en los otros dos input estará para establecer un límite de fechas en la
+cual vamos a filtrar la información. Estas son la fecha de inicio y la fecha fin.
+Podremos filtrar la información que queramos en el rango de fechas que libremente
+definamos y sea más fácil su búsqueda.
+
+<h3>Salidas</h3>
+Información filtrada en la tabla según los criterios establecidos.
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF85Case} alt="RF85Case" width={3148} height={2270} />

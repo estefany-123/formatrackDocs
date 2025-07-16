@@ -3,10 +3,7 @@ title: "Qué es Formatrack"
 description: "Una introducción al sistema de gestión de préstamos e inventario diseñado para el SENA."
 ---
 
-
-
-
-#  ¿Qué es Formatrack?
+# ¿Qué es Formatrack?
 
 **Formatrack es un sistema creado para llevar la trazabilidad de los materiales de formacion del SENA-Yamboro, con el fin de que se pueda tener registros digitales y poder ver todos los movimientos que se le hacen a cada uno de estos elementos, para asi poder tener mas control e informacion de los mismos**
 
@@ -31,6 +28,38 @@ Este sistema está construido con:
 - **Autenticación**: Tokens JWT que ayuda a crear rutas protegidas para mayor seguridad y verificacion de roles.
 
 > "Permite registrar, actualizar, buscar, desactivar y listar elementos como usuarios, solicitudes, movimientos, verificaciones y asignaciones de fichas, todo lo que necesitas en un solo lugar."
+
+---
+
+---
+
+## 🗝️ Claves de Acceso
+
+En este apartado se definen las credenciales básicas necesarias para ingresar y utilizar el sistema Formatrack, así como los datos de autenticación utilizados por el bot de correo del sistema para enviar notificaciones o mensajes automatizados.
+
+### 🧑‍💼 Usuario Administrador por Defecto
+
+El sistema incluye un usuario administrador inicial con los siguientes datos, útil para el primer ingreso al sistema:
+
+```ts
+{
+  idUsuario: 1,
+  documento: 1111111111,
+  nombre: "Admin",
+  estado: true,
+  password: "hola1234",
+  fkRol: { idRol: 1 }
+}
+```
+
+### ✉️ Configuración del Correo para Recuperación de Contraseña
+
+Para permitir que los usuarios puedan recuperar su contraseña, es necesario configurar un correo SMTP. En este caso, se utiliza una cuenta de Gmail dedicada al sistema:
+
+```ts
+MAIL_USER = "formatrackbot@gmail.com";
+MAIL_PASSWORD = "gdjznmobipqgyqzs";
+```
 
 ---
 

@@ -1,7 +1,23 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF77 : Registrar Unidad de Medida"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf77"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF77Case from "../../../../assets/requerimientos/registrar unidad de medida .png";
+
+<h3>Entradas</h3>
+Se deberá llenar la información correspondiente para el registro de la unidad como lo son el nombre y el estado.
+
+<h3>Descripción</h3>
+En la vista Unidades de Medida en la parte superior izquierda de la tabla encontraremos un botón azul el cual debemos seleccionar para que nos despliegue un modal el cual debemos llenar para poder registrar una unidad; posteriormente debemos dar en guardar para que el registro sea exitoso.
+
+<h3>Salidas</h3>
+Mensaje de Registro Exitoso y Redireccionamiento al listado de la unidades.
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF77Case} alt="RF77Case" width={3148} height={2270} />

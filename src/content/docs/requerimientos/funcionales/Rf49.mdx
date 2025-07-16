@@ -1,7 +1,33 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF49 : Listar Municipios"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf49"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF49Case from "../../../../assets/requerimientos/GET municipios .png";
+
+<h3>Entradas</h3>
+Información del Sistema
+
+<h3>Descripción</h3>
+Esta es la vista general de todos los municipios del sistema donde además tiene:
+- Un botón en la parte superior izquierda que es para añadir un municipio - Dentro
+de la tabla se encontrará con dos botones de acciones: un pencil para actualizar
+la información de un municipio y un trash para cambiar el estado - Un botón en la
+parte superior derecha que es para gestionar lo que tiene que ver con los centros
+disponibles, que van relacionados con la tabla de los municipios - Una opción para
+buscar algún municipio específico - Dos filtros para establecer un rango de fechas
+deseado - Una opción de paginación para elegir la cantidad de registros que se quieren
+visualizar{" "}
+
+Este requerimiento hace parte del módulo de admin.
+
+<h3>Salidas</h3>
+Muestra la lista de todos los municipios
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF49Case} alt="RF49Case" width={3148} height={2270} />

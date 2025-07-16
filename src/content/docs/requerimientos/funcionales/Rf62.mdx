@@ -1,7 +1,28 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF62 : Actualizar Inventario"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf62"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF62Case from "../../../../assets/requerimientos/agregar stock 1.1.png";
+
+<h3>Entradas</h3>
+Se modificará el campo estado del elemento en el inventario.
+
+<h3>Descripción</h3>
+Se realizará la modificación de los campos requeridos para la actualización, en este
+caso el stock. Descripción En la vista de inventarios, en las acciones de la tabla
+encontraremos el icono de una caja el cual hace referencia a el stock, entonces cuando
+los elementos en el inventario no requieren de códigos para registrar el stock se
+establecerá el formulario de actualización para este caso y se deberá definir la
+cantidad de stock que posee el elemento.
+
+<h3>Salidas</h3>
+Mensaje de Estado cambiado con éxito.
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF62Case} alt="RF62Case" width={3148} height={2270} />m

@@ -221,7 +221,7 @@ export default defineConfig({
                 { label: "Actualizar Rol", slug: "roles/actualizarRol" },
                 {
                   label: "Cambiar Estado del Rol",
-                  slug: "roles/cambiarEstadoRol",
+                  slug: "roles/estadoRol",
                 },
               ],
             },
@@ -410,16 +410,26 @@ export default defineConfig({
                   label: "Cambiar Estado de Usuario",
                   slug: "usuarios/cambiarEstadoUsuario",
                 },
-                { label: "Eliminar Usuario", slug: "usuarios/eliminarUsuario" },
                 { label: "Iniciar Sesión", slug: "usuarios/login" },
-                { label: "Cerrar Sesión", slug: "usuarios/logout" },
                 {
                   label: "Recuperar Contraseña",
                   slug: "usuarios/recuperarContraseña",
                 },
                 {
+                  label: "Registrar Usuarios Masivamente",
+                  slug: "usuarios/registroMasivo",
+                },
+                {
                   label: "Reestablecer contraseña",
                   slug: "usuarios/reestablecer-contrasena",
+                },
+                {
+                  label: "Obtener Perfil del Usuario",
+                  slug: "usuarios/perfilUsuario",
+                },
+                {
+                  label: "Actualizar Perfil",
+                  slug: "usuarios/actualizarPerfil",
                 },
               ],
             },
@@ -481,6 +491,62 @@ export default defineConfig({
             {
               label: "Requerimientos Funcionales",
               items: [
+                {
+                  label: "Iniciar Sesión",
+                  slug: "requerimientos/Rf01",
+                },
+                {
+                  label: "Cerrar Sesión",
+                  slug: "requerimientos/Rf02",
+                },
+                {
+                  label: "Restablecer Contraseña",
+                  slug: "requerimientos/Rf03",
+                },
+                {
+                  label: " Cambiar Contraseña",
+                  slug: "requerimientos/Rf04",
+                },
+                {
+                  label: "Registrar Usuario",
+                  slug: "requerimientos/Rf05",
+                },
+                {
+                  label: "Actualizar Usuario",
+                  slug: "requerimientos/Rf06",
+                },
+                {
+                  label: "Cambiar estado del Usuario",
+                  slug: "requerimientos/Rf07",
+                },
+                {
+                  label: " Listar Usuarios",
+                  slug: "requerimientos/Rf08",
+                },
+                {
+                  label: " Buscar Usuario",
+                  slug: "requerimientos/Rf09",
+                },
+                {
+                  label: " Registrar Centro",
+                  slug: "requerimientos/Rf10",
+                },
+                {
+                  label: "Actualizar Centro",
+                  slug: "requerimientos/Rf11",
+                },
+                {
+                  label: "Cambiar estado del Centro",
+                  slug: "requerimientos/Rf12",
+                },
+                {
+                  label: "Buscar Centro",
+                  slug: "requerimientos/Rf13",
+                },
+                {
+                  label: "Listar Centros",
+                  slug: "requerimientos/Rf14",
+                },
                 {
                   label: "Registrar áreas",
                   slug: "requerimientos/Rf15",
@@ -582,6 +648,242 @@ export default defineConfig({
                   slug: "requerimientos/Rf39",
                 },
                 {
+                  label: "Registrar tipo de Sitio",
+                  slug: "requerimientos/Rf40",
+                },
+                {
+                  label: "Actualizar tipo de Sitio",
+                  slug: "requerimientos/Rf41",
+                },
+                {
+                  label: "Cambiar estado tipo de Sitio",
+                  slug: "requerimientos/Rf42",
+                },
+                {
+                  label: " Buscar tipo de Sitio",
+                  slug: "requerimientos/Rf43",
+                },
+                {
+                  label: "Listar tipo de Sitio",
+                  slug: "requerimientos/Rf44",
+                },
+                {
+                  label: "Registrar Municipios",
+                  slug: "requerimientos/Rf45",
+                },
+                {
+                  label: "Actualizar Municipio",
+                  slug: "requerimientos/Rf46",
+                },
+                {
+                  label: "Cambiar estado del Municipio",
+                  slug: "requerimientos/Rf47",
+                },
+                {
+                  label: "Buscar Municipio",
+                  slug: "requerimientos/Rf48",
+                },
+                {
+                  label: "Listar Municipios",
+                  slug: "requerimientos/Rf49",
+                },
+                {
+                  label: "Registrar Categorías",
+                  slug: "requerimientos/Rf50",
+                },
+                {
+                  label: "Actualizar Categoría",
+                  slug: "requerimientos/Rf51",
+                },
+                {
+                  label: "Cambiar estado de la Categoría",
+                  slug: "requerimientos/Rf52",
+                },
+                {
+                  label: "Buscar Categoría",
+                  slug: "requerimientos/Rf53",
+                },
+                {
+                  label: "Listar Categorías",
+                  slug: "requerimientos/Rf54",
+                },
+                {
+                  label: "Registrar Elemento o Materiales",
+                  slug: "requerimientos/Rf55",
+                },
+                {
+                  label: "Actualizar Elemento",
+                  slug: "requerimientos/Rf56",
+                },
+                {
+                  label: "Modificar el Estado del  Elemento",
+                  slug: "requerimientos/Rf57",
+                },
+                {
+                  label: "Buscarqueda del  Elemento",
+                  slug: "requerimientos/Rf58",
+                },
+                {
+                  label: "Listar Elementos",
+                  slug: "requerimientos/Rf59",
+                },
+                {
+                  label: "Agregar Stock al  Inventario",
+                  slug: "requerimientos/Rf60",
+                },
+                {
+                  label: "Registrar Elementos en el Inventario",
+                  slug: "requerimientos/Rf61",
+                },
+                {
+                  label: "Actualizar Inventario",
+                  slug: "requerimientos/Rf62",
+                },
+                {
+                  label: "Cambiar Estado del Elemento en el Inventario",
+                  slug: "requerimientos/Rf63",
+                },
+                {
+                  label: "Buscar en el Inventario",
+                  slug: "requerimientos/Rf64",
+                },
+                {
+                  label: "Listar Inventario",
+                  slug: "requerimientos/Rf65",
+                },
+                {
+                  label: "Registrar Tipo de Movimiento",
+                  slug: "requerimientos/Rf66",
+                },
+                {
+                  label: "Actualizar Tipo de Movimiento",
+                  slug: "requerimientos/Rf67",
+                },
+                {
+                  label: "Cambiar Estado del Tipo de Movimiento",
+                  slug: "requerimientos/Rf68",
+                },
+                {
+                  label: "Buscar Tipo de Movimiento",
+                  slug: "requerimientos/Rf69",
+                },
+                {
+                  label: "Listar Tipos de Movimiento",
+                  slug: "requerimientos/Rf70",
+                },
+                {
+                  label: "Registrar Movimiento",
+                  slug: "requerimientos/Rf71",
+                },
+                {
+                  label: "Actualizar Movimiento",
+                  slug: "requerimientos/Rf72",
+                },
+                {
+                  label: " Aceptar Movimiento",
+                  slug: "requerimientos/Rf73",
+                },
+                {
+                  label: "Cancelar Movimiento",
+                  slug: "requerimientos/Rf74",
+                },
+                {
+                  label: " Buscar Movimiento",
+                  slug: "requerimientos/Rf75",
+                },
+                {
+                  label: " Buscar Movimiento",
+                  slug: "requerimientos/Rf75",
+                },
+                {
+                  label: "Listar Movimientos",
+                  slug: "requerimientos/Rf76",
+                },
+                {
+                  label: "Registrar Unidad de Medida",
+                  slug: "requerimientos/Rf77",
+                },
+                {
+                  label: "Actualizar Unidades de Medida",
+                  slug: "requerimientos/Rf78",
+                },
+                {
+                  label: "Cambiar Estado de la Unidad de Medida",
+                  slug: "requerimientos/Rf79",
+                },
+                {
+                  label: "Buscar Unidad de Medida",
+                  slug: "requerimientos/Rf80",
+                },
+                {
+                  label: "Listar Unidades de Medida",
+                  slug: "requerimientos/Rf81",
+                },
+                {
+                  label: "Registrar Rol",
+                  slug: "requerimientos/Rf82",
+                },
+                {
+                  label: "Actualizar Rol",
+                  slug: "requerimientos/Rf83",
+                },
+                {
+                  label: "Cambiar Estado del Rol",
+                  slug: "requerimientos/Rf84",
+                },
+                {
+                  label: "Buscar Rol",
+                  slug: "requerimientos/Rf85",
+                },
+                {
+                  label: "Listar Roles",
+                  slug: "requerimientos/Rf86",
+                },
+                {
+                  label: " Registrar Características",
+                  slug: "requerimientos/Rf87",
+                },
+                {
+                  label: "Actualizar Característica",
+                  slug: "requerimientos/Rf88",
+                },
+                {
+                  label: "Listar Características",
+                  slug: "requerimientos/Rf89",
+                },
+                {
+                  label: "Buscar Característica",
+                  slug: "requerimientos/Rf90",
+                },
+                {
+                  label: "Gestionar Notificaciones",
+                  slug: "requerimientos/Rf91",
+                },
+                {
+                  label: "Configurar Perfil de Usuario",
+                  slug: "requerimientos/Rf92",
+                },
+                {
+                  label: "Gestionar Reportes",
+                  slug: "requerimientos/Rf93",
+                },
+                {
+                  label: "Actualizar Código Inventario",
+                  slug: "requerimientos/Rf94",
+                },
+                {
+                  label: "Listar Código de Inventario",
+                  slug: "requerimientos/Rf95",
+                },
+                {
+                  label: " Registrar Usuarios Masivamente",
+                  slug: "requerimientos/Rf96",
+                },
+                {
+                  label: "Dar de baja al elemento",
+                  slug: "requerimientos/Rf97",
+                },
+                {
                   label: "Asignar Permisos",
                   slug: "requerimientos/Rf98",
                 },
@@ -589,11 +891,12 @@ export default defineConfig({
             },
             {
               label: "Requerimientos No Funcionales",
-              items: [],
-            },
-            {
-              label: "Requerimientos tecnicos",
-              items: [{ label: "Software", slug: "tecnicos/requeriTecni" }],
+              items: [
+                {
+                  label: "Tecnologias Utilizadas",
+                  slug: "tecnologias1",
+                },
+              ],
             },
           ],
         },

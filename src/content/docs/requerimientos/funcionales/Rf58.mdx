@@ -1,7 +1,24 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF58: Buscarqueda del  Elemento"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf58"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF58Case from "../../../../assets/requerimientos/GET-elementos.png";
+
+<h3>Descripción</h3>
+En la vista de elementos encontraremos tres inputs en la parte superior derecha de
+la tabla en donde encontraremos el input de buscar para ingresar el texto correspondiente
+a buscar y en los otros dos input estará para establecer un limite de fechas en la
+cual vamos a filtrar la información. Esta son la fecha de inicio y la fecha fin.
+Podremos filtrar la información que queramos en el rango de fechas que libremente
+definamos y sea más fácil su búsqueda
+
+<h3>Instrucciones para realizar la busqueda de un Elemento </h3>
+Se deberá ingresar texto en el input de buscar para filtrar los elementos por nombre,
+descripción, tipo de elemento. En caso tal también se podrá filtrar los elementos
+que hay registrados en un rango de fechas.
+
+<h3>Mockup</h3>
+<Image src={RF58Case} alt="RF58Case" width={3148} height={2270} />

@@ -1,7 +1,35 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF95: Listar Código de Inventario"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder visualizar los códigos asignados a los elementos dentro del inventario del sistema Formatrack."
 slug: "requerimientos/Rf95"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF95Case from "../../../../assets/requerimientos/listar codigo inventario .png";
+
+<h3>Entradas</h3>- Información generada automáticamente por el sistema al momento
+del registro de los elementos. - Elemento del inventario con sus respectivos códigos
+asignados.
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Descripción</h3>
+En este apartado se podrá visualizar el listado de **códigos únicos asignados** a
+cada elemento registrado en el inventario de un sitio específico.
+
+El administrador podrá consultar dichos códigos dando clic en el botón de color azul ubicado en la columna de acciones de la tabla de inventario. Al hacerlo, se desplegará una ventana emergente que muestra todos los códigos registrados para ese elemento.
+
+Cada código podrá ser **editado** desde este mismo modal, si el administrador lo desea, presionando el botón **Editar** correspondiente a cada campo.
+
+<h3>Instrucciones para listar los códigos de inventario</h3>
+1. Ve al módulo **Bodega > Inventario**. 2. Ubica el elemento deseado en la tabla.
+3. Haz clic en el botón azul con ícono de código. 4. Se abrirá un modal mostrando
+todos los códigos asignados a ese elemento. 5. Para editar un código, da clic en
+el botón **Editar** junto al campo correspondiente.
+
+<h3>Salidas</h3>- Visualización de todos los códigos asignados a los elementos registrados.
+- Posibilidad de editar los códigos directamente desde el modal.
+
+<h3>Mockup</h3>
+<Image src={RF95Case} alt="RF95Case" width={3148} height={2270} />

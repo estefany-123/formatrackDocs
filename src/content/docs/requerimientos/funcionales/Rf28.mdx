@@ -1,5 +1,5 @@
 ---
-title: "RF28: Buscar  Ficha "
+title: "RF28: Buscar Ficha"
 description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf28"
 ---
@@ -7,12 +7,21 @@ slug: "requerimientos/Rf28"
 import { Image } from "astro:assets";
 import RF28Case from "../../../../assets/requerimientos/GET-Fichas.png";
 
+<h3>Entradas</h3>
+Se deberá ingresar texto en el input de búsqueda para filtrar las fichas por código.
+También se podrá filtrar por las fichas registradas dentro de un rango de fechas
+(fecha inicio y fecha fin).
+
 <h3>Descripción</h3>
-Para poder realizar la respectiva búsqueda de la ficha, en la parte superior de la
-tabla encontrará el filtrado por nombre y el filtrado por fechas en donde solo deberá
-ingresar el valor correspondiente y se realizará el respectivo filtrado
-<h3>Instrucciones para realizar la busqueda de una ficha </h3>
-Se deberá ingresar el respectivo valor en los inputs ya sea en el filtrado por nombre
-o por fecha
+En la parte superior derecha de la tabla se encuentran tres inputs: uno para ingresar
+el texto correspondiente al código de la ficha que se desea buscar, y los otros dos
+para establecer un límite de fechas en el cual se filtrará la información.
+
+<h3>Salidas</h3>
+Información filtrada en la tabla según los criterios establecidos.
+
+<h3>Prioridad</h3>
+Alta
+
 <h3>Mockup</h3>
 <Image src={RF28Case} alt="RF28Case" width={3148} height={2270} />

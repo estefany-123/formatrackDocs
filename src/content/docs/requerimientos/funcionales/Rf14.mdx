@@ -1,7 +1,33 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
-slug: "requerimientos/Rf12"
+title: "RF14 : Listar Centros"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+slug: "requerimientos/Rf14"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF14Case from "../../../../assets/requerimientos/GET centros .png";
+
+<h3>Entradas</h3>
+Información del Sistema
+
+<h3>Descripción</h3>
+Esta es la vista general de todos los centros del sistema donde además tiene: - Un
+botón en la parte superior izquierda que es para añadir un centro - Dentro de la
+tabla se encontrará con dos botones de acciones: un ícono de lápiz (pencil) para
+actualizar la información de un centro y un ícono de basura (trash) para cambiar
+el estado - Un botón en la parte superior derecha que es para gestionar lo que tiene
+que ver con las sedes y municipios disponibles que van relacionados con la tabla
+de los centros - En la parte superior de la tabla tiene una opción para buscar algún
+centro específico - Dos filtros para establecer fechas deseadas - Una opción de paginación
+para elegir la cantidad de registros que quiere ver{" "}
+
+Este requerimiento hace parte del módulo de admin.
+
+<h3>Salidas</h3>
+Muestra la lista de todos los centros
+
+<h3>Prioridad</h3>
+Media
+
+<h3>Mockup</h3>
+<Image src={RF14Case} alt="RF14Case" width={3148} height={2270} />

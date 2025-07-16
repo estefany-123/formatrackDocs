@@ -1,7 +1,33 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF94: Actualizar Código Inventario"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder actualizar el código de un inventario."
 slug: "requerimientos/Rf94"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF94Case from "../../../../assets/requerimientos/actualizar codigo inventario .png";
+
+<h3>Descripción</h3>
+Este apartado permite al administrador **actualizar el código de un inventario**
+ya registrado. En la tabla de inventario, cada elemento tiene una opción de edición
+para sus códigos individuales.
+
+Al hacer clic en el botón azul con ícono de lápiz, se abrirá un pequeño formulario donde se puede editar directamente el código del inventario asociado al elemento seleccionado.
+
+<h3>Entradas</h3>- Código actual del inventario (visible en el input) - Nuevo
+código del inventario (a modificar)
+
+<h3>Instrucciones para actualizar un código</h3>
+1. Ingrese a la sección de **Inventario** en el módulo de Bodega. 2. Busque el elemento
+cuyo código desea editar. 3. Haga clic en el botón azul con el ícono de editar (✏️).
+4. Ingrese el nuevo código en el campo correspondiente. 5. Presione el botón **Guardar**
+para confirmar los cambios.
+
+<h3>Salidas</h3>- El código del inventario se actualiza correctamente. - El
+nuevo valor se refleja inmediatamente en la tabla de inventario.
+
+<h3>Prioridad</h3>
+Media
+
+<h3>Mockup</h3>
+<Image src={RF94Case} alt="RF94Case" width={3148} height={2270} />

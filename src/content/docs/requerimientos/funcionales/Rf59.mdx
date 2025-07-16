@@ -1,7 +1,21 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF59:  Listar Elementos"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf59"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF59Case from "../../../../assets/requerimientos/GET-elementos.png";
+
+<h3>Descripción</h3>
+En la vista elementos encontraremos un listado con todos los elementos registrados,
+además también encontraremos en la tabla las opciones de editar y cambia estado del
+elemento, en la parte superior izquierda de la tabla el botón de añadir elemento.
+La tabla cuenta con paginación para mayor recursividad a la hora de listar registros.
+Encontramos en la parte superior derecha el filtrado por texto escrito o por fecha(inputs
+fecha inicio y fecha fin) y finalmente entre el navbar y en la tabla se estableció
+el redireccionamiento a las tabla conectadas con la de elementos y así facilitamos
+el acceso rápido a las demás vistas.
+
+<h3>Mockup</h3>
+<Image src={RF59Case} alt="RF59Case" width={3148} height={2270} />

@@ -1,7 +1,37 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF65 : Listar Inventario"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf65"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF65Case from "../../../../assets/requerimientos/GET inventario 1.1.png";
+
+<h3>Entradas</h3>
+Información del sistema
+
+<h3>Descripción</h3>
+En primera instancia en la vista inicial tenemos que se encuentran todas las áreas
+registradas y ya al seleccionar alguna área aparecerán los sitios que se han registrado
+a esa área y dentro de cada sitio es la vista donde se encuentra la tabla con el
+inventario de ese sitio. En cada una de estas vistas encontramos la tabla con los
+elementos asignados en el inventario del sitio, contiene sus respectivas acciones
+que es el cambio de estado y además también presenta el icono para agregar el stock.
+Posee paginación para mayor recursividad en la organización y el alistamiento de
+los datos, en la parte superior derecha encontramos todo lo relacionado con el filtrado
+de información y además podemos también seleccionar el número de registros que queremos
+visualizar por página de la tabla. Por otro lado, al lado izquierdo encontramos el
+botón de registrar inventario para añadir más elementos a este en caso de requerirlo.
+Y superior a estos establecimos una card con el título de gestión de inventario al
+lado izquierdo y a su lado derecho dos botones de redireccionamiento a las tablas
+que están relacionadas con el inventario, en este caso son sitio y elementos para
+que sea más rápido su registro.
+
+<h3>Salidas</h3>
+Información del sistema.
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF65Case} alt="RF65Case" width={3148} height={2270} />

@@ -71,7 +71,12 @@ Este endpoint permite recuperar la contraseña de un usuario.
 
   <TabItem label="Status 400">
   ```json
-  {message:"Error al recuperar contraseña de usuario"}
+  {
+    "statusCode": 404,
+    "timestamp": "2025-07-10T03:57:18.969Z",
+    "path": "/auth/forgot-password",
+    "response": "No se encontro ningun usuario con el correo danielitahoyos2000@gmail.com"
+}
   ```
   </TabItem>
 </Tabs>

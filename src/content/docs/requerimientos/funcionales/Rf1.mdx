@@ -1,6 +1,27 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
-slug: "requerimientos/Rf1"
+title: "RF01 : Iniciar Sesión"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+slug: "requerimientos/Rf01"
 ---
 
+import { Image } from "astro:assets";
+import RF01Case from "../../../../assets/requerimientos/login .png";
+
+<h3>Entradas</h3>
+Debe permitir iniciar sesión con: Documento, password
+
+<h3>Descripción</h3>
+El usuario debe iniciar sesión en el sistema con su documento y password en los inputs
+para poder acceder a este y a sus funcionalidades según corresponda. En la parte
+posterior también se encuentra el apartado por si olvidó su contraseña y el respectivo
+botón de ingresar. Este requerimiento hace parte del módulo de usuarios.
+
+<h3>Salidas</h3>
+Acceder a la página de inicio del sistema, junto con los módulos a los que tenga
+acceso según su rol y los permisos que este tenga.
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF01Case} alt="RF01Case" width={3148} height={2270} />

@@ -1,7 +1,33 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF89 : Listar Características"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf89"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF89Case from "../../../../assets/requerimientos/GET caracteristicas .png";
+
+<h3>Entradas</h3>
+Información generada por el sistema de registros de características
+
+<h3>Descripción</h3>
+Esta es la vista general de todas las características del sistema donde además tiene:
+- Un botón en la parte superior izquierda que es para añadir una característica -
+Dentro de la tabla se encontrará con dos botones de acciones: un pencil para actualizar
+la información de una característica y un trash para cambiar el estado - Un botón
+en la parte superior derecha que es para gestionar lo que tiene que ver con elementos
+disponibles que van relacionados con la tabla de características - Una opción para
+buscar alguna característica específica - Dos filtros para establecer un rango de
+fechas deseado - Una opción de paginación para elegir la cantidad de registros que
+quiere ver{" "}
+
+Este requerimiento hace parte del módulo de admin.
+
+<h3>Salidas</h3>
+Muestra la lista de todas las características
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF89Case} alt="RF89Case" width={3148} height={2270} />

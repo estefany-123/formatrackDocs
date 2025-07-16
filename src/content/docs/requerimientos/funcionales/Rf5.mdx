@@ -1,7 +1,28 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
-slug: "requerimientos/Rf5"
+title: "RF05 : Registrar Usuario"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+slug: "requerimientos/Rf05"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF05Case from "../../../../assets/requerimientos/Agregar usuarios .png";
+
+<h3>Entradas</h3>
+El administrador podrá registrar un usuario con: Documento, Nombre, Apellido, Edad,
+Teléfono, Correo, Estado, Cargo, Password, Rol
+
+<h3>Descripción</h3>
+Como podemos ver, se encuentra un botón azul en la parte superior izquierda “Añadir
+usuario”. Al hacer clic en este, el administrador verá un modal con los inputs correspondientes
+y con estos podrá registrar un usuario con sus datos básicos al darle en el botón
+de la parte inferior que dice guardar. Este requerimiento hace parte del módulo de
+admin.
+
+<h3>Salidas</h3>
+Muestra la lista de todos los usuarios.
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF05Case} alt="RF05Case" width={3148} height={2270} />

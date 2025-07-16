@@ -1,5 +1,5 @@
 ---
-title: "RF33: Buscar  Sede "
+title: "RF33: Buscar Sede"
 description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf33"
 ---
@@ -7,11 +7,23 @@ slug: "requerimientos/Rf33"
 import { Image } from "astro:assets";
 import RF33Case from "../../../../assets/requerimientos/GET-Sedes.png";
 
+<h3>Entradas</h3>
+Texto a buscar (nombre de la sede) Fechas para filtrar por rango (fecha de inicio
+y fecha fin)
+
 <h3>Descripción</h3>
-Se deberá ingresar el respectivo valor en los inputs ya sea en el filtrado por nombre
-o por fecha Para poder realizar la respectiva búsqueda de la sede, en la parte superior
-de la tabla encontrará el filtrado por nombre y el filtrado por fechas en donde solo
-deberá ingresar el valor correspondiente y se realizará el respectivo filtrado
+Para realizar la búsqueda de una sede específica, debe utilizar los campos de búsqueda
+ubicados en la parte superior derecha de la tabla: - **Filtrado por nombre**: permite
+buscar una sede específica escribiendo su nombre. - **Filtrado por fechas**: permite
+establecer un rango de fechas mediante los inputs de fecha de inicio y fecha fin.
+
+Solo deberá ingresar el valor correspondiente y el sistema filtrará automáticamente los resultados en la tabla.
+
+<h3>Salidas</h3>
+Se muestra la lista de sedes filtradas según los criterios establecidos.
+
+<h3>Prioridad</h3>
+Media
 
 <h3>Mockup</h3>
 <Image src={RF33Case} alt="RF33Case" width={3148} height={2270} />

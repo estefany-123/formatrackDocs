@@ -1,7 +1,26 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF45 : Registrar Municipios"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf45"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF45Case from "../../../../assets/requerimientos/agregar municipios .png";
+
+<h3>Entradas</h3>
+El administrador podrá registrar un municipio con: Nombre, departamento, estado
+
+<h3>Descripción</h3>
+En la parte superior derecha se encuentra un botón “Añadir Municipio” con el cual
+el administrador podrá ver un modal con los inputs para llenar con la información
+de un nuevo municipio y, en la parte inferior, un botón de guardar. Este requerimiento
+hace parte del módulo de admin.
+
+<h3>Salidas</h3>
+Muestra la lista de todos los municipios
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF45Case} alt="RF45Case" width={3148} height={2270} />

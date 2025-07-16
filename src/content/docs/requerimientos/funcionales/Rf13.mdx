@@ -1,7 +1,25 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
-slug: "requerimientos/Rf12"
+title: "RF13 : Buscar Centro"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+slug: "requerimientos/Rf13"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF13Case from "../../../../assets/requerimientos/GET centros .png";
+
+<h3>Entradas</h3>
+El administrador podrá buscar un centro con: Nombre
+
+<h3>Descripción</h3>
+Con ayuda del botón que dice “buscar”, ubicado en la parte superior derecha de la
+tabla, el administrador puede buscar un centro determinado. Este requerimiento hace
+parte del módulo de admin.
+
+<h3>Salidas</h3>
+Muestra la lista de todos los centros
+
+<h3>Prioridad</h3>
+Media
+
+<h3>Mockup</h3>
+<Image src={RF13Case} alt="RF13Case" width={3148} height={2270} />

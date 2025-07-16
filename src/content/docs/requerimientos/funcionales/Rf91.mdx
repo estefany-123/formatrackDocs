@@ -1,7 +1,36 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF91: Gestionar Notificaciones"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder gestionar las notificaciones del sistema Formatrack."
 slug: "requerimientos/Rf91"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF91Case from "../../../../assets/requerimientos/Gestionar notificaciones .png";
+
+<h3>Descripción</h3>
+Este apartado permite al usuario visualizar las notificaciones generadas por el sistema,
+tales como alertas de **stock bajo**, **movimientos registrados** o **cambios importantes**
+en el inventario.
+
+Las notificaciones están agrupadas en una ventana emergente accesible desde el ícono de campana 🔔 ubicado en la parte superior derecha de la interfaz. Al hacer clic en este ícono, se despliega una lista con el historial reciente de notificaciones.
+
+Cada notificación está compuesta por un **título**, un **mensaje descriptivo** y, en algunos casos, el usuario y sitio asociado al evento.
+
+<h3>Entradas</h3>
+No se requieren entradas directas por parte del usuario. Las notificaciones se generan
+automáticamente según eventos del sistema.
+
+<h3>Instrucciones para visualizar las notificaciones</h3>
+1. Dirígete a cualquier sección de la aplicación. 2. Haz clic en el ícono de la campana
+🔔 ubicado en la parte superior derecha. 3. Se desplegará una lista de notificaciones
+recientes. 4. Lee los mensajes para estar al tanto de eventos importantes del sistema.
+
+<h3>Salidas</h3>- El usuario puede visualizar y leer las notificaciones
+recientes. - El sistema actualiza la lista automáticamente cuando ocurren nuevos
+eventos.
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF91Case} alt="RF91Case" width={3148} height={2270} />

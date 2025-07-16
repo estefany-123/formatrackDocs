@@ -1,7 +1,33 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF44 : Listar tipo de Sitio"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf44"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF44Case from "../../../../assets/requerimientos/GET tipo de sitio .png";
+
+<h3>Entradas</h3>
+Información del Sistema
+
+<h3>Descripción</h3>
+Esta es la vista general de todos los tipos de sitios del sistema donde además tiene:
+- Un botón en la parte superior izquierda que es para añadir un tipo de sitio - Dentro
+de la tabla se encontrará con dos botones de acciones: un pencil para actualizar
+la información de un tipo de sitio y un trash para cambiar el estado - Un botón en
+la parte superior derecha que es para gestionar lo que tiene que ver con los sitios
+disponibles, que van relacionados con la tabla de los tipos de sitios - Una opción
+para buscar algún tipo de sitio específico - Dos filtros para establecer un rango
+de fechas deseado - Una opción de paginación para elegir la cantidad de registros
+que se quieren visualizar{" "}
+
+Este requerimiento hace parte del módulo de admin.
+
+<h3>Salidas</h3>
+Muestra la lista de todos los tipos de sitios
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF44Case} alt="RF44Case" width={3148} height={2270} />

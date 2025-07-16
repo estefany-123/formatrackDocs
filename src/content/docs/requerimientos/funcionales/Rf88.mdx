@@ -1,7 +1,26 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF88 : Actualizar Característica"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf88"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF88Case from "../../../../assets/requerimientos/editar catacteristica .png";
+
+<h3>Entradas</h3>
+El administrador podrá actualizar una característica con: Nombre
+
+<h3>Descripción</h3>
+En la parte derecha de la tabla donde se encuentran las características, el administrador
+podrá ver un botón de pencil el cual desplegará un modal con el input de la característica
+seleccionada para que la pueda editar, y en la parte inferior un botón de guardar.
+Este requerimiento hace parte del módulo de admin.
+
+<h3>Salidas</h3>
+Muestra la lista de todas las características
+
+<h3>Prioridad</h3>
+Media
+
+<h3>Mockup</h3>
+<Image src={RF88Case} alt="RF88Case" width={3148} height={2270} />

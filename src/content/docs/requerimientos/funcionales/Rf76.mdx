@@ -1,7 +1,30 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF76 : Listar Movimientos"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf76"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF76Case from "../../../../assets/requerimientos/GET moviminetos .png";
+
+<h3>Entradas</h3>
+Información del Sistema
+
+<h3>Descripción</h3>
+En la vista Movimientos encontraremos un listado con todos los movimientos registrados,
+además también encontraremos en la tabla las opciones de editar y cambiar estado
+del movimiento, en la parte superior izquierda de la tabla el botón de añadir movimientos.
+La tabla cuenta con paginación para mayor recursividad a la hora de listar registros.
+Encontramos en la parte superior derecha el filtrado por texto escrito o por fecha
+(inputs fecha inicio y fecha fin) y finalmente entre el navbar y en la tabla se estableció
+el redireccionamiento a las tablas conectadas con la de elementos y así facilitamos
+el acceso rápido a las demás vistas.
+
+<h3>Salidas</h3>
+Información del sistema
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF76Case} alt="RF76Case" width={3148} height={2270} />

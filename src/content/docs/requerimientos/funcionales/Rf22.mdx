@@ -1,5 +1,5 @@
 ---
-title: "RF22: Modificar el Estado del  Programa"
+title: "RF22 : Modificar el Estado del Programa"
 description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf22"
 ---
@@ -7,13 +7,20 @@ slug: "requerimientos/Rf22"
 import { Image } from "astro:assets";
 import RF22Case from "../../../../assets/requerimientos/GET-Pogramas.png";
 
-<h3>Descripción</h3>
-En este apartado se podrá cambiar el estado de las diferentes áreas creadas en donde
-solo deberá dar click en el icono de basura y automáticamente cambiará su estado.
+<h3>Entradas</h3>
+Se modificará el estado del programa.
 
-<h3>Instrucciones para Cambiar el Estado de un Pograma Específica</h3>
-Para poder realizar la correcta modificación del estado de una área en especifico
-debera dirigirse al botón ubicado en la parte derecha en un icono de cesta de basura
-y dar click en este.
+<h3>Descripción</h3>
+En la tabla que se encuentra en la vista de programas, en las acciones hay un icono
+que permite cambiar el estado del programa. Este icono es una caneca de basura que
+se muestra cuando el programa está activo. Al desactivarlo, cambiará a un icono de
+un chile verde.
+
+<h3>Salidas</h3>
+Mensaje de estado cambiado con éxito.
+
+<h3>Prioridad</h3>
+Alta
+
 <h3>Mockup</h3>
 <Image src={RF22Case} alt="RF22Case" width={3148} height={2270} />

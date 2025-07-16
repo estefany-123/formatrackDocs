@@ -1,7 +1,26 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF10 : Registrar Centro"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf10"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF10Case from "../../../../assets/requerimientos/agergar centros.png";
+
+<h3>Entradas</h3>
+El administrador podrá registrar un centro con: Nombre, estado y municipio
+
+<h3>Descripción</h3>
+En la parte superior derecha se encuentra un botón “Añadir centro” con el cual el
+usuario podrá ver un modal con los inputs para llenar con la información de un nuevo
+centro y en la parte inferior un botón de guardar. Este requerimiento hace parte
+del módulo de admin.
+
+<h3>Salidas</h3>
+Muestra la lista de todos los centros
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF10Case} alt="RF10Case" width={3148} height={2270} />

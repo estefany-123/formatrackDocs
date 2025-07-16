@@ -1,7 +1,22 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF61 : Registrar Elementos en el Inventario"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf61"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF61Case from "../../../../assets/requerimientos/registrar elemento 1.1.png";
+
+<h3>Descripción</h3>
+En la vista de Inventarios encontraremos un botón en la parte superior izquierda
+y al dar click en este se desplegará un modal donde debemos llenar los campos con
+la información correspondiente para el registro luego al final deberá darle al botón
+de guardar para que el registro sea exitoso y finalmente se añadirá el elemento al
+listado.
+
+<h3>Datos a ingresar para poder realizar el respectivo registro</h3>
+Se deberá llenar la información correspondiente para el registro de un elemento en
+el inventario como el stock( en caso tal de no requerir códigos), el estado, el sitio
+y el elemento que va a asignar a ese sitio en el inventario.
+<h3>Mockup</h3>
+<Image src={RF61Case} alt="RF61Case" width={3148} height={2270} />

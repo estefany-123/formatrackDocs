@@ -1,7 +1,43 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF92: Configurar Perfil de Usuario"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder configurar su perfil de usuario en Formatrack."
 slug: "requerimientos/Rf92"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF92Case from "../../../../assets/requerimientos/perfil.png";
+import RF92Case2 from "../../../../assets/requerimientos/editar perfil .png";
+
+<h3>Entradas</h3>
+Edad, Teléfono, Correo electrónico (y otros datos según los permisos del rol).
+
+<h3>Descripción</h3>
+Este apartado permite al usuario visualizar y actualizar su perfil dentro del sistema.
+La vista de perfil muestra los siguientes datos:
+
+- Rol del usuario (ej. Administrador)
+- Nombre completo
+- Documento
+- Edad
+- Teléfono
+- Correo electrónico
+
+Además, en la parte superior derecha del cuadro de perfil se encuentra un botón con el ícono de lápiz ✏️. Al hacer clic sobre él, se despliega un formulario que permite **editar los datos personales** del usuario (edad, teléfono, correo, etc.).
+
+<h3>Datos que se pueden actualizar</h3>- Edad - Teléfono - Correo electrónico -
+(Otros datos opcionales dependiendo de los permisos del rol)
+
+<h3>Instrucciones para editar el perfil</h3>
+1. Dirígete a la sección "Home" del menú lateral izquierdo. 2. Haz clic en el botón
+de lápiz en la parte superior derecha del perfil. 3. Actualiza los campos deseados.
+4. Haz clic en el botón **Guardar** para confirmar los cambios.
+
+<h3>Salidas</h3>- Perfil actualizado correctamente. - Los datos modificados se
+reflejan de inmediato en la vista principal del perfil.
+
+<h3>Prioridad</h3>
+Media
+
+<h3>Mockup</h3>
+<Image src={RF92Case} alt="RF92Case" width={3148} height={2270} />
+<Image src={RF92Case2} alt="RF92Case2" width={3148} height={2270} />

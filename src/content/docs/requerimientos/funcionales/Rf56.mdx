@@ -1,7 +1,23 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF56 : Actualizar Elemento"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf56"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF56Case from "../../../../assets/requerimientos/PATCH-elementos.png";
+
+<h3>Descripción</h3>
+En la tabla de la vista de elementos, exactamente en la tabla donde están los elementos
+registros encontramos en la parte derecha una columna de acciones entre ellas vamos
+a encontrar un icono de lápiz al cual debemos dar click para poder acceder al formulario
+y actualizar la información del elementos. Esta actualización si vemos la necesidad
+la actualizamos toda sino solo de los campos que consideremos necesarios y damos
+click en guardar para que se actualicen con éxito.
+
+<h3>Datos a ingresar para poder realizar la respectivo Actualización</h3>
+Para poder realizar la actualización se deberá permitir la modificación de la información
+del elemento como el nombre, la descripción, la imagen{" "}
+
+<h3>Mockup</h3>
+<Image src={RF56Case} alt="RF56Case" width={3148} height={2270} />

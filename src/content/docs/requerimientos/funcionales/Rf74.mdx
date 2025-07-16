@@ -1,7 +1,49 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF74: Cancelar Movimiento"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder cancelar un movimiento en el sistema."
 slug: "requerimientos/Rf74"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF74Case from "../../../../assets/requerimientos/aceptar o rechazar movimiento .png";
+
+<h3>Descripción</h3>
+Este apartado permite a los usuarios **rechazar** o **cancelar** un movimiento que
+no cumple con las condiciones esperadas.
+
+Desde la vista principal del sistema (Home), los movimientos pendientes se listan. Al seleccionar uno de estos, se abre una ventana emergente con el detalle completo del movimiento, incluyendo:
+
+- Tipo de movimiento
+- Elemento
+- Cantidad solicitada
+- Usuario solicitante
+- Estado actual del movimiento
+- Descripción del movimiento
+
+El botón **Rechazar** de color rojo, ubicado en la parte inferior derecha de la ventana emergente, permite **cancelar el movimiento** tras revisar sus detalles.
+
+<h3>Entradas</h3>
+
+- ID del movimiento
+- Estado actual del movimiento (pendiente)
+- Acción tomada: cancelar o rechazar
+
+<h3>Instrucciones para cancelar un movimiento</h3>
+1. Ingresa a la sección **Home** desde el menú lateral. 2. En la tabla de **Últimos
+Movimientos** o el gráfico de **Movimientos por Estado**, identifica los movimientos
+pendientes. 3. Haz clic sobre el movimiento que deseas rechazar. 4. En la ventana
+emergente, revisa la información del movimiento. 5. Presiona el botón rojo **Rechazar**
+para cancelar el movimiento. 6. El sistema actualizará el estado del movimiento a
+**Rechazado** o **Cancelado**.
+
+<h3>Salidas</h3>
+
+- El estado del movimiento cambia correctamente.
+- La acción queda registrada y reflejada en la interfaz del sistema.
+- El movimiento no será ejecutado.
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF74Case} alt="RF74Case" width={3148} height={2270} />

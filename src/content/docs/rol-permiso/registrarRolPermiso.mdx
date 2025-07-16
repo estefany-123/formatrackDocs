@@ -55,23 +55,21 @@ Este endpoint permite registrar un rol-permiso con los datos proporcionados.
 Para agilizar la creacion de nuevos rol-permiso te ofrecemos estos endpoints de apoyo para que puedas consultar y obtener el ID unico tando de permiso como de rol, los cuales son necesarias para crear tu rol-permiso.
 
 <li>
-  <a href="/permisos/listarPermisos">Permido</a>
+  <a href="/permisos/listarPermisos">Permiso</a>
 </li>
 <li>
-  <a href="/usuario/listarUsuarios">Rol</a> //falta por agregar la direccion aun
-  no esta creada la vista
+  <a href="/roles/listarRoles">Roles</a>
 </li>
 
 <h3>Parametros del cuerpo</h3>
 
-| Parametro y Tipo | Descripcion |
-| ---------------- | ----------- |
-
-| fkPermiso (number) ID del permiso al cual pertenece el rol permiso proximo a crear|
-| fkRol (number) ID del rol al cual pertenece el rol permiso |
-| estado (boolean) | Si se encuentra activo o inactiva el area |
-| createdAt (date) | fecha de creació del area.Esta se crea automaticamente |
-| updatedAt (date) | fecha de actualización del area.Esta se crea automaticamente |
+| Parametro y Tipo   | Descripcion                                                     |
+| ------------------ | --------------------------------------------------------------- |
+| fkPermiso (number) | ID del permiso al cual pertenece el rol permiso proximo a crear |
+| fkRol (number)     | ID del rol al cual pertenece el rol permiso                     |
+| estado (boolean)   | Si se encuentra activo o inactiva el area                       |
+| createdAt (date)   | fecha de creació del area.Esta se crea automaticamente          |
+| updatedAt (date)   | fecha de actualización del area.Esta se crea automaticamente    |
 
 ### Body
 

@@ -1,7 +1,37 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF96: Registrar Usuarios Masivamente"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder registrar usuarios de forma masiva en el sistema."
 slug: "requerimientos/Rf96"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF96Case from "../../../../assets/requerimientos/registro masivo .png";
+
+<h3>Descripción</h3>
+Este apartado permite al administrador registrar múltiples usuarios de forma masiva
+por medio de un archivo de Excel. Esta funcionalidad facilita el ingreso de grandes
+cantidades de datos sin necesidad de registros individuales.
+
+Desde el módulo de usuarios, encontrará un botón llamado **"Subir masivamente"** con el cual podrá descargar una plantilla en Excel. Esta plantilla deberá ser llenada con la información correspondiente a cada usuario.
+
+Una vez completada, podrá volver al sistema y **cargar el archivo**. Al hacer clic en el botón **"Crear usuarios"**, se procesará el archivo y se registrarán todos los usuarios indicados.
+
+<h3>Entradas</h3>
+El archivo Excel debe contener las siguientes columnas: - Documento - Nombre - Apellido
+- Edad - Teléfono - Correo - Estado - Cargo{" "}
+
+<h3>Instrucciones</h3>
+1. Haga clic en el botón **"Subir masivamente"** para descargar la plantilla Excel.
+2. Complete la plantilla con la información de los usuarios. 3. Vuelva al sistema
+y cargue el archivo. 4. Haga clic en **"Crear usuarios"** para completar el registro
+masivo.{" "}
+
+<h3>Salidas</h3>- Se muestra la lista de todos los usuarios registrados
+correctamente. - En caso de errores en el archivo, se notificará qué usuarios no
+fueron procesados.
+
+<h3>Prioridad</h3>
+Media
+
+<h3>Mockup</h3>
+<Image src={RF96Case} alt="RF96Case" width={3148} height={2270} />

@@ -1,7 +1,30 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF80 : Buscar Unidad de Medida"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf80"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF80Case from "../../../../assets/requerimientos/GET unidades de medida .png";
+
+<h3>Entradas</h3>
+Se deberá ingresar texto en el input de buscar para filtrar las unidades por nombre.
+En caso tal también se podrá filtrar las unidades que hay registrados en un rango
+de fechas.
+
+<h3>Descripción</h3>
+En la vista Unidades de Medida encontraremos tres inputs en la parte superior derecha
+de la tabla en donde encontraremos el input de buscar para ingresar el texto correspondiente
+a buscar y en los otros dos input estará para establecer un límite de fechas en la
+cual vamos a filtrar la información. Estas son la fecha de inicio y la fecha fin.
+Podremos filtrar la información que queramos en el rango de fechas que libremente
+definamos y sea más fácil su búsqueda.
+
+<h3>Salidas</h3>
+Información filtrada en la tabla según los criterios establecidos.
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF80Case} alt="RF80Case" width={3148} height={2270} />

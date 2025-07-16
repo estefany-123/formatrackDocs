@@ -1,7 +1,24 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
-slug: "requerimientos/Rf4"
+title: "RF04 : Cambiar Contraseña"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+slug: "requerimientos/Rf04"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF04Case from "../../../../assets/requerimientos/RF4 contraseña.png";
+
+<h3>Entradas</h3>
+El usuario podrá cambiar la contraseña con: Antigua contraseña, Nueva contraseña
+
+<h3>Descripción</h3>
+El usuario podrá cambiar su contraseña en caso de que así lo desee, con su antigua
+contraseña y su nueva contraseña. Este requerimiento hace parte del módulo de usuarios.
+
+<h3>Salidas</h3>
+Vuelve al Login
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF04Case} alt="RF04Case" width={3148} height={2270} />

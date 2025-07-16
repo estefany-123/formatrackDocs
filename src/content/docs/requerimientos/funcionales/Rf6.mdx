@@ -1,7 +1,27 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
-slug: "requerimientos/Rf6"
+title: "RF06 : Actualizar Usuario"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+slug: "requerimientos/Rf06"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF06Case from "../../../../assets/requerimientos/editar usuarios .png";
+
+<h3>Entradas</h3>
+El administrador podrá actualizar un usuario con: Nombre, Apellido, Edad, Teléfono,
+Correo, Cargo
+
+<h3>Descripción</h3>
+El administrador podrá ver un icono de un lápiz con el cual podrá ver los datos del
+usuario seleccionado y, en el modal que le aparece, estarán los inputs con la información
+modificable. En la parte inferior estará el botón de guardar. Este requerimiento
+hace parte del módulo de admin.
+
+<h3>Salidas</h3>
+Muestra la lista de todos los usuarios.
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF06Case} alt="RF06Case" width={3148} height={2270} />

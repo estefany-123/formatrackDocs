@@ -1,7 +1,48 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF73: Aceptar Movimiento"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder aceptar un movimiento en el sistema."
 slug: "requerimientos/Rf73"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF73Case from "../../../../assets/requerimientos/aceptar o rechazar movimiento .png";
+
+<h3>Descripción</h3>
+Este apartado permite a los usuarios autorizados **visualizar el detalle de un movimiento**
+y **aceptarlo** si cumple con las condiciones establecidas por el sistema.
+
+Desde la vista principal (Home), los movimientos pendientes se listan y pueden ser gestionados. Al hacer clic sobre un movimiento, se despliega una ventana emergente con todos los detalles del mismo:
+
+- Tipo de movimiento
+- Elemento involucrado
+- Cantidad
+- Usuario que realizó la solicitud
+- Estado actual
+- Descripción del movimiento
+
+En la parte inferior de esta ventana emergente se presentan dos botones: **Aceptar** y **Rechazar**, permitiendo al responsable gestionar la solicitud.
+
+<h3>Entradas</h3>
+
+- Identificador del movimiento
+- Estado previo del movimiento (pendiente)
+- Decisión tomada (Aceptar)
+
+<h3>Instrucciones para aceptar un movimiento</h3>
+1. Dirígete a la sección **Home** del sistema. 2. Revisa la tabla **Últimos Movimientos**
+o la gráfica de **Movimientos por Estado**. 3. Haz clic sobre el movimiento pendiente
+que desees revisar. 4. Verifica los detalles del movimiento en la ventana emergente.
+5. Si todo está correcto, presiona el botón verde **Aceptar**. 6. El estado del movimiento
+cambiará a “Aceptado” y será registrado en el sistema.
+
+<h3>Salidas</h3>
+
+- El estado del movimiento cambia a **Aceptado**.
+- La vista principal se actualiza reflejando el nuevo estado.
+- Puede generarse una notificación o registro en el historial.
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF73Case} alt="RF73Case" width={3148} height={2270} />

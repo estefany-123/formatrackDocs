@@ -1,5 +1,5 @@
 ---
-title: "RF32: Modificar el Estado de la sede"
+title: "RF32: Modificar el Estado de la Sede"
 description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf32"
 ---
@@ -7,16 +7,26 @@ slug: "requerimientos/Rf32"
 import { Image } from "astro:assets";
 import RF32Case from "../../../../assets/requerimientos/GET-Sedes.png";
 
-<h3>Descripción</h3>
-Para poder editar una sede correctamente deberemos desplazarnos a la parte derecha
-de la tabla en donde encontraremos una columna que tiene por nombre acciones allí
-nos ubicaremos en un icono de lapis de color azul al dar click en este se desplegara
-el formulario con los respectivos campos, cual termine de modificar los campos deseados
-dará click en guardar y finalmente se actualizara la ficha.
+<h3>Entradas</h3>
+Se modificará el campo estado de la sede seleccionada.
 
-<h3>Instrucciones para Cambiar el Estado de una sede  Específica</h3>
-Para poder realizar la correcta modificación del estado de una ficha en especifico
-debera dirigirse al botón ubicado en la parte derecha en un icono de cesta de basura
-y dar click en este.
+<h3>Descripción</h3>
+En la tabla de sedes, en la columna **"Acciones"**, encontrará un ícono con forma
+de **cesta de basura**. Este ícono representa la acción para cambiar el estado de
+la sede: - Si la sede está activa, al hacer clic en el ícono pasará a estado inactivo.
+- Si la sede está inactiva, el ícono cambiará a uno con forma de chile verde y al
+hacer clic se activará nuevamente.{" "}
+
+<h3>Instrucciones para Cambiar el Estado de una Sede Específica</h3>
+Diríjase al ícono de la **cesta de basura** ubicado en la parte derecha de la tabla
+dentro de la columna acciones y haga clic en él. Automáticamente se modificará el
+estado de la sede.
+
+<h3>Salidas</h3>
+Mensaje de estado cambiado con éxito y actualización de la lista de sedes.
+
+<h3>Prioridad</h3>
+Media
+
 <h3>Mockup</h3>
 <Image src={RF32Case} alt="RF32Case" width={3148} height={2270} />

@@ -1,7 +1,26 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF87 : Registrar Características"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf87"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF87Case from "../../../../assets/requerimientos/registrar caracteristicas .png";
+
+<h3>Entradas</h3>
+El administrador podrá registrar una característica con: Nombre, código, elemento
+
+<h3>Descripción</h3>
+En la parte superior derecha se encuentra un botón “Añadir Característica” con el
+cual el administrador podrá ver un modal con los inputs para llenar con la información
+de una nueva característica y, en la parte inferior, un botón de guardar. Este requerimiento
+hace parte del módulo de admin.
+
+<h3>Salidas</h3>
+Muestra la lista de todas las características
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF87Case} alt="RF87Case" width={3148} height={2270} />

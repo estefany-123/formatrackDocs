@@ -1,7 +1,25 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
-slug: "requerimientos/Rf3"
+title: "RF03 : Restablecer Contraseña"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+slug: "requerimientos/Rf03"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF03Case from "../../../../assets/requerimientos/RF3 contraseña.png";
+
+<h3>Entradas</h3>
+El usuario podrá restablecer la contraseña con: Email, Código de seguridad
+
+<h3>Descripción</h3>
+El usuario podrá restablecer su contraseña en caso de haberla olvidado, con su email
+y el código de seguridad que será enviado a su correo. Este requerimiento hace parte
+del módulo de usuarios.
+
+<h3>Salidas</h3>
+Vuelve a la vista del Login
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF03Case} alt="RF03Case" width={3148} height={2270} />

@@ -4,7 +4,6 @@ description: "Un resumen final sobre el propósito y valor de Formatrack como si
 slug: "formatrack/conclusion"
 ---
 
-
 **"En conclusión, Formatrack se presenta como una solución integral y personalizada para la gestión de préstamos e inventario del SENA, optimizando el control de activos como equipos tecnológicos y recursos mediante una API RESTful robusta construida con Node.js, Express y PostgreSQL."**
 
 ---

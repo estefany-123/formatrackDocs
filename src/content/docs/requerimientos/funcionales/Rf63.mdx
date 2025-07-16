@@ -1,7 +1,26 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF63 : Cambiar Estado del Elemento en el Inventario"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf63"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF63Case from "../../../../assets/requerimientos/GET inventario 1.1.png";
+
+<h3>Entradas</h3>
+Se modificará el campo estado del elemento en el inventario.
+
+<h3>Descripción</h3>
+En la tabla que encontramos en la vista de inventario en las acciones hay un icono
+que nos permite el cambio de estado, es el de la caneca de basura el cual se muestra
+cuando el elemento del inventario se encuentra activado y en caso contrario al desactivarlo
+se va a cambiar a un icono de un chilito verde.
+
+<h3>Salidas</h3>
+Mensaje de Estado cambiado con éxito.
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF63Case} alt="RF63Case" width={3148} height={2270} />

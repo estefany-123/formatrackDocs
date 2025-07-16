@@ -1,7 +1,21 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF57: Modificar el Estado del  Elemento"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf57"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF57Case from "../../../../assets/requerimientos/GET-elementos.png";
+
+<h3>Descripción</h3>
+En la tabla donde encontramos los diferentes registros de los elementos. En la parte
+derecha hay una columna llamada Acciones y en esta lo que vamos a encontrar es que
+hay una icono de basura y al ar click en este va a cambiar el estado al igual que
+de icono a un chulito de bien, activo significa que se muestra la basurita y viceversa.{" "}
+
+<h3>Instrucciones para Cambiar el Estado de un Elemento Específico</h3>
+Para poder realizar la correcta modificación del estado de una elemento en especifico
+debera dirigirse al botón ubicado en la parte derecha en un icono de cesta de basura
+y dar click en este.
+<h3>Mockup</h3>
+<Image src={RF57Case} alt="RF57Case" width={3148} height={2270} />

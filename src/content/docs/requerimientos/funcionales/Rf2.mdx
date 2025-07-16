@@ -1,7 +1,25 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
-slug: "requerimientos/Rf2"
+title: "RF02 : Cerrar Sesión"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+slug: "requerimientos/Rf02"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF02Case from "../../../../assets/requerimientos/cerara sesion .png";
+
+<h3>Entradas</h3>
+Para cerrar la sesión se dirige al sidebar, en la parte inferior derecha encontrará
+un icono de una flecha. Al dar click en este, su sesión se cerrará automáticamente.
+
+<h3>Descripción</h3>
+El usuario puede cerrar sesión en el sistema. Este requerimiento hace parte del módulo
+de usuarios.
+
+<h3>Salidas</h3>
+Vuelve a la vista del Login
+
+<h3>Prioridad</h3>
+Media
+
+<h3>Mockup</h3>
+<Image src={RF02Case} alt="RF02Case" width={3148} height={2270} />

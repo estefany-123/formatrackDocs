@@ -1,7 +1,24 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF55 : Registrar Elemento o Materiales"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf55"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF15Case from "../../../../assets/requerimientos/POST-elementos.png";
+
+<h3>Descripción</h3>
+En la vista de elementos nos vamos a ubicar en la parte superior derecha, podemos
+visualizar un botón azul en cual al dar click nos mostrara el respectivo formulario
+en un modal para llevar cabo el registro de un nuevo material ; para ello debemos
+llenar el formulario según la información que nos pida. Finalmente debemos dar click
+en el botón de guardar par que se añada exitosamente el elemento al listado.
+
+<h3>Datos a ingresar para poder realizar el respectivo registro</h3>
+Se deberá llenar la información correspondiente para el registro del elemento como
+lo son el nombre, descripción, el tipo de elemento, el estado, una imagen, la fecha
+de vencimiento va a depender del tipo de elemento, la fecha de uso, la unidad de
+medida a la cual pertenece, la categoría y la característica si la posee.{" "}
+
+<h3>Mockup</h3>
+<Image src={RF15Case} alt="RF15Case" width={3148} height={2270} />

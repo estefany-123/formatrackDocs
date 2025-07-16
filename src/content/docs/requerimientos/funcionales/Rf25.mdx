@@ -7,16 +7,21 @@ slug: "requerimientos/Rf25"
 import { Image } from "astro:assets";
 import RF25Case from "../../../../assets/requerimientos/POST-Ficha.png";
 
+<h3>Entradas</h3>
+Código de ficha, estado, programa
+
 <h3>Descripción</h3>
 Para poder realizar el respectivo registro de una ficha se deberá ingresar en el
-botón (añadir Ficha) de color azul ubicado en la parte superior izquierda al ingresar
-se desplegará un formulario en donde deberán llenar los siguientes campos Código
-de ficha, estado, programa, luego dará click en guardar y así la ficha se creará
-correctamente.
+botón “Añadir Ficha” de color azul ubicado en la parte superior izquierda. Al hacer
+clic se desplegará un formulario en donde deberán llenarse los siguientes campos:
+código de ficha, estado y programa. Una vez diligenciados, se dará clic en el botón
+“Guardar” para completar el registro exitosamente.
 
-<h3>Datos a ingresar para poder realizar el respectivo registro</h3>
-Para poder registrar una ficha se necesita la siguiente información Código de ficha,
-estado, programa{" "}
+<h3>Salidas</h3>
+Mensaje de Registro Exitoso y redireccionamiento a la tabla de fichas.
+
+<h3>Prioridad</h3>
+Alta
 
 <h3>Mockup</h3>
 <Image src={RF25Case} alt="RF25Case" width={3148} height={2270} />

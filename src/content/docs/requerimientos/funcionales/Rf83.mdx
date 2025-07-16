@@ -1,7 +1,27 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF83 : Actualizar Rol"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf83"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF83Case from "../../../../assets/requerimientos/editar roles .png";
+
+<h3>Entradas</h3>
+Se modificarán los campos que se pueden actualizar, en este caso es el nombre.
+
+<h3>Descripción</h3>
+En la vista Roles encontramos en la tabla, en acciones, un botón con un icono de
+lápiz el cual debemos seleccionar para que se despliegue el modal con el formulario
+de actualización para la respectiva modificación en caso de ser necesario y luego
+debe dar click en el botón guardar para que la información que se cambió se guarde
+con éxito en la tabla.
+
+<h3>Salidas</h3>
+Mensaje de Actualización Exitosa y Redireccionamiento a la tabla roles.
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF83Case} alt="RF83Case" width={3148} height={2270} />

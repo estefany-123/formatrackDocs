@@ -1,7 +1,30 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF71 : Registrar Movimiento"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf71"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF71Case from "../../../../assets/requerimientos/registrar moviminetos .png";
+
+<h3>Entradas</h3>
+Se deberá llenar la información correspondiente para el registro de los movimientos
+como la descripción, la cantidad, hora de ingreso, hora de salida, la fecha de préstamo,
+el tipo de uso, la fecha de devolución, el lugar de destino, el usuario que va a
+realizar el movimiento, el tipo de movimiento que va a realizar, el sitio del cual
+se realiza y el elemento el cual se le dará movimiento desde el inventario.
+
+<h3>Descripción</h3>
+En la vista Tipos de Movimientos en la parte superior izquierda de la tabla encontraremos
+un botón azul el cual debemos seleccionar para que nos despliegue un modal el cual
+debemos llenar para poder registrar un tipo de movimiento; posteriormente debemos
+dar en guardar para que el registro sea exitoso.
+
+<h3>Salidas</h3>
+Mensaje de Registro Exitoso y Redireccionamiento al listado de los movimientos.
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF71Case} alt="RF71Case" width={3148} height={2270} />

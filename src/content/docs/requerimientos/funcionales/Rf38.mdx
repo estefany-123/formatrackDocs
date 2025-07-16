@@ -1,5 +1,5 @@
 ---
-title: "RF38: Buscar  Sitio "
+title: "RF38: Buscar Sitio"
 description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf38"
 ---
@@ -8,8 +8,23 @@ import { Image } from "astro:assets";
 import RF38Case from "../../../../assets/requerimientos/GET-Sitio.png";
 
 <h3>Descripción</h3>
-Para poder realizar la respectiva búsqueda del sitio, en la parte superior de la
-tabla encontrará el filtrado por nombre y el filtrado por fechas en donde solo deberá
-ingresar el valor correspondiente y se realizará el respectivo filtrado
+Para realizar la búsqueda de un sitio específico, diríjase a la parte superior derecha
+de la tabla. Allí encontrará tres campos: - Un input para ingresar el nombre del
+sitio. - Dos campos para establecer un **rango de fechas** (fecha de inicio y fecha
+fin).
+
+Una vez completado cualquiera de estos campos, el sistema filtrará automáticamente la información de los sitios que coincidan con los criterios ingresados.
+
+<h3>Instrucciones para realizar la búsqueda</h3>
+1. Ingrese un valor en el campo de búsqueda por nombre, o 2. Establezca un rango
+de fechas en los campos correspondientes. 3. El sistema mostrará únicamente los sitios
+que cumplan con el criterio ingresado.
+
+<h3>Salidas</h3>
+Visualización de los resultados filtrados en la tabla según los criterios establecidos.
+
+<h3>Prioridad</h3>
+Alta
+
 <h3>Mockup</h3>
 <Image src={RF38Case} alt="RF38Case" width={3148} height={2270} />

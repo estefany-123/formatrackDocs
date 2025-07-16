@@ -1,7 +1,25 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
-slug: "requerimientos/Rf7"
+title: "RF07 : Cambiar estado del Usuario"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+slug: "requerimientos/Rf07"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF07Case from "../../../../assets/requerimientos/GET  usuarios .png";
+
+<h3>Entradas</h3>
+Se modificará el campo estado del usuario.
+
+<h3>Descripción</h3>
+El administrador podrá ver un icono de una basura con el cual podrá modificar el
+estado del usuario (si está activo pasa a inactivo y viceversa). Este requerimiento
+hace parte del módulo de admin.
+
+<h3>Salidas</h3>
+Muestra la lista de todos los usuarios.
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF07Case} alt="RF07Case" width={3148} height={2270} />

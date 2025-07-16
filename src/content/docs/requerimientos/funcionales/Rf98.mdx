@@ -1,21 +1,45 @@
 ---
-title: "RF98 : Asignar Permisos"
-description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF98: Asignar Permisos"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder asignar permisos a los roles dentro del sistema."
 slug: "requerimientos/Rf98"
 ---
 
 import { Image } from "astro:assets";
 import RF98Case from "../../../../assets/requerimientos/POST-Permisos.png";
 
+<h3>Entradas</h3>- Rol seleccionado - Permisos a asignar (checkbox) - Estado
+(Activo/Inactivo)
+
+<h3>Prioridad</h3>
+Alta
+
 <h3>Descripción</h3>
-En este apartado, se presenta un botón azul con la etiqueta "Asignar" ubicado en
-la parte derecha de la tabla de roles. Al hacer clic sobre este botón, se despliega
-un modal (ventana emergente) que permite configurar los permisos disponibles para
-el rol seleccionado.
+En esta vista, el administrador podrá **asignar permisos específicos a los roles**
+del sistema. Desde la tabla de roles, se encuentra un botón azul con el texto “Asignar”
+en la columna de acciones. Al dar clic en este botón, se abrirá un modal emergente
+con una lista de permisos disponibles en forma de checkboxes.
 
-Dentro del modal, se muestran múltiples opciones organizadas en forma de checkboxes, correspondientes a los diferentes módulos o funcionalidades del sistema. El usuario podrá marcar aquellas opciones que desee habilitar para el rol en cuestión, permitiendo así el acceso a vistas o acciones específicas, como la gestión de usuarios, visualización de fichas o registro masivo de datos.
+Cada permiso está claramente identificado con su respectiva funcionalidad, por ejemplo:
 
-Además, se incluye un selector para establecer el estado del rol (por ejemplo, activo o inactivo) y un botón inferior de color azul con la etiqueta "Guardar", que permite confirmar y aplicar los cambios realizados en la asignación de permisos.
+- Crear Usuario
+- Listar Usuarios
+- Buscar Usuarios
+- Listar Fichas
+- Registro Masivo
+- Ver Perfil Usuario
+- Actualizar Usuario
+- Crear Ficha
+
+También se podrá seleccionar el **estado** del permiso (activo o inactivo) desde un desplegable en la parte inferior del modal. Finalmente, el administrador debe hacer clic en el botón **Guardar** para confirmar la asignación.
+
+<h3>Instrucciones para asignar permisos</h3>
+1. Ir a la sección "Admin" > "Roles". 2. Ubicar el rol al cual se desea asignar permisos.
+3. Hacer clic en el botón azul “Asignar” de la columna de acciones. 4. Seleccionar
+los permisos deseados mediante las casillas de verificación. 5. Seleccionar el estado
+del permiso. 6. Hacer clic en el botón **Guardar** para confirmar.
+
+<h3>Salidas</h3>- Permisos asignados correctamente al rol. - El sistema refleja
+los cambios de manera inmediata.
 
 <h3>Mockup</h3>
 <Image src={RF98Case} alt="RF98Case" width={3148} height={2270} />

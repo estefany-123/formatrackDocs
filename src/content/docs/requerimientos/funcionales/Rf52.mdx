@@ -1,7 +1,25 @@
 ---
-title: "Requerimientos tecnicos"
-description: "Aqui le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
+title: "RF52 : Cambiar estado de la Categoría"
+description: "Aquí le explicaremos todos los requisitos que debe tener para poder usar nuestro software."
 slug: "requerimientos/Rf52"
 ---
 
-RF1
+import { Image } from "astro:assets";
+import RF52Case from "../../../../assets/requerimientos/GET categorias .png";
+
+<h3>Entradas</h3>
+Se modificará el campo estado de la categoría seleccionado
+
+<h3>Descripción</h3>
+En la parte derecha de la tabla donde se encuentran las categorías, el administrador
+podrá ver un botón de trash el cual cambiará el estado de la categoría (si está activo
+a inactivo y viceversa). Este requerimiento hace parte del módulo de bodega.
+
+<h3>Salidas</h3>
+Muestra la lista de todas las categorías
+
+<h3>Prioridad</h3>
+Alta
+
+<h3>Mockup</h3>
+<Image src={RF52Case} alt="RF52Case" width={3148} height={2270} />
