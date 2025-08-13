@@ -74,3 +74,222 @@ Formatrack ofrece:
 ---
 
 **Formatrack es más que un sistema: es una herramienta clave para optimizar la gestión de activos y préstamos, asegurando la trazabilidad y el orden en el SENA con una solución moderna y segura.**
+
+# 1. Introducción
+
+Mediante el presente documento, vamos a establecer la información clara acerca de los Requerimientos funcionales y no funcionales identificadas para el proyecto : Software para llevar la trazabilidad de entrada, salida y asignación de los materiales formativos del CGDSS.
+
+## 1.1 Propósito
+
+El propósito de este documento es describir detalladamente los Requerimientos Funcionales y no funcionales que se van a tener en cuenta para la elaboración del sistema.
+
+## 1.2 Alcance
+
+El alcance que se busca con este proyecto es el mejoramiento de la trazabilidad de los elementos formativos que ingresan salen y permanecen en el centro (en este caso los ambientes de formación).  
+En este último caso se enfatiza en que se llevará a cabo el registro de los materiales asignados a estos lugares de formación mediante cámara en tiempo real. Una forma de realizar esta actividad es coordinar o implementar el software de horarios para que cada vez que el ambiente vaya a ser usado, la persona a cargo de la formación o el vigilante/supervisor puedan asegurarse que los elementos se encuentran completos.  
+Este sistema ayudará a llevar un balance acerca del material más usado para evitar solicitar elementos adicionales innecesarios y pedir solo lo que realmente se requiere.  
+Finalmente, se espera que el sistema pueda emplearse en otros centros.
+
+## 1.3 Responsables e involucrados
+
+| Nombre                            | Tipo (Responsable/Involucrado) | Rol         |
+| --------------------------------- | ------------------------------ | ----------- |
+| Yurgen Esneider Perdomo Vargas    | Responsable                    | Development |
+| Estefany Daniela Parada Escalante | Responsable                    | Development |
+| Luis Miguel Giron Orozco          | Responsable                    | Development |
+
+---
+
+# 2. Descripción general
+
+## 2.1 Perspectiva del producto
+
+El sistema de gestión de elementos de formación es una página web para el manejo de la trazabilidad de los materiales de formación del CGDSS, con posible versión móvil (no asegurada).  
+Permitirá seguimiento de materiales para generar inventario, balance de entradas/salidas y priorización de solicitudes.  
+Posible integración con sistema de horarios.  
+Usuarios previstos: **administrador, líder, instructor, aprendiz**.  
+Objetivo: generar informes y estadísticas para decisiones de reposición de materiales.
+
+## 2.1.1 Interfaces del usuario
+
+**RF1 - Vista Login :** En esta vista permitirá al usuario iniciar sesión con un rol ya establecido para ello debe ingresar su documento o correo y la contraseña.
+
+**RF2 - vista Recuperar Contraseña :** Mediante esta se busca poder recuperar la cuenta del usuario en caso de que no recuerde la contraseña se le pedirá el documento y el correo para luego solicitar la nueva contraseña y se finalizara con el cambio correcto de contraseña por la cual lo redireccionara al Login
+
+**Vista Dashboard o Inicio :** Este apartado permitirá el usuario tener información más recientes sobres algunas de las actividades que se hayan realizado, mostrando algunos gráficos sobre estos. En caso de querer verificar alguna de estos datos de forma general vamos a poder tener acceso a ello desde aquí ya que al seleccionarlo nos redirige a la ventana que se seleccionó. Es decir aquí manejaremos las estadísticas generales que permitan facilitar la toma de decisiones.
+
+**Vista Perfil de Usuario :** En esta opción el usuario podrá verificar sus datos personales y en caso de ser necesario podrá editarlos y adicionalmente podrá añadir una imagen a su perfil.
+
+## 2.1.1.2 Modulo de Administrador
+
+**Vista Usuarios :** Esta vista permitirá ver el listado de los usuarios registrados en el sistema y además también permitirá registrar un nuevo usuario, editarlo, buscar y cambiar de estado.
+
+**Vista Centros :** Esta vista permitirá ver el listado de los centros registrados en el sistema y además también permitirá registrar un nuevo centro, editarlo, buscar y cambiar de estado.
+
+**Vista Áreas :** Esta vista permitirá ver el listado de las áreas registradas en el sistema y además también permitirá registrar una nueva área, editarla, buscar y cambiar de estado.
+
+**Vista Programas Formación :** Esta vista permitirá ver el listado de los programas registrados en el sistema y además también permitirá registrar un nuevo programa, editarlo, buscar y cambiar de estado.
+
+**Vista Fichas :** Esta vista permitirá ver el listado de las fichas registradas en el sistema y además también permitirá registrar una nueva ficha, editarla, buscar y cambiar de estado.
+
+**Vista Sedes :** Esta vista permitirá ver el listado de las sedes registradas en el sistema y además también permitirá registrar una nueva sede, editarla, buscar por nombre.
+
+**Vista Sitios :** Esta vista permitirá ver el listado de los sitios registrados en el sistema y además también permitirá registrar un nuevo sitio, editarlo, buscar y cambiar de estado.
+
+**Vista Tipo de Sitios :** Esta vista permitirá ver el listado de los tipos de sitios registrados en el sistema y además también permitirá registrar un nuevo tipo de sitio, editarlo, buscar y cambiar de estado.
+
+**Vista Municipios :** Esta vista permitirá ver el listado de los municipios registrados en el sistema y además también permitirá registrar un nuevo municipio, editarlo, buscar y cambiar de estado.
+
+**Vista Permisos :** Esta vista permitirá ver el listado de los permisos registrados, y además permitirá registrar , editar y buscar los permisos.
+
+**Vista módulos :** Esta vista permitirá ver el listado de los módulos registrados, y además permitirá registrar , editar , cambiar de estado y buscar entre los módulos ya existentes.
+
+**Vista Rutas :** Esta vista permitirá ver el listado de las rutas registradas y además permitirá registrar , editar , cambiar de estado y buscar entre las rutas ya existentes.
+
+**Vista Roles :** Esta vista permitirá ver el listado de los roles registradas y además permitirá registrar , editar , cambiar de estado y buscar entre los roles ya existentes.
+
+## 2.1.1.3 Modulo de Bodega
+
+**Vista Elementos:** Mediante esta vista se listarán los elementos registrados y permitirá al usuario registrar, actualizar, buscar y cambiar el estado del elemento
+
+**Vista Movimientos:** En esta vista se mostrará un listado con los movimientos realizados y el estado en el que se encuentran, se podrá agregar y editar.
+
+**Vista Tipos de Movimiento:** En esta vista se listarán todos los tipos de movimientos disponibles, además se podrán registrar, actualizar, buscar y cambiar el estado.
+
+**Vista de Unidades de Medida :** En esta vista se listarán todas las unidades de medida disponibles, además se podrán registrar, actualizar, buscar y cambiar el estado.
+
+**Vista Inventario:** En esta vista se podrán listar los inventarios por áreas en donde podrá visualizar cada uno de los elementos que se encuentran en dicho inventario. Además también se podrá actualizar el stock del elemento seleccionado.
+
+## 2.1.1.5 Modulo de Reportes
+
+**Vista Reportes :** En esta vista se podrán visualizar los diferentes reportes acerca de los materiales formativos . De igual manera se podrá visualizar el pdf con la información y posterior a ello permitirá la descarga en formato PDF.
+
+### 2.1.2 Mapa de Navegación.
+
+## 2.2. Características del producto
+
+**Desarrollo en Lenguaje de Programación**
+El sistema será desarrollado utilizando el lenguaje de programación TypeScript para el Frontend, con React como la librería principal y para el Backend emplearemos el framework nestjs.
+
+**Aplicación Web**
+El sistema será accesible a través de los navegadores web modernos asegurando además que sea compatible con tabletas y móviles.
+
+**Gestión de Usuarios**
+El sistema va a permitir la creación, actualización, eliminación y búsqueda de usuarios con roles diferenciados como administrador, líder, instructor, aprendiz.
+
+**Interfaz Intuitiva y Responsiva**
+Se implementará de tal manera que los usuarios puedan interactuar con una página intuitiva y responsiva para que le sea posible adaptarse a diferentes pantallas mejorando así la experiencia del usuario.
+
+**Soporte Multilenguaje**
+El sistema se desarrollará de tal forma que pueda seleccionar el lenguaje de su preferencia en nuestro caso por lo general es solo español e inglés.
+
+**Funcionalidad de Reportes**
+Este sistema establecerá esta funcionalidad debido a que se llevara a cabo los reportes de los movimientos realizados a los materiales de formación y es importante establecer el reporte para obtener estadísticas claras acerca del uso que se le está dando y cuál es el mayor elemento utilizado.
+
+## 2.2.1 Funciones del producto
+
+## 2.2.1.1 Gestión de Usuarios
+
+Mediante este módulo vamos a poder gestionar los usuarios a través de los procesos de registro, actualización, consulta, cambio de estado. Así mismo se podrá gestionar el inicio y cierre de sesión.
+
+## 2.2.1.2 Gestión de Permisos
+
+Mediante este módulo podremos registrar los diferentes permisos que hay dentro del sistema, además se podrán actualizar en caso de ser necesarios. Con esta funcionalidad del software podremos dar acceso a diferentes módulos según el rol que le corresponda.
+
+## 2.2.1.3 Gestión de Centros
+
+Mediante el módulo gestionaremos los procesos de registro, consulta, actualización y cambio de estado de los centros.
+
+## 2.2.1.4 Gestión de Áreas
+
+Este módulo permitirá el registro, consulta, actualización y cambio de estado de las áreas.
+
+## 2.2.1.5 Gestión de Programas Formación
+
+Gracias a este módulo podremos gestionar los procesos de registro, consulta, actualización y cambio de estado de los programas de formación.
+
+## 2.2.1.6 Gestión de Fichas
+
+Mediante este módulo podremos realizar los procesos de registro, consulta, actualización y cambio de estado de fichas.
+
+## 2.2.1.7 Gestión de Sedes
+
+Mediante este módulo podremos realizar los procesos de registro, consulta, actualización y cambio de estado de sedes.
+
+## 2.2.1.8 Gestión de Sitios
+
+Mediante este módulo podremos realizar los procesos de registro, consulta, actualización y cambio de estado de sitios.
+
+## 2.2.1.9 Gestión de Tipo de Sitios
+
+Mediante este módulo podremos realizar los procesos de registro, consulta, actualización y cambio de estado de tipo de sitios.
+
+## 2.2.2.0 Gestión de Municipios
+
+Mediante este módulo podremos realizar los procesos de registro, consulta, actualización y cambio de estado de municipios.
+
+## 2.2.2.1 Gestión de Movimientos
+
+Mediante este módulo podremos realizar los procesos de registro, consulta, actualización, aceptación y rechazo de movimientos.
+
+## 2.2.2.2 Gestión Tipos de Movimientos
+
+Mediante este módulo podremos realizar los procesos de registro, consulta, actualización, cambio de estado del tipo de movimiento.
+
+## 2.2.2.3 Gestión de Categorías
+
+Mediante este módulo podremos realizar los procesos de registro, consulta, actualización y cambio de estado de categorías.
+
+## 2.2.2.4 Gestión de Reportes y Estadísticas
+
+Mediante este módulo se generarán reportes que permitan y faciliten la toma de decisiones a partir de estadísticas.
+
+## 2.2.2.5 Gestión de Notificaciones
+
+Mediante este módulo va a ser posible dar a conocer acerca de los productos cerca a caducar y sobre el material formativo que debe ser gastado debido a que hay demasiado en Stock. Este también contara con un tipo de alera o notificación cuando es solicitado un elemento de formación. Además se tendrá en cuenta cuando se realice un movimiento o también se notificará cuando se den de baja los elementos.
+
+## 2.2.2.6 Gestión de Elementos
+
+Mediante este módulo se va a poder realizar el procesos de registro, consulta, actualización y cambio de estado de elementos Formativos.
+
+## 2.2.2.7 Gestión de Inventarios
+
+Mediante este módulo será posible realizar los procesos de registro, actualización y cambio de estado de elementos que se han registrado en el inventario debido que se encuentran asignados en un sitio y se facilitara su proceso de verificación. Además se podrá realizar la modificación del stock y se podrá dar de baja un elemento en el inventario.
+
+## 2.2.2.8 Gestión de Características
+
+Mediante este módulo se realizará el proceso de registro, consulta y actualización de las diferentes características únicas que podemos encontrar en un elemento.
+
+## 2.2.2.9 Gestión de Módulos
+
+Mediante este módulo se realizará el registro, consulta, actualización y cambio de estado de los distintos módulos. Este nos va a permitir manejar el tema de permisos y de los diferentes accesos que tiene cada rol a dicho modulo.
+
+## 2.2.3.0 Gestión de Roles
+
+Mediante este módulo se realizar el registro, registro , consulta, actualización y cambio de estado de los diferentes roles. Gracias a esto vamos a poder realizar la respectiva asignación de permisos.
+
+## 2.2.3.1 Gestión de Rutas
+
+Mediante este módulo se realizar el registro, registro , consulta, actualización y cambio de estado de las diferentes rutas. Gracias a esto podemos conocer la dirección URL con la que podemos acceder a cada módulo.
+
+## 2.2.3.2 Gestión de Unidades de medida
+
+Mediante este módulo se realizar el registro, registro , consulta, actualización y cambio de estado de las diferentes unidades de medida registradas.
+
+## 2.3 Características del usuario
+
+## 2.3.1 Administrador
+
+Este tipo de usuario podrá tener el acceso a todas las funcionalidades del sistema en general.
+
+## 2.3.2 Líder
+
+Este tipo de usuario tendrá el acceso a varias de las funcionalidades excepto a las de documentación y verificación, tendrá un apartado al recibir las notificación para que en algunas ocasiones debe aceptar algunas peticiones realizadas y es ahí donde podrá revisar a detalle la petición realizada.
+
+## 2.3.3 Instructor
+
+Este usuario tendrá acceso a la opción de peticiones y verificación. Por lo general podrá acceder a revisar su perfil de usuario pero no podrá editar sus datos son que solamente la foto, en caso de ser necesario debe pedirlo al líder o administrador.
+
+## 2.3.4 Aprendiz
+
+Este usuario va a depender de que permisos se le asignen por parte del administrador ya que muy posiblemente podrá realizar varias acciones.
