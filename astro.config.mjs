@@ -893,8 +893,44 @@ export default defineConfig({
               label: "Requerimientos No Funcionales",
               items: [
                 {
-                  label: "Tecnologias Utilizadas",
-                  slug: "tecnologias1",
+                  label: "Interacción de gráficas",
+                  slug: "requerimientos/RNF1",
+                },
+                {
+                  label: "Colores y tipografía",
+                  slug: "requerimientos/RNF2",
+                },
+                {
+                  label: "Filtrador Select",
+                  slug: "requerimientos/RNF3",
+                },
+                {
+                  label: "Alertas",
+                  slug: "requerimientos/RNF4",
+                },
+                {
+                  label: "Enumerador de notificaciones",
+                  slug: "requerimientos/RNF5",
+                },
+                {
+                  label: " Redondeado de botones",
+                  slug: "requerimientos/RNF6",
+                },
+                {
+                  label: " Accesibilidad",
+                  slug: "requerimientos/RNF7",
+                },
+                {
+                  label: "Rendimiento",
+                  slug: "requerimientos/RNF8",
+                },
+                {
+                  label: "Seguridad",
+                  slug: "requerimientos/RNF9",
+                },
+                {
+                  label: "Compatibilidad",
+                  slug: "requerimientos/RNF10",
                 },
               ],
             },
