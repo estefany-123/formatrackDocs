@@ -1,14 +1,188 @@
 ---
-title: "Diagrama de Secuencia"
-description: "Aqui le explicaremos sobre el diagrama de Secuencia."
+title: "Diagramas de Secuencia"
+description: "Vista general de los diagramas de secuencia del proyecto Formatrack."
 slug: "modeloDatos/diagramSecuencia"
 ---
 
-import { Image } from 'astro:assets';
-import adminSecuence from '../../../assets/diagramasSecuencia/RegistrarUsuario.jpg';
+import { Image } from "astro:assets";
 
-<h3>¿Qué es un Modelo Entidad-Relacion (ER)?</h3>
-<p>Es unarepresentacion grafica de como actuan los objetos en el sistema, es decir como es la interaccion de las diferentes actividaes disponibles a realizar en este. </p>
-<p>A continuacion vamos a ilustrar el inicio de los diagramas de secuencia referentes a  Formatrack</p>
+import rolPermisos from "../../../assets/diagramasSecuencia/Registrar rol-permiso.jpg";
+import programas from "../../../assets/diagramasSecuencia/Registrar programa .jpg";
+import roles from "../../../assets/diagramasSecuencia/Registrar roles.jpg";
+import areas from "../../../assets/diagramasSecuencia/Registrar Areas.jpg";
+import usuarios from "../../../assets/diagramasSecuencia/Registrar usuario.jpg";
+import notificaciones from "../../../assets/diagramasSecuencia/Gestionar notificaciones.jpg";
+import tipoSitio from "../../../assets/diagramasSecuencia/Registrar Tipo de sitio.jpg";
+import sitio from "../../../assets/diagramasSecuencia/Registrar Sitios.jpg";
+import ficha from "../../../assets/diagramasSecuencia/Registrar Ficha.jpg";
+import municipios from "../../../assets/diagramasSecuencia/Registrar Municipio.jpg";
+import centro from "../../../assets/diagramasSecuencia/Registrar centro.jpg";
+import sedes from "../../../assets/diagramasSecuencia/Registrar sedes.jpg";
+import movimientos from "../../../assets/diagramasSecuencia/Registrar Movimientos.jpg";
+import codigoInventario from "../../../assets/diagramasSecuencia/Registrar Codigo inventario.jpg";
+import inventarios from "../../../assets/diagramasSecuencia/Registrar Inventario.jpg";
+import elementos from "../../../assets/diagramasSecuencia/Registrar Elemento .jpg";
+import caracteristicas from "../../../assets/diagramasSecuencia/Registrar Caracteristicas .jpg";
+import unidadMedida from "../../../assets/diagramasSecuencia/Registrar Unidad de medida .jpg";
+import tipoMovimiento from "../../../assets/diagramasSecuencia/Registrar Tipo de mivimiento .jpg";
+import categorias from "../../../assets/diagramasSecuencia/Registrar Caracteristicas .jpg";
 
-<Image src={adminSecuence} alt="Secuencia register" width={2952} height={1211} />
+<h2>Diagramas de Secuencia del Proyecto</h2>
+<p>
+  En esta sección se presentan los diagramas de secuencia que describen los
+  procesos clave del sistema Formatrack. Cada uno refleja cómo interactúan los
+  actores y el sistema para llevar a cabo diferentes operaciones.
+</p>
+
+---
+
+### 🟢 Diagrama 1: Rol Permisos
+
+<p>
+  Representa la asignación y validación de permisos asociados a los roles del
+  sistema.
+</p>
+<Image src={rolPermisos} alt="Diagrama Rol Permisos" width={1200} />
+
+---
+
+### 🟢 Diagrama 2: Programas
+
+<p>
+  Describe la gestión de los programas de formación registrados en el sistema.
+</p>
+<Image src={programas} alt="Diagrama Programas" width={1200} />
+
+---
+
+### 🟢 Diagrama 3: Roles
+
+<p>Refleja cómo se crean, modifican y administran los roles de usuario.</p>
+<Image src={roles} alt="Diagrama Roles" width={1200} />
+
+---
+
+### 🟢 Diagrama 4: Áreas
+
+<p>Muestra el proceso de administración y control de las áreas.</p>
+<Image src={areas} alt="Diagrama Áreas" width={1200} />
+
+---
+
+### 🟢 Diagrama 5: Usuarios
+
+<p>Explica cómo se registran, actualizan y gestionan los usuarios.</p>
+<Image src={usuarios} alt="Diagrama Usuarios" width={1200} />
+
+---
+
+### 🟢 Diagrama 6: Notificaciones
+
+<p>Representa el envío, recepción y gestión de notificaciones en el sistema.</p>
+<Image src={notificaciones} alt="Diagrama Notificaciones" width={1200} />
+
+---
+
+### 🟢 Diagrama 7: Tipo de Sitio
+
+<p>Describe la administración de los diferentes tipos de sitio registrados.</p>
+<Image src={tipoSitio} alt="Diagrama Tipo de Sitio" width={1200} />
+
+---
+
+### 🟢 Diagrama 8: Sitio
+
+<p>Explica la gestión de los sitios registrados en el sistema.</p>
+<Image src={sitio} alt="Diagrama Sitio" width={1200} />
+
+---
+
+### 🟢 Diagrama 9: Ficha
+
+<p>Refleja el manejo de fichas de formación y sus interacciones.</p>
+<Image src={ficha} alt="Diagrama Ficha" width={1200} />
+
+---
+
+### 🟢 Diagrama 10: Municipios
+
+<p>Explica cómo se gestionan los municipios vinculados al sistema.</p>
+<Image src={municipios} alt="Diagrama Municipios" width={1200} />
+
+---
+
+### 🟢 Diagrama 11: Centro
+
+<p>Ilustra la administración de centros de formación registrados.</p>
+<Image src={centro} alt="Diagrama Centro" width={1200} />
+
+---
+
+### 🟢 Diagrama 12: Sedes
+
+<p>Describe la gestión de sedes y su relación con los centros.</p>
+<Image src={sedes} alt="Diagrama Sedes" width={1200} />
+
+---
+
+### 🟢 Diagrama 13: Movimientos
+
+<p>
+  Refleja el registro y seguimiento de movimientos realizados en el sistema.
+</p>
+<Image src={movimientos} alt="Diagrama Movimientos" width={1200} />
+
+---
+
+### 🟢 Diagrama 14: Código Inventario
+
+<p>
+  Explica cómo se gestionan los movimientos asociados a códigos de inventario.
+</p>
+<Image src={codigoInventario} alt="Diagrama Código Inventario" width={1200} />
+
+---
+
+### 🟢 Diagrama 15: Inventarios
+
+<p>Muestra el proceso de administración general de inventarios.</p>
+<Image src={inventarios} alt="Diagrama Inventarios" width={1200} />
+
+---
+
+### 🟢 Diagrama 16: Elementos
+
+<p>
+  Explica cómo se registran, actualizan y gestionan los elementos disponibles.
+</p>
+<Image src={elementos} alt="Diagrama Elementos" width={1200} />
+
+---
+
+### 🟢 Diagrama 17: Características
+
+<p>Describe la administración de características asociadas a los elementos.</p>
+<Image src={caracteristicas} alt="Diagrama Características" width={1200} />
+
+---
+
+### 🟢 Diagrama 18: Unidad de Medida
+
+<p>Refleja la gestión de unidades de medida utilizadas en el sistema.</p>
+<Image src={unidadMedida} alt="Diagrama Unidad de Medida" width={1200} />
+
+---
+
+### 🟢 Diagrama 19: Tipo de Movimiento
+
+<p>
+  Explica cómo se gestionan los diferentes tipos de movimiento en inventarios.
+</p>
+<Image src={tipoMovimiento} alt="Diagrama Tipo de Movimiento" width={1200} />
+
+---
+
+### 🟢 Diagrama 20: Categorías
+
+<p>Muestra la organización de elementos en categorías.</p>
+<Image src={categorias} alt="Diagrama Categorías" width={1200} />

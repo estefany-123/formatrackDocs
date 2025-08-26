@@ -31,6 +31,18 @@ Este sistema está construido con:
 
 ---
 
+## 🎯 Beneficios para el SENA
+
+Formatrack ofrece:
+
+- **Eficiencia operativa**: Automatiza tareas manuales y reduce errores, con la ayuda de procedimientos almacenados para mayor eficacia en las operaciones.
+- **Adaptabilidad**: Diseñado a medida para las necesidades del SENA.
+- **Control total**: Desde el inventario hasta los usuarios, todo bajo una plataforma unificada.
+
+---
+
+**Formatrack es más que un sistema: es una herramienta clave para optimizar la gestión de activos y préstamos, asegurando la trazabilidad y el orden en el SENA con una solución moderna y segura.**
+
 ---
 
 ## 🗝️ Claves de Acceso
@@ -63,17 +75,41 @@ MAIL_PASSWORD = "gdjznmobipqgyqzs";
 
 ---
 
-## 🎯 Beneficios para el SENA
+### 🔑 Variables de entorno y conexión a la base de datos
 
-Formatrack ofrece:
+## ⚙️ Backend
 
-- **Eficiencia operativa**: Automatiza tareas manuales y reduce errores, con la ayuda de procedimientos almacenados para mayor eficacia en las operaciones.
-- **Adaptabilidad**: Diseñado a medida para las necesidades del SENA.
-- **Control total**: Desde el inventario hasta los usuarios, todo bajo una plataforma unificada.
+```ts
+{
+ DB_HOST=db
+DB_PORT=5432
+DB_USERNAME=postgres
 
----
+BASE_URL= http://localhost:5173
+SECRET=formatrack123
 
-**Formatrack es más que un sistema: es una herramienta clave para optimizar la gestión de activos y préstamos, asegurando la trazabilidad y el orden en el SENA con una solución moderna y segura.**
+SERVICE_MAIL="gmail"
+MAIL_USER="formatrackbot@gmail.com"
+MAIL_PASSWORD="gdjz nmob ipqg yqzs"
+}
+```
+
+## 🎨 Frontend
+
+```ts
+{
+  VITE_API_CLIENT = "http://localhost:3000/";
+}
+```
+
+## 🗄️ Base de datos
+
+```ts
+{
+  DB_PASSWORD = 123;
+  DB_NAME = formatrackdev;
+}
+```
 
 # 1. Introducción
 
