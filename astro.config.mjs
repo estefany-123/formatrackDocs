@@ -964,4 +964,5 @@ export default defineConfig({
       ],
     }),
   ],
+  base: '/doc-tecnica/',
 });
